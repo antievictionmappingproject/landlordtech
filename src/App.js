@@ -43,7 +43,13 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        Hi Proptech
+        <Header />
+        <Hero />
+        <Intro />
+        <Nomanclatures />
+        <MapArea />
+        <SurveyArea />
+        <Footer />
       </Fragment>
     )
   }
