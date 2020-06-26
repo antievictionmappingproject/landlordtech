@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-export default class MapArea extends Component {
+class MapArea extends Component {
   render() {
+    console.log(this.props.data);
     return (
       <div>
         Map
@@ -9,3 +11,11 @@ export default class MapArea extends Component {
     )
   }
 }
+
+let mapStateToProps = state => {
+  return {
+    data: state.data
+  }
+}
+
+export default connect(mapStateToProps)(MapArea);

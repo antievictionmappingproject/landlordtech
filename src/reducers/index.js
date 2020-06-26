@@ -9,6 +9,11 @@ var reducer = (state = INITIAL_STATE, action) => {
         screenWidth: action.payload.screenWidth,
         screenHeight: action.payload.screenHeight
       };
+    case 'UPDATE_DATA':
+      return {
+        ...state,
+        data: action.payload.data
+      };
     default:
       return state;
   }
