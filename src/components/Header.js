@@ -9,6 +9,7 @@ const HeaderContainer = styled.header`
   left: 0;
   width:100%;
   display:flex;
+  z-index:9999;
   justify-content:center;
   border-bottom: 1px solid white;
 `;
