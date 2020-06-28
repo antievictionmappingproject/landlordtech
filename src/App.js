@@ -61,7 +61,6 @@ class App extends Component {
         <Header />
         <Hero />
         <Intro />
-        <Nomenclature />
         <MapArea />
         <SurveyArea />
         <Footer />
