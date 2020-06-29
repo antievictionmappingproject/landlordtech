@@ -25,6 +25,7 @@ const Title = styled.div`
   font-size: 2.500em;
   line-height: 1.2;
   color: white;
+  padding: 0 20px;
 `;
 
 const Circle = styled.div`

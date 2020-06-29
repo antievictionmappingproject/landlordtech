@@ -1,41 +1,75 @@
 export const INITIAL_STATE = {
   screenWidth: 1024,
   screenHeight: 768,
-  data: []
+  data: [],
+  currentNomenclature: null
 };
 
 export const TECH_LIST = [
   {
     id: 1,
-    title: "Tenant Screening"
+    title: "Tenant Screening & Protection",
+    services: [
+      "Tenant Screening offers to delimit those who “belong” in buildings or on streets from those who don’t."
+    ],
+    examples: [
+      "Enhanced Credit Checks",
+      "Tenant Background Checks",
+      "Tenant Means Testing",
+      "Roommate Matching",
+      "Co-living",
+      "Intergenerational Home Sharing",
+      "Tenant Selection / Rental Listings"
+    ],
+    harm: [
+      "Discrimination: Lack of compliance with Fair Housing Act",
+      "Collection and Aggregation of data",
+      "Denial of housing based on incorrect information",
+      "Invasion of privacy through background checks",
+      "Means testing of tenants in non-means tested housing to enable speculation",
+      "Predatory fees"
+    ],
+    companies: [
+      "Badi",
+      "Nesterly",
+      "Bungalow",
+      "Zumper",
+      "Instarent",
+      "Zently"
+    ]
   },
   {
     id: 2,
-    title: "Property Listing Apps"
-  },
-  {
-    id: 3,
-    title: "Rental Listing Services"
-  },
-  {
-    id: 4,
-    title: "Smart Homes"
-  },
-  {
-    id: 5,
-    title: "Property Surveillance"
-  },
-  {
-    id: 6,
-    title: "Neighborhood Surveillance"
-  },
-  {
-    id: 7,
-    title: "Access Keys"
-  },
-  {
-    id: 7,
-    title: "Property Management"
+    title: "Property Management",
+    services: [
+      "Property Management"
+    ],
+    examples: [
+      "Remote management",
+      "Rental payments",
+      "Security deposits",
+      "Renters Insurance",
+      "Utility Payments",
+      "Short-term management"      
+    ],
+    harm: [
+      "Absentee, less responsive management",
+      "Reduction in labor required to respond to management issues",
+      "Automated evictions",
+      "Automated notices including late notices",
+      "Tenant vulnerability with security deposits and rents paid through a 3rd party",
+      "Installation of"
+    ],
+    companies: [
+      "Rhino",
+      "Jetty",
+      "HelloRented",
+      "MainStreet",
+      "Domuso",
+      "Till",
+      "Zently",
+      "Doorstead"      
+    ]
   }
 ];
 

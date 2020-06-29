@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { Container, Title, Gutter, Circle, Subtitle, Paragraph } from '../stylesheets/components';
 import styled from 'styled-components';
+import { Nomenclature } from './';
+import { changeCurrentNomenclature } from '../actions';
 import { TECH_LIST } from '../constants/defaults';
+import { connect } from 'react-redux';
 import _ from 'lodash';
 
 const BlackTitle = styled(Title)`
@@ -55,7 +58,14 @@ const LineArea = styled.div`
 
 
 class Intro extends Component {
+  handleClick(id){
+
+    this.props.dispatch(changeCurrentNomenclature(id));
+
+  }
+
   render() {
+    let { currentNomenclature } = this.props;
     return (
       <Container>
         <Gutter h={100} />
@@ -91,7 +101,7 @@ class Intro extends Component {
             _.map (TECH_LIST, tech => {
               // eslint-disable-next-line no-unused-expressions
               return (
-                <TechLink key={tech.id} href="javascript:void();">
+                <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
                   { tech.title }
                 </TechLink>
               )
@@ -107,9 +117,20 @@ class Intro extends Component {
         </ListContainer>
         
         <Gutter h={100} />
+
+        {
+          currentNomenclature ? 
+          <Nomenclature /> : null
+        }
       </Container>
     )
   }
 }
 
-export default Intro;
+let mapStateToProps = state => {
+  return {
+    currentNomenclature: state.currentNomenclature
+  }
+}
+
+export default connect(mapStateToProps)(Intro);

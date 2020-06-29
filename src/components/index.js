@@ -5,6 +5,7 @@ import MapArea from './MapArea';
 import SurveyArea from './SurveyArea';
 import Hero from './Hero';
 import MapContainer from './MapContainer';
+import Nomenclature from './Nomenclature';
 
 export {
   Header,
@@ -13,5 +14,6 @@ export {
   MapArea,
   SurveyArea,
   MapContainer,
-  Hero
+  Hero,
+  Nomenclature
 };

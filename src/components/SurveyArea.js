@@ -33,6 +33,7 @@ class SurveyArea extends Component {
             </SurveyFrame>
           </CenterArea>
         </Inner>
+        <Gutter h={50} />
       </div>
     )
   }

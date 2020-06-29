@@ -8,6 +8,15 @@ export const windowResize = (width, height) => {
   }
 };
 
+export const changeCurrentNomenclature = (currentNomenclature) => {
+  return {
+    type: "CHANGE_CURRENT_NOMENCLATURE",
+    payload: {
+      currentNomenclature: currentNomenclature
+    }
+  }
+}
+
 
 export const updateData = (data) => {
   return {

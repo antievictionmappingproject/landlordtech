@@ -9,6 +9,11 @@ var reducer = (state = INITIAL_STATE, action) => {
         screenWidth: action.payload.screenWidth,
         screenHeight: action.payload.screenHeight
       };
+    case "CHANGE_CURRENT_NOMENCLATURE":
+      return {
+        ...state,
+        currentNomenclature: action.payload.currentNomenclature
+      };
     case 'UPDATE_DATA':
       return {
         ...state,
