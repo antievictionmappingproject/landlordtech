@@ -10,7 +10,7 @@ export const TECH_LIST = [
     id: 1,
     title: "Tenant Screening & Protection",
     services: [
-      "Tenant Screening offers to delimit those who “belong” in buildings or on streets from those who don’t."
+      "Background and credit checks for tenant and roommate selection."
     ],
     examples: [
       "Enhanced Credit Checks",
