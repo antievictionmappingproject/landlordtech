@@ -4,7 +4,7 @@ import { Inner, CenterArea, Gutter, Title } from '../stylesheets/components';
 
 const SurveyFrame = styled.iframe`
   width: 100%;
-  height: 3800px;
+  height: 500px;
 `;
 
 const BlackTitle = styled(Title)`
