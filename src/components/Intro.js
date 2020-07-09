@@ -23,9 +23,9 @@ const BlackParagraph = styled(Paragraph)`
 
 const TechLink = styled.a`
   display: block;
-  font-family: "GT America Expanded";
+  font-family: 'Staatliches', cursive;
   padding-bottom: 5px;
-  font-size: 2.500em;
+  font-size: 3.571em;
   line-height: 1.2;
   color: black;
   text-align: center;
@@ -37,9 +37,9 @@ const TechLink = styled.a`
 `;
 
 const ListTitle = styled.div`
-  font-family: "GT America Extended";
+  font-family: "Source Sans Pro";
   color: black;
-  margin: 10px 0;
+  margin: 5px 0;
   font-weight: 400;
   text-align: center;
 `;

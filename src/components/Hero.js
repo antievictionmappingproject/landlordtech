@@ -18,13 +18,14 @@ const Wrap = styled.div`
 `;
 
 const Subtitle = styled.div`
-  font-family: "GT America Extended";
+  font-family: 'Staatliches', cursive;
   font-weight: 400;
   color: white;
-  font-size: 2.143em;
-  line-height: 1.2;
+  font-size: 3.571em;
+  line-height: 1.1;
   width: 500px;
   margin: 0 auto;
+  text-align: center;
 
   b {
     font-weight: 500;
@@ -34,15 +35,24 @@ const Subtitle = styled.div`
 
 
 const Question = styled.div`
-  font-family: "GT America Extended";
-  font-weight: 500;
-  color: white;
-  font-size: 1.429em;
-  line-height: 1.2;
+  
   position: absolute; 
   left: 30px;
   top: 30px;
   width: 350px;
+
+  p {
+    font-family: "Source Sans Pro";
+    color: white;
+    font-size: 1.429em;
+    line-height: 1.2;
+    font-weight: 300;
+  }
+
+  b {
+    color: white;
+    font-weight: 600;
+  }
 `;
 
 const HeroImageContainer = styled.div`
@@ -52,19 +62,19 @@ const HeroImageContainer = styled.div`
 
 const QUESTIONS = [
   {
-    q: "Have there been changes in the way your building is managed?",
+    q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
     pos: [70, 56]
   },
   {
-    q: "Are there new cameras that have been installed?",
+    q: <p>Are there <b>new cameras</b> that have been installed?</p>,
     pos: [600, 180]
   },
   {
-    q: "Are there different payment, notification, or screening systems?",
+    q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
     pos: [150, 315]
   },
   {
-    q: "Has access to your building changed, for instance: you no longer have a key?",
+    q: <p>Has access to your building changed, <b>for instance: you no longer have a key?</b></p>,
     pos: [550, 455]
   }
 ];
@@ -76,14 +86,14 @@ const HeroTitleContainer = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  font-family:"GT America Expanded";
-  font-size:2.143em;
+  font-family:'Staatliches', cursive;
+  font-size: 3.571em;
+  line-height: 1.1;
   color: white;
-  line-height: 1.2;
 `;
 
 const HeroSub = styled.div`
-  font-family:"GT America Extended";
+  font-family:"Source Sans Pro";
   font-size: 1.286em;
   color: white;
   line-height: 1.4;
@@ -98,9 +108,9 @@ export default class Hero extends Component {
           <Wrap>
 
             {
-              _.map(QUESTIONS, q => {
+              _.map(QUESTIONS, (q, i) => {
                 return (
-                  <Question style={{ left: q.pos[0], top: q.pos[1] }}>
+                  <Question key={i} style={{ left: q.pos[0], top: q.pos[1] }}>
                     { q.q }
                   </Question>
                 );

@@ -24,6 +24,8 @@ const Container = styled.div`
 
 const Title = styled.div`
   color: white; 
+  font-family:'Staatliches', cursive;
+  font-size: 1.1em;
 `;
 
 const Menu = styled.div`

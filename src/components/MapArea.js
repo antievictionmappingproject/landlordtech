@@ -13,7 +13,6 @@ const Container = styled.div`
 
 class MapArea extends Component {
   render() {
-    console.log(this.props.data);
     return (
       <Container>
         <Gutter h={50} />
@@ -43,7 +42,6 @@ class MapArea extends Component {
 
 let mapStateToProps = state => {
   return {
-    data: state.data
   }
 }
 

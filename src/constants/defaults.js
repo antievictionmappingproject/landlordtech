@@ -1,7 +1,10 @@
 export const INITIAL_STATE = {
   screenWidth: 1024,
   screenHeight: 768,
-  data: [],
+  data: {
+    "type": "FeatureCollection",
+    "features": []
+  },
   currentNomenclature: null
 };
 
@@ -251,7 +254,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     type: "indirect",
     title: "Home Sales Financing",
     services: [
@@ -280,7 +283,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 8,
+    id: 10,
     type: "indirect",
     title: "Platforms that Buy Homes",
     services: [
@@ -309,7 +312,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 8,
+    id: 11,
     type: "indirect",
     title: "Rent-to-Own Platforms",
     services: [

@@ -37,8 +37,9 @@ const NCTitle = styled(Title)`
 `;
 
 const NCSubtitle = styled(Subtitle)`
-  font-size: 1.071em;
-  width: 370px;
+  font-size: 1.2em;
+  text-align: center;
+  
 `;
 
 
@@ -59,7 +60,7 @@ const ExampleInner = styled(Inner)`
     max-width: 200px;
 
     .title {
-      font-family: "GT America Extended";
+      font-family: 'Staatliches', cursive;;
       font-size: 1.0em;
       line-height: 1.2;
       text-align: center;
@@ -69,9 +70,10 @@ const ExampleInner = styled(Inner)`
 `;
 
 const HarmText = styled.div`
-  font-family: "GT America Extended";
+  font-family: 'Staatliches', cursive;
   color: white;
-  line-height: 1.2;
+  line-height: 1.1;
+  font-size: 1.2em;
   margin-bottom: 15px;
   width: 40%;
 `;
@@ -155,7 +157,7 @@ class Nomenclature extends Component {
         <Container>
           <Gutter h={50} />
 
-          <CenterArea style={{color: "white"}}>
+          <CenterArea style={{color: "white", textAlign: 'center'}}>
             Types of <br/>
             Landlord Tech
           </CenterArea>
@@ -199,8 +201,8 @@ class Nomenclature extends Component {
             {
               _.map(tech.harm, (h, i) => {
                 return (
-                  <CenterArea>
-                    <HarmText key={i}>
+                  <CenterArea key={i}>
+                    <HarmText>
                       { h }
                     </HarmText>
                   </CenterArea>

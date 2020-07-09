@@ -1,3 +1,30 @@
+import _ from 'lodash';
+
+export const convGeoJSON = (data) => {
+  let result = {
+    "type": "FeatureCollection",
+    "features": []
+  }
+
+  _.each(data, datum => {
+    let feature = {
+      "properties": datum,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          Number(datum.Longitude),
+          Number(datum.Latitude)
+        ]
+      }
+    };
+
+    result.features.push(feature);
+  })
+
+  return result;
+};
+
+
 export const numberWithDelimiter = (number, delimiter, separator) => {
   try {
     delimiter = delimiter || ",";

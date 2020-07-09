@@ -2,7 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import { windowResize, updateData } from './actions';
 import { csvParse } from 'd3';
-import { Header, Hero, Intro, Nomenclature, MapArea, SurveyArea, Footer } from './components';
+import { convGeoJSON } from './utils';
+import { Header, Hero, Intro, MapArea, SurveyArea, Footer } from './components';
 
 const Fragment = React.Fragment;
 
@@ -21,14 +22,6 @@ class App extends Component {
   }
 
   async loadData(){
-    // Papa.parse('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6CdlROYPNn9Z6xGZqcFgh9toXFFlR510iX24tJk1Mb3NclHDqv4Tq5bw93vBVaYQNVZrBaMjMJI1h/pub?gid=0&single=true&output=csv', {
-    //   download: true,
-    //   header: true,
-    //   complete: function(results) {
-    //     var data = results.data
-    //     console.log(data)
-    //   }
-    // })
 
     const response = await fetch('https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vT6CdlROYPNn9Z6xGZqcFgh9toXFFlR510iX24tJk1Mb3NclHDqv4Tq5bw93vBVaYQNVZrBaMjMJI1h/pub?output=csv', { method: "get" });
 
@@ -36,7 +29,8 @@ class App extends Component {
       let responseText = await response.text();
 
       let data = csvParse(responseText);
-      this.props.dispatch(updateData(data));
+      let geojson = convGeoJSON(data);
+      this.props.dispatch(updateData(geojson));
       
 
     } else {

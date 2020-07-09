@@ -21,9 +21,10 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  font-family: "GT America Expanded";
-  font-size: 2.500em;
-  line-height: 1.2;
+  font-family: 'Staatliches', cursive;;
+  font-size: 3.571em;
+  line-height: 1.1;
+  text-align: center;
   color: white;
   padding: 0 20px;
 `;
@@ -37,17 +38,17 @@ const Circle = styled.div`
 `;
 
 const Subtitle = styled.div`
-  font-family: "GT America Extended";
+  font-family: "Staatliches";
   font-weight: 500;
-  font-size: 1.429em;
-  line-height: 1.3;
+  font-size: 1.857em;
+  line-height: 1.1;
   width: 635px;
   margin: 0 auto;
   color: white;
 `;
 
 const Paragraph = styled.div`
-  font-family: "GT America";
+  font-family: "Source Sans Pro";
   font-weight: 400;
   font-size: 1.143em;
   line-height: 1.4;

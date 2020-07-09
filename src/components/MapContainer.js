@@ -35,26 +35,34 @@ class MapContainer extends Component {
   
   }
 
+  componentDidUpdate(prevProps){
+    if (prevProps.data.features.length === 0 && this.props.data.features.length > 0) {
+      this.updateData(this.props.data);
+    }
+  }
+
+  updateData(data){
+    console.log(data);
+    this.map.getSource('responses').setData(data);
+  }
+
   async handleStyleLoad(e) {
 
-    // this.map.addSource('osm_points', {
-    //   "type": 'vector',
-    //   "tiles": [`${API_URL}/tiles/osm_points/{z}/{x}/{y}.pbf`],
-    //   "minZoom": 3
-    // });
+    this.map.addSource('responses', {
+      "type": 'geojson',
+      "data": this.props.data
+    });
 
-    // this.map.addLayer({
-    //   'id': 'osm_points_layer',
-    //   'source': 'osm_points',
-    //   'source-layer': 'public.planet_osm_point',
-    //   'type': 'circle',
-    //   "minzoom": 3,
-    //   'paint': {
-    //     'circle-radius': 2,
-    //     'circle-color': "#FFFFFF"        
-    //   }
-    // });
-
+    this.map.addLayer({
+      'id': 'responses_layer',
+      'source': 'responses',
+      'type': 'circle',
+      "minzoom": 10,
+      'paint': {
+        'circle-radius': 5,
+        'circle-color': "#FFFFFF"        
+      }
+    });
 
   }
 
@@ -72,7 +80,8 @@ let mapStateToProps = state => {
 
   return {
     windowWidth: state.windowWidth,
-    windowHeight: state.windowHeight
+    windowHeight: state.windowHeight,
+    data: state.data
   }
 }
 

@@ -17,12 +17,12 @@ const Column = styled.div`
 `;
 
 const Subtitle = styled.div`
-  font-family: "GT America Extended";
+  font-family: "Staatliches";
   font-weight: 400;
-  font-size: 1.0em;
+  font-size: 1.3em;
   color: white;
   margin-bottom: 3px;
-  line-height: 1.2;
+  line-height: 1.1;
 `;
 
 const Authors = styled.div`
