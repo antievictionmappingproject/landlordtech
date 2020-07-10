@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Inner, Title, Gutter } from '../stylesheets/components';
-import { style } from 'd3';
+
 
 const FooterArea = styled.footer`
   background-color: black;

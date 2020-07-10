@@ -6,8 +6,9 @@ export const convGeoJSON = (data) => {
     "features": []
   }
 
-  _.each(data, datum => {
+  _.each(data, (datum, i) => {
     let feature = {
+      "id": i,
       "properties": datum,
       "geometry": {
         "type": "Point",

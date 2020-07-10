@@ -8,6 +8,13 @@ export const INITIAL_STATE = {
   currentNomenclature: null
 };
 
+export const TECH_SELECT_VALUES = [
+  {
+    
+  }
+
+]
+
 export const TECH_LIST = [
   {
     id: 1,

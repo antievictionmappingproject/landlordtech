@@ -23,12 +23,14 @@ class MapContainer extends Component {
     this.map = new window.mapboxgl.Map({
       container: this.refsMapContainer,
       style: 'mapbox://styles/dataplusfeminism/ckbyelidz303i1hqr6cqsjgj6',
-      zoom: 13,
-      minZoom: 13,
+      zoom: 11,
+      minZoom: 11,
       center: [ -73.935242, 40.730610],
+      scrollZoom: false
       // interactive: false
     });
 
+    this.map.addControl(new window.mapboxgl.NavigationControl());
 
     window.map = this.map;
     this.map.on('style.load', this.handleStyleLoad.bind(this));
