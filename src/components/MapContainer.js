@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import { API_URL } from '../constants/defaults';
+import { TECH_SELECT_VALUES } from '../constants/defaults';
 import _ from 'lodash';
 import styled from 'styled-components';
 
@@ -41,6 +41,48 @@ class MapContainer extends Component {
     if (prevProps.data.features.length === 0 && this.props.data.features.length > 0) {
       this.updateData(this.props.data);
     }
+
+    if (prevProps.currentTechType.value !== this.props.currentTechType.value) {
+      this.updateFilter(this.props.currentTechType.value);
+    }
+  }
+
+  renderCircleColors(){
+    let circleColors = ["case"];
+
+    _.each([...TECH_SELECT_VALUES].splice(1, TECH_SELECT_VALUES.length), v => {
+      circleColors.push(["in", v.value, ['get', 'techType']], v.color);
+    });
+
+    circleColors.push("#ccc");
+    
+    return circleColors;
+  }
+
+  updateFilter(currentTechTypeValue) {
+
+    if (currentTechTypeValue === "All"){
+
+      this.map.setFilter('responses_layer', null);
+    
+      this.map.setPaintProperty('responses_layer', 'circle-color', this.renderCircleColors());
+    } else {  
+
+      this.map.setFilter('responses_layer', [
+        'in',
+        currentTechTypeValue,
+        ['get', 'techType']
+      ]);
+
+      let color = _.find(TECH_SELECT_VALUES, v => v.value === currentTechTypeValue).color;
+      this.map.setPaintProperty('responses_layer', 'circle-color', [
+        'case',
+        ["in", currentTechTypeValue, ['get', 'techType']], color,
+        "#ccc"
+      ]);
+
+      // console.log(this.map.getFilter('responses_layer'))
+    }
   }
 
   updateData(data){
@@ -55,16 +97,23 @@ class MapContainer extends Component {
       "data": this.props.data
     });
 
+    
     this.map.addLayer({
       'id': 'responses_layer',
       'source': 'responses',
       'type': 'circle',
       "minzoom": 10,
       'paint': {
-        'circle-radius': 5,
-        'circle-color': "#FFFFFF"        
+        'circle-radius': {
+          'base': 5,
+          'stops': [
+          [12, 5],
+          [22, 180]
+          ]
+        },
+        'circle-color': this.renderCircleColors()
       }
-    });
+    }, "admin-0-boundary-disputed");
 
   }
 
@@ -83,7 +132,8 @@ let mapStateToProps = state => {
   return {
     windowWidth: state.windowWidth,
     windowHeight: state.windowHeight,
-    data: state.data
+    data: state.data,
+    currentTechType: state.currentTechType
   }
 }
 

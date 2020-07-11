@@ -18,6 +18,16 @@ export const changeCurrentNomenclature = (currentNomenclature) => {
 }
 
 
+export const changeCurrentTechType = (currentTechType) => {
+  return {
+    type: "CHANGE_CURRENT_TECH_TYPE",
+    payload: {
+      currentTechType: currentTechType
+    }
+  }
+}
+
+
 export const updateData = (data) => {
   return {
     type: 'UPDATE_DATA',

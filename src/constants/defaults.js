@@ -1,6 +1,10 @@
 export const INITIAL_STATE = {
   screenWidth: 1024,
   screenHeight: 768,
+  currentTechType: {
+    value: "All",
+    label: "All"
+  },
   data: {
     "type": "FeatureCollection",
     "features": []
@@ -10,10 +14,55 @@ export const INITIAL_STATE = {
 
 export const TECH_SELECT_VALUES = [
   {
-    
+    value: "All",
+    label: "All"
+  },
+  {
+    value: "Cameras",
+    label: "Cameras",
+    color: "#DBFF00"
+  },
+  {
+    value: "Smart lock",
+    label: "Smart Lock",
+    color: "#FF008A"
+  },
+  {
+    value: "Keyless entry",
+    label: "Keyless Entry",
+    color: "#00C2FF"
+  },
+  {
+    value: "Facial recognition",
+    label: "Facial Recognition",
+    color: "#FF0000"
+  },
+  {
+    value: "Smart meter",
+    label: "Smart Meter",
+    color: "#00FFC2",
+  },
+  {
+    value: "App",
+    label: "App",
+    color: "#8342D7"
+  },
+  {
+    value: "Lock Boxes",
+    label: "Lock Boxes",
+    color: "#D7AD42"
+  },
+  {
+    value: "Related to short term rentals",
+    label: "Related to Short Term Rentals",
+    color: "#42D75A"
+  },
+  {
+    value: "Other",
+    label: "Other",
+    color: "#686868"
   }
-
-]
+];
 
 export const TECH_LIST = [
   {

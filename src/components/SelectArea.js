@@ -2,17 +2,21 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Select from 'react-select';
+import { changeCurrentTechType } from '../actions';
+import { TECH_SELECT_VALUES } from '../constants/defaults';
 
 const SelectContainer = styled.div`
   position: absolute;
   left: 15px;
   top: 15px;
+  width: 200px;
+  z-index:5;
 `;
 
 class SelectArea extends Component {
 
   handleSelectedTechType(e){
-
+    this.props.dispatch(changeCurrentTechType(e));
   }
   render() {
     let selectStyles = {
@@ -67,14 +71,15 @@ class SelectArea extends Component {
       })
     };
 
+    let { currentTechType } = this.props;
     return (
       <SelectContainer>
          <Select
           styles={selectStyles}
-          value={[]}
+          value={currentTechType}
           isSearchable={false}
           onChange={this.handleSelectedTechType.bind(this)}
-          options={[]}
+          options={TECH_SELECT_VALUES}
         />
       </SelectContainer>
     )
@@ -83,7 +88,7 @@ class SelectArea extends Component {
 
 let mapStateToProps = state => {
   return {
-
+    currentTechType: state.currentTechType
   }
 }
 

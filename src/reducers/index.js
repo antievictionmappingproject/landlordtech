@@ -14,6 +14,11 @@ var reducer = (state = INITIAL_STATE, action) => {
         ...state,
         currentNomenclature: action.payload.currentNomenclature
       };
+    case "CHANGE_CURRENT_TECH_TYPE":
+      return {
+        ...state,
+        currentTechType: action.payload.currentTechType
+      }
     case 'UPDATE_DATA':
       return {
         ...state,

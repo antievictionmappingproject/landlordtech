@@ -7,6 +7,9 @@ export const convGeoJSON = (data) => {
   }
 
   _.each(data, (datum, i) => {
+
+    datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ')
+
     let feature = {
       "id": i,
       "properties": datum,
