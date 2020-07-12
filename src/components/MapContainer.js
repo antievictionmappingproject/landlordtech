@@ -8,14 +8,14 @@ const Fragment = React.Fragment;
 
 const MapDiv = styled.div`
   width: calc(100vw - 80px);
-  height: calc(100vh - 40px);
+  height: calc(100vh - 100px);
 `;
 
 
 class MapContainer extends Component {
   constructor(props){
     super(props);
-
+    this.hoveredStateId = null;
   }
   componentDidMount() {
     window.mapboxgl.accessToken = "pk.eyJ1IjoiZGF0YXBsdXNmZW1pbmlzbSIsImEiOiJjazl6aHc4cjQwNnRwM2xwZHJxZ2F4dm9vIn0.T9pZe5G7wOLEFLwdDlGBdg";//process.env.MAPBOX_TOKEN;
@@ -111,10 +111,37 @@ class MapContainer extends Component {
           [22, 180]
           ]
         },
-        'circle-color': this.renderCircleColors()
+        'circle-color': this.renderCircleColors(),
+        'circle-opacity': [
+          'case',
+          ['boolean', ['feature-state', 'hover'], false],
+          1,
+          0.5
+          ]
       }
     }, "admin-0-boundary-disputed");
 
+
+    this.map.on('mousemove', 'responses_layer', e => {
+      if (e.features.length > 0) {
+        if (this.hoveredStateId) {
+       
+          this.map.setFeatureState(
+            { source: 'responses', id: this.hoveredStateId },
+            { hover: false }
+          );
+       
+        }
+
+        this.hoveredStateId = e.features[0].id;
+        
+        this.map.setFeatureState(
+          { source: 'responses', id: this.hoveredStateId },
+          { hover: true }
+        );
+
+        }
+    });
   }
 
   
