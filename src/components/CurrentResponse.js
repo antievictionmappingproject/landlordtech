@@ -10,10 +10,11 @@ const ResponseContainer = styled.div`
   bottom: 15px;
   background-color: #111;
   border: 1px solid #333333;
-  padding: 10px;
+  padding: 15px;
   max-width: 500px;
   height: calc(100vh - 300px);
   color: white;
+  overflow-y: scroll;
 `;
 
 const AnswerArea = styled.div`
@@ -27,6 +28,7 @@ class CurrentResponse extends Component {
     let response = _.find(data.features, f => {
       return f.id === currentResponseID
     });
+    console.log(response);
     return (
       <ResponseContainer>
         {

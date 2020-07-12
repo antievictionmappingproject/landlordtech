@@ -41,6 +41,16 @@ input {
   outline: -webkit-focus-ring-color auto 0px;
   border:none;
 } 
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-button {
+  width: 16px;
+  height: 16px;
+}
+
 ::-webkit-scrollbar-thumb {
   background: rgba(150, 150, 150, 0.5);
   border: 9px none #ffffff;

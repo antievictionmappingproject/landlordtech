@@ -2,14 +2,14 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Select from 'react-select';
-import { changeCurrentTechType, changeIsFullScreen } from '../actions';
+import { changeCurrentTechType, changeIsFullScreen, changeCurrentResponseID } from '../actions';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 
 const SelectContainer = styled.div`
   position: absolute;
   left: 15px;
   top: 15px;
-  width: 200px;
+  width: 250px;
   z-index:5;
   display: flex;
   align-items: center;
@@ -24,6 +24,7 @@ const ExpandBtn = styled.a`
 class SelectArea extends Component {
 
   handleSelectedTechType(e){
+    this.props.dispatch(changeCurrentResponseID(null));
     this.props.dispatch(changeCurrentTechType(e));
   }
 
