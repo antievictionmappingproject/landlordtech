@@ -23,6 +23,15 @@ const Subtitle = styled.div`
   color: white;
   margin-bottom: 3px;
   line-height: 1.1;
+
+  a {
+    font-family: "Staatliches";
+    font-weight: 400;
+    font-size: 1.0em;
+    color: white;
+    margin-bottom: 3px;
+    line-height: 1.1;
+  }
 `;
 
 const Authors = styled.div`
@@ -66,7 +75,7 @@ export default class Footer extends Component {
               <Gutter h={10}></Gutter>
               <ArticleArea>
                 <Subtitle>
-                  COVID-19 Crisis Capitalism Comes to Real Estate
+                  <a href="http://bostonreview.net/class-inequality-science-nature/erin-mcelroy-meredith-whittaker-genevieve-fried-covid-19-crisis" target="_blank" rel="noopener noreferrer">COVID-19 Crisis Capitalism Comes to Real Estate</a>
                 </Subtitle>
                 <Authors>
                   Erin McElroy, Meredith Whittaker, Genevieve Fried
@@ -77,13 +86,35 @@ export default class Footer extends Component {
               </ArticleArea>
               <ArticleArea>
                 <Subtitle>
-                  Disruption at the Doorstep
+                  <a href="https://urbanomnibus.net/2019/11/disruption-at-the-doorstep/" target="_blank" rel="noopener noreferrer">Disruption at the Doorstep</a>
                 </Subtitle>
                 <Authors>
                   Erin McElroy
                 </Authors>
                 <Publisher>
                   Urban Omnibus
+                </Publisher>
+              </ArticleArea>
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.e-flux.com/architecture/housing/333698/how-to-pick-a-smart-lock/" target="_blank" rel="noopener noreferrer">How to Pick a Smart Lock</a>
+                </Subtitle>
+                <Authors>
+                  Miranda Hall
+                </Authors>
+                <Publisher>
+                  e-flux
+                </Publisher>
+              </ArticleArea>
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.publicbooks.org/uploading-housing-inequality-digitizing-housing-justice/" target="_blank" rel="noopener noreferrer">Uploading Housing Inequality, Digitizing Housing Justice?</a>
+                </Subtitle>
+                <Authors>
+                  Desiree Fields
+                </Authors>
+                <Publisher>
+                  Public Books
                 </Publisher>
               </ArticleArea>
             </Column>
@@ -111,7 +142,7 @@ export default class Footer extends Component {
                   MIT DUSP
                 </Subtitle>
                 <CreditAuthors>
-                  Wonyoung So
+                  <a href="https://wonyoung.so" target="_blank" rel="noopener noreferer">Wonyoung So</a>
                 </CreditAuthors>
                 <Gutter h={30} />
                 <Subtitle>
