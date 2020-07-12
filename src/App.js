@@ -57,6 +57,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
+        <a name="top"></a>
         <Header />
         <Hero />
         <Intro />

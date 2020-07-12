@@ -55,6 +55,7 @@ export default class Footer extends Component {
   render() {
     return (
       <FooterArea>
+        <a name="articles"></a>
         <Inner>
           <Gutter h={50} />
           <ColumnContainer>

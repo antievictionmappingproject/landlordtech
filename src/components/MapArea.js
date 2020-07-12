@@ -19,12 +19,12 @@ const RelativeWrap = styled.div`
   z-index: ${props => props.isFullScreen ? 10000 : 9998 };
 `;
 
-
 class MapArea extends Component {
   render() {
     let { isFullScreen, currentResponseID } = this.props;
     return (
       <Container>
+        <a name="map"></a>
         <Gutter h={50} />
         <Inner>
           <CenterArea>
@@ -36,8 +36,9 @@ class MapArea extends Component {
 
           <Gutter h={50} />
           <Subtitle>
-            While such technologies have celebrated the “disruption” of the real estate industry with new technology and data infrastructures, they often exacerbate housing inequality and gentrification. 
+            We need to add some description of the map
           </Subtitle>
+          
         </Inner>
         <Gutter h={50} />
         <CenterArea>

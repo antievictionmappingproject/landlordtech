@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Gutter } from '../stylesheets/components';
+import gsap from 'gsap';
 const HeaderContainer = styled.header`
   background-color: black;
   position: fixed;
@@ -11,7 +12,7 @@ const HeaderContainer = styled.header`
   display:flex;
   z-index:9999;
   justify-content:center;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 `;
 
 const Container = styled.div`
@@ -24,14 +25,34 @@ const Container = styled.div`
 
 const Title = styled.div`
   color: white; 
+  button.menu-link {
+    background: transparent;
+    padding:0;
+    margin:0;
+    border: none;
+    cursor: pointer;
+    color: white;
+
   font-family:'Staatliches', cursive;
   font-size: 1.1em;
+    margin-right: 15px;
+
+    &:last-child {
+      margin: 0;
+    }
+  }
 `;
 
 const Menu = styled.div`
   
-  a.menu-link {
+  button.menu-link {
+    background: transparent;
+    padding:0;
+    margin:0;
+    border: none;
+    cursor: pointer;
     color: white;
+    font-family: "Source Sans Pro";
     margin-right: 15px;
 
     &:last-child {
@@ -44,6 +65,20 @@ const Menu = styled.div`
 const Fragment = React.Fragment;
 
 class Header extends Component {
+  handleClick(e){
+
+
+    var d = document.querySelector(`a[name=${e}]`);
+
+    var bodyRect = document.body.getBoundingClientRect(),
+        elemRect = d.getBoundingClientRect(),
+        pos = elemRect.top - bodyRect.top;
+
+        
+    gsap.to((document.scrollingElement || document.documentElement), 1, { ease: "power3.inOut", scrollTop: pos - 30});
+  }
+
+
   render() {
     return (
       <Fragment>
@@ -51,23 +86,25 @@ class Header extends Component {
         <HeaderContainer>
           <Container>
             <Title>
-              Crowdsourcing Landlord Tech Deployment
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'top')}>
+                Crowdsourcing Landlord Tech Deployment
+              </button>
             </Title>
             <Menu>
-              <a href="#" className="menu-link" rel="noopener noreferer">
-                What is Landlord Tech
-              </a>
-              <a href="#" className="menu-link" rel="noopener noreferer">
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'whatis')}>
+                What is Landlord Tech?
+              </button>
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'map')}>
                 Map
-              </a>
+              </button>
 
-              <a href="#" className="menu-link" rel="noopener noreferer">
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'survey')}>
                 Survey
-              </a>
+              </button>
 
-              <a href="#" className="menu-link" rel="noopener noreferer">
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'articles')}>
                 Articles
-              </a>
+              </button>
             </Menu>
           </Container>
 

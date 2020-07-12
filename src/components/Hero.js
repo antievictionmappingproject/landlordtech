@@ -14,7 +14,7 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   position: relative;
-  height: 600px;
+  height: 100vh;
 `;
 
 const Subtitle = styled.div`
@@ -63,19 +63,19 @@ const HeroImageContainer = styled.div`
 const QUESTIONS = [
   {
     q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
-    pos: [70, 56]
+    pos: [70, 11]
   },
   {
     q: <p>Are there <b>new cameras</b> that have been installed?</p>,
-    pos: [600, 180]
+    pos: [600, 30]
   },
   {
     q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
-    pos: [150, 315]
+    pos: [150, 50]
   },
   {
     q: <p>Has access to your building changed, <b>for instance: you no longer have a key?</b></p>,
-    pos: [550, 455]
+    pos: [550, 70]
   }
 ];
 
@@ -110,7 +110,7 @@ export default class Hero extends Component {
             {
               _.map(QUESTIONS, (q, i) => {
                 return (
-                  <Question key={i} style={{ left: q.pos[0], top: q.pos[1] }}>
+                  <Question key={i} style={{ left: q.pos[0], top: `${q.pos[1]}%` }}>
                     { q.q }
                   </Question>
                 );

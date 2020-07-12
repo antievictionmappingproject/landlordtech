@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import _ from 'lodash';
+import { changeCurrentResponseID } from '../actions';
+import { Gutter } from '../stylesheets/components';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 
 const ResponseContainer = styled.div`
@@ -65,6 +67,15 @@ const ColorCircle = styled.div`
   }
 `;
 
+
+const CloseBtn = styled.button`
+  position: absolute;
+  right: 5px;
+  top: 10px;
+  z-index: 1000001;
+  cursor:pointer;
+`;
+
 const EXCLUDE_QUESTIONS = ["Timestamp", "techType", "Optional", "Latitude", "Longitude", "zip code", "Would you consider this technology"];
 
 class CurrentResponse extends Component {
@@ -72,6 +83,9 @@ class CurrentResponse extends Component {
     return _.find(TECH_SELECT_VALUES, value => value.value === tt).color;
   }
 
+  handleClose(e){
+    this.props.dispatch(changeCurrentResponseID(null));
+  }
   render() {
     let { currentResponseID, data } = this.props;
     let response = _.find(data.features, f => {
@@ -102,6 +116,14 @@ class CurrentResponse extends Component {
 
     return (
       <ResponseContainer>
+        <CloseBtn onClick={this.handleClose.bind(this)}>
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+            <path d="M1 1 L15 15" stroke="#D7D7D7"/>
+            <path d="M1 15 L15 1" stroke="#D7D7D7"/>
+          </svg>
+
+        </CloseBtn>
+        <Gutter h={20} />
         <TechTypeArea style={{borderBottom: 'none'}}>
           <div className="tech-title-area">
           {

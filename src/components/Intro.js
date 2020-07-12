@@ -40,7 +40,7 @@ const ListTitle = styled.div`
   font-family: "Source Sans Pro";
   color: black;
   margin: 5px 0;
-  font-weight: 400;
+  font-weight: 600;
   text-align: center;
 `;
 
@@ -66,8 +66,13 @@ class Intro extends Component {
 
   render() {
     let { currentNomenclature } = this.props;
+
+    let indirectTechList = _.filter(TECH_LIST, tl => tl.type === "indirect");
+    let directTechList = _.filter(TECH_LIST, tl => tl.type === "direct");
+    
     return (
       <Container>
+        <a name="whatis"></a>
         <Gutter h={100} />
         <BlackTitle>
           What is <br/>
@@ -97,8 +102,31 @@ class Intro extends Component {
               <path d="M1 0V69" stroke="black"/>
             </svg>
           </LineArea>
+          <ListTitle>
+            Direct Impact to Tenants:
+          </ListTitle>
           {
-            _.map (TECH_LIST, tech => {
+            _.map (directTechList, tech => {
+              // eslint-disable-next-line no-unused-expressions
+              return (
+                <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
+                  { tech.title }
+                </TechLink>
+              )
+            })
+          }
+
+          <LineArea>
+            <svg width="2" height="50" viewBox="0 0 2 50" fill="none">
+              <path d="M1 0V150" stroke="black"/>
+            </svg>
+          </LineArea>
+
+          <ListTitle>
+            Indirect Impact to Tenants:
+          </ListTitle>
+          {
+            _.map (indirectTechList, tech => {
               // eslint-disable-next-line no-unused-expressions
               return (
                 <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>

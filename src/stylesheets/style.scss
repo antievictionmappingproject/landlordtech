@@ -27,7 +27,7 @@ body {
   overflow-x:hidden;
 }
 
-body, div, p, input {
+body, div, p, input, button {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
   line-height: $basic_line_height;
@@ -35,6 +35,12 @@ body, div, p, input {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
 
 input {  
   -webkit-box-shadow: none;
@@ -88,7 +94,7 @@ a {
   color:$text_color;
 }
 
-a:hover {
+a:hover, button:hover {
   opacity:.5;
   -webkit-transition: all 0.1s ease-out;
   -moz-transition: all 0.1s ease-out;

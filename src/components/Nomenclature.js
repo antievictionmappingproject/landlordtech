@@ -17,6 +17,15 @@ const Back = styled.div`
   background-color: black;
   opacity: 0.8;
   z-index: 99998;
+  cursor:pointer;
+`;
+
+const CloseBtn = styled.div`
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 1000001;
+  cursor:pointer;
 `;
 
 const Container = styled.div`
@@ -45,19 +54,30 @@ const NCSubtitle = styled(Subtitle)`
 
 const ExampleInner = styled(Inner)`
   position: relative;
+  margin-left: 10px;
   width: 100%;
-  height: 400px;
+  height: 450px;
+  background-color: #111;
 
   div.example {
     position: absolute;
     background: #FFFFFF;
     border: 1px solid #000000;
     box-sizing: border-box;
-    box-shadow: 2px 2px 0px #FFFFFF;
+    box-shadow: 2px 2px 0px #AAA;
     border-radius: 10px;
     padding: 8px;
     transform: translate(-50%, -50%);
+    transform-origin: center;
     max-width: 200px;
+    cursor:pointer;
+    transition: 0.4s transform;
+    &:hover {
+      transform-origin: center;
+      transform: translateX(-50%) translateY(-50%) scale(1.2, 1.2);
+      z-index: 88888;
+
+    }
 
     .title {
       font-family: 'Staatliches', cursive;;
@@ -117,10 +137,14 @@ class Nomenclature extends Component {
       .data(examples)
       .enter()
       .append("div")
+      // .on('mouseover', function(e) {
+      //   d3.select(this).style('z-index', 88888);
+      // })
       .attr("class", 'example')
         .append("div")
         .attr("class", "title")
         .text(d => d.str);
+      
 
 
     this.nodes = innerElem.selectAll("div.example");
@@ -153,6 +177,15 @@ class Nomenclature extends Component {
     return (
       <Fragment>
         <Back onClick={this.handleBackClick.bind(this)}>
+          <CloseBtn>
+
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <path d="M1 1L27 27" stroke="#D7D7D7"/>
+              <path d="M27 1L1 27" stroke="#D7D7D7"/>
+            </svg>
+
+          </CloseBtn>
+          
         </Back>
         <Container>
           <Gutter h={50} />

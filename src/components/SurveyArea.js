@@ -17,6 +17,7 @@ class SurveyArea extends Component {
   render() {
     return (
       <div>
+        <a name="survey"></a>
         <Gutter h={50} />
         <Inner>
           <CenterArea>
