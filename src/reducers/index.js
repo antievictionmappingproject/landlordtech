@@ -9,7 +9,16 @@ var reducer = (state = INITIAL_STATE, action) => {
         screenWidth: action.payload.screenWidth,
         screenHeight: action.payload.screenHeight
       };
-      
+    case "CHANGE_MAP_LOADED":
+      return {
+        ...state,
+        mapLoaded: action.payload.mapLoaded
+      }
+    case "CHANGE_CURRENT_RESPONSE_ID":
+      return {
+        ...state,
+        currentResponseID: action.payload.currentResponseID
+      };
     case "CHANGE_IS_FULL_SCREEN":
       return {
         ...state,

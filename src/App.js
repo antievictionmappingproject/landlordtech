@@ -18,7 +18,12 @@ class App extends Component {
 
     window.addEventListener('resize', this.handleResize);
     this.handleResize();
-    this.loadData();
+  }
+
+  componentDidUpdate(prevProps){
+    if (!prevProps.mapLoaded && this.props.mapLoaded) {
+      this.loadData();
+    }
   }
 
   async loadData(){
@@ -65,6 +70,7 @@ class App extends Component {
 
 let mapStateToProps = state => {
   return {
+    mapLoaded: state.mapLoaded
   }
 }
 

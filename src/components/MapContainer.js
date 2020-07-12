@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { changeMapLoaded, changeCurrentResponseID } from '../actions';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 import _ from 'lodash';
 import styled from 'styled-components';
 import { point, bbox, buffer } from '@turf/turf';
 
-const Fragment = React.Fragment;
+// const Fragment = React.Fragment;
 
 const MapDiv = styled.div`
   width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 80px)"};
@@ -136,16 +137,8 @@ class MapContainer extends Component {
     this.map.on('click', 'responses_layer', e => {
       if (e.features.length > 0) {
         let feature = e.features[0];
-        let featurePoint = point([Number(feature.properties.Longitude), Number(feature.properties.Latitude)]);
-        let bufferedArea = buffer(featurePoint, 0.1, {units: 'kilometers'});
-        var bboxed = bbox(bufferedArea);
-
-        this.map.fitBounds(
-          [
-            [bboxed[0], bboxed[1]], 
-            [bboxed[2], bboxed[3]]
-          ]
-        )
+        console.log(feature.id, "selected");
+        this.props.dispatch(changeCurrentResponseID(feature.id));
       }
     });
 
@@ -185,6 +178,8 @@ class MapContainer extends Component {
       this.hoveredStateId = null;
       this.map.getCanvas().style.cursor = '';
     });
+
+    this.props.dispatch(changeMapLoaded(true));
   }
 
   

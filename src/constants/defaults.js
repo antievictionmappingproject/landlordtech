@@ -10,7 +10,8 @@ export const INITIAL_STATE = {
     "type": "FeatureCollection",
     "features": []
   },
-  currentNomenclature: null
+  currentNomenclature: null,
+  currentResponseID: null
 };
 
 export const TECH_SELECT_VALUES = [

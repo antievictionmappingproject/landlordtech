@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { MapContainer, Legend, SelectArea } from './';
+import { MapContainer, Legend, SelectArea, CurrentResponse } from './';
 import { Title, Subtitle, Inner, Gutter, CenterArea } from '../stylesheets/components';
 
 const Container = styled.div`
@@ -22,7 +22,7 @@ const RelativeWrap = styled.div`
 
 class MapArea extends Component {
   render() {
-    let { isFullScreen } = this.props;
+    let { isFullScreen, currentResponseID } = this.props;
     return (
       <Container>
         <Gutter h={50} />
@@ -44,6 +44,10 @@ class MapArea extends Component {
           <RelativeWrap isFullScreen={isFullScreen}>
             <SelectArea />
             <MapContainer /> 
+            {
+              currentResponseID ? 
+              <CurrentResponse /> : null
+            }
             <Legend />
           </RelativeWrap>
         </CenterArea>
@@ -56,7 +60,8 @@ class MapArea extends Component {
 
 let mapStateToProps = state => {
   return {
-    isFullScreen: state.isFullScreen
+    isFullScreen: state.isFullScreen,
+    currentResponseID: state.currentResponseID
   }
 }
 

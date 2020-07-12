@@ -8,6 +8,7 @@ import MapContainer from './MapContainer';
 import Nomenclature from './Nomenclature';
 import Legend from './Legend';
 import SelectArea from './SelectArea';
+import CurrentResponse from './CurrentResponse';
 
 export {
   Header,
@@ -19,5 +20,6 @@ export {
   Hero,
   Nomenclature,
   Legend,
-  SelectArea
+  SelectArea,
+  CurrentResponse
 };

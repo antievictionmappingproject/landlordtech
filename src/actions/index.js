@@ -8,6 +8,25 @@ export const windowResize = (width, height) => {
   }
 };
 
+export const changeMapLoaded = (mapLoaded) => {
+  return {
+    type: "CHANGE_MAP_LOADED",
+    payload: {
+      mapLoaded: mapLoaded
+    }
+  }
+}
+
+
+export const changeCurrentResponseID = (currentResponseID) => {
+  return {
+    type: "CHANGE_CURRENT_RESPONSE_ID",
+    payload: {
+      currentResponseID: currentResponseID
+    }
+  }
+}
+
 export const changeIsFullScreen = (isFullScreen) => {
   return {
     type: "CHANGE_IS_FULL_SCREEN",
