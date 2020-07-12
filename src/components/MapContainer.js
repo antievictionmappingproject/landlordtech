@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import { point, bbox, buffer } from '@turf/turf';
 
 // const Fragment = React.Fragment;
-
 const MapDiv = styled.div`
   width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 80px)"};
   height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 100px)"};
@@ -20,7 +19,7 @@ class MapContainer extends Component {
     this.hoveredStateId = null;
   }
   componentDidMount() {
-    window.mapboxgl.accessToken = "pk.eyJ1IjoiZGF0YXBsdXNmZW1pbmlzbSIsImEiOiJjazl6aHc4cjQwNnRwM2xwZHJxZ2F4dm9vIn0.T9pZe5G7wOLEFLwdDlGBdg";//process.env.MAPBOX_TOKEN;
+    window.mapboxgl.accessToken = process.env.REACT_APP_MAPBOX_TOKEN;
 
     this.map = new window.mapboxgl.Map({
       container: this.refsMapContainer,
@@ -64,7 +63,7 @@ class MapContainer extends Component {
 
     _.each([...TECH_SELECT_VALUES].splice(1, TECH_SELECT_VALUES.length), v => {
       circleColors.push(["in", v.value, ['get', 'techType']], v.color);
-    });
+    }); 
 
     circleColors.push("#ccc");
     
