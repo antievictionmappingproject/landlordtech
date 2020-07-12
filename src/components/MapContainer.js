@@ -136,7 +136,15 @@ class MapContainer extends Component {
     this.map.on('click', 'responses_layer', e => {
       if (e.features.length > 0) {
         let feature = e.features[0];
-        console.log(feature.id, "selected");
+        let pointed = point([Number(feature.properties.Longitude), Number(feature.properties.Latitude)]);
+        let buffered = buffer(pointed, 0.15, {units: 'kilometers'});
+        let bboxed = bbox(buffered);
+
+        this.map.fitBounds([
+          [bboxed[0], bboxed[1]],
+          [bboxed[2], bboxed[3]]
+        ]);
+
         this.props.dispatch(changeCurrentResponseID(feature.id));
       }
     });
