@@ -11,12 +11,18 @@ const Container = styled.div`
 `;
 
 const RelativeWrap = styled.div`
-  position: relative;
+  width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 80px)"};
+  height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 100px)"};
+  position: ${props => props.isFullScreen ? "fixed" : "relative"};
+  left: ${props => props.isFullScreen ? 0 : "auto"};
+  top: ${props => props.isFullScreen ? 0 : "auto"};
+  z-index: ${props => props.isFullScreen ? 10000 : 9998 };
 `;
 
 
 class MapArea extends Component {
   render() {
+    let { isFullScreen } = this.props;
     return (
       <Container>
         <Gutter h={50} />
@@ -35,7 +41,7 @@ class MapArea extends Component {
         </Inner>
         <Gutter h={50} />
         <CenterArea>
-          <RelativeWrap>
+          <RelativeWrap isFullScreen={isFullScreen}>
             <SelectArea />
             <MapContainer /> 
             <Legend />
@@ -50,6 +56,7 @@ class MapArea extends Component {
 
 let mapStateToProps = state => {
   return {
+    isFullScreen: state.isFullScreen
   }
 }
 

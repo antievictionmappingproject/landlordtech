@@ -9,6 +9,13 @@ var reducer = (state = INITIAL_STATE, action) => {
         screenWidth: action.payload.screenWidth,
         screenHeight: action.payload.screenHeight
       };
+      
+    case "CHANGE_IS_FULL_SCREEN":
+      return {
+        ...state,
+        isFullScreen: action.payload.isFullScreen
+      }
+  
     case "CHANGE_CURRENT_NOMENCLATURE":
       return {
         ...state,

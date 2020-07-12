@@ -3,12 +3,13 @@ import { connect } from 'react-redux';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 import _ from 'lodash';
 import styled from 'styled-components';
+import { point, bbox, buffer } from '@turf/turf';
 
 const Fragment = React.Fragment;
 
 const MapDiv = styled.div`
-  width: calc(100vw - 80px);
-  height: calc(100vh - 100px);
+  width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 80px)"};
+  height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 100px)"};
 `;
 
 
@@ -45,6 +46,16 @@ class MapContainer extends Component {
     if (prevProps.currentTechType.value !== this.props.currentTechType.value) {
       this.updateFilter(this.props.currentTechType.value);
     }
+
+    if (prevProps.isFullScreen !== this.props.isFullScreen) {
+      if (this.props.isFullScreen) {
+        this.map.scrollZoom.enable();
+      } else {
+        this.map.scrollZoom.disable();
+      }
+    }
+
+    this.map.resize();
   }
 
   renderCircleColors(){
@@ -107,20 +118,36 @@ class MapContainer extends Component {
         'circle-radius': {
           'base': 5,
           'stops': [
-          [12, 5],
+          [12, 10],
           [22, 180]
           ]
         },
         'circle-color': this.renderCircleColors(),
+        'circle-stroke-width': 1,
         'circle-opacity': [
           'case',
           ['boolean', ['feature-state', 'hover'], false],
           1,
-          0.5
-          ]
+          0.7
+        ]
       }
     }, "admin-0-boundary-disputed");
 
+    this.map.on('click', 'responses_layer', e => {
+      if (e.features.length > 0) {
+        let feature = e.features[0];
+        let featurePoint = point([Number(feature.properties.Longitude), Number(feature.properties.Latitude)]);
+        let bufferedArea = buffer(featurePoint, 0.1, {units: 'kilometers'});
+        var bboxed = bbox(bufferedArea);
+
+        this.map.fitBounds(
+          [
+            [bboxed[0], bboxed[1]], 
+            [bboxed[2], bboxed[3]]
+          ]
+        )
+      }
+    });
 
     this.map.on('mousemove', 'responses_layer', e => {
       if (e.features.length > 0) {
@@ -140,15 +167,33 @@ class MapContainer extends Component {
           { hover: true }
         );
 
-        }
+
+        this.map.getCanvas().style.cursor = 'pointer';
+      } 
+    });
+
+    this.map.on("mouseleave", "responses_layer", e => {
+      if (this.hoveredStateId) {
+        this.map.setFeatureState({
+          source: 'responses',
+          id: this.hoveredStateId
+        }, {
+          hover: false
+        });
+      }
+    
+      this.hoveredStateId = null;
+      this.map.getCanvas().style.cursor = '';
     });
   }
 
   
 
   render() {
+    let { isFullScreen } = this.props;
+
     return (
-      <MapDiv ref={c => { this.refsMapContainer = c; }} className="map-container">
+      <MapDiv isFullScreen={isFullScreen} ref={c => { this.refsMapContainer = c; }} className="map-container">
       </MapDiv>
     );
   }
@@ -160,7 +205,8 @@ let mapStateToProps = state => {
     windowWidth: state.windowWidth,
     windowHeight: state.windowHeight,
     data: state.data,
-    currentTechType: state.currentTechType
+    currentTechType: state.currentTechType,
+    isFullScreen: state.isFullScreen
   }
 }
 

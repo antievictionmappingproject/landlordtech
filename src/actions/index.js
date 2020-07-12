@@ -8,6 +8,14 @@ export const windowResize = (width, height) => {
   }
 };
 
+export const changeIsFullScreen = (isFullScreen) => {
+  return {
+    type: "CHANGE_IS_FULL_SCREEN",
+    payload: {
+      isFullScreen: isFullScreen
+    } 
+  }
+}
 export const changeCurrentNomenclature = (currentNomenclature) => {
   return {
     type: "CHANGE_CURRENT_NOMENCLATURE",

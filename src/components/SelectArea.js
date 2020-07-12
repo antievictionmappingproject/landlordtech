@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import Select from 'react-select';
-import { changeCurrentTechType } from '../actions';
+import { changeCurrentTechType, changeIsFullScreen } from '../actions';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 
 const SelectContainer = styled.div`
@@ -11,13 +11,33 @@ const SelectContainer = styled.div`
   top: 15px;
   width: 200px;
   z-index:5;
+  display: flex;
+  align-items: center;
 `;
+
+const ExpandBtn = styled.a`
+  margin-right: 10px;
+  
+`;
+
 
 class SelectArea extends Component {
 
   handleSelectedTechType(e){
     this.props.dispatch(changeCurrentTechType(e));
   }
+
+  handleFullScreenClick(e){
+    e.preventDefault();
+    let { isFullScreen } = this.props;
+    if (isFullScreen) {
+      document.body.style.overflow = "auto";
+    } else {
+      document.body.style.overflow = "hidden";
+    }
+    this.props.dispatch(changeIsFullScreen(!isFullScreen));
+  }
+
   render() {
     let selectStyles = {
       container: (provided, state) => {
@@ -71,10 +91,17 @@ class SelectArea extends Component {
       })
     };
 
-    let { currentTechType } = this.props;
+    let { currentTechType, isFullScreen } = this.props;
     return (
       <SelectContainer>
-         <Select
+        <ExpandBtn isFullScreen={isFullScreen} href="#" onClick={this.handleFullScreenClick.bind(this)}>
+            {
+              isFullScreen ? 
+              <img src="/assets/fullscreen_cancel_btn.svg" alt="fullscreen cancel button" /> :
+              <img src="/assets/fullscreen_btn.svg" alt="fullscreen button" />
+            }
+          </ExpandBtn>
+        <Select
           styles={selectStyles}
           value={currentTechType}
           isSearchable={false}
@@ -88,7 +115,8 @@ class SelectArea extends Component {
 
 let mapStateToProps = state => {
   return {
-    currentTechType: state.currentTechType
+    currentTechType: state.currentTechType,
+    isFullScreen: state.isFullScreen
   }
 }
 
