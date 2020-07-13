@@ -142,18 +142,25 @@ export default class Footer extends Component {
                   AI Now Institute
                 </Subtitle>
                 <CreditAuthors>
-                  Erin McElroy<br/>
                   Meredith Whittaker<br/>
                   Genevieve Fried<br/>
                   Deborah Raji
                 </CreditAuthors>
                 <Gutter h={30} />
                 <Subtitle>
-                  Anti-Eviction Mapping Project,<br />
-                  MIT DUSP
+                  Anti-Eviction Mapping Project
                 </Subtitle>
                 <CreditAuthors>
-                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferer">Wonyoung So</a>
+                  Erin McElroy<br/>
+                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>, <i>MIT DUSP</i>
+                </CreditAuthors>
+                <Gutter h={30} />
+                <Subtitle>
+                  People Power Media
+                </Subtitle>
+                <CreditAuthors>
+                  Joseph Smooke<br/>
+                  Dyan Ruiz
                 </CreditAuthors>
                 <Gutter h={30} />
                 <Subtitle>
@@ -161,8 +168,6 @@ export default class Footer extends Component {
                 </Subtitle>
                 <CreditAuthors>
                   Desiree Fields, <i>UC Berkeley</i><br/>
-                  Joseph Smooke, <i>People Power Media</i><br/>
-                  Dyan Ruiz, <i>People Power Media</i><br/>
                   Tranae’ Moran, <i>Atlantic Plaza Towers</i><br/>
                   Fabian Rogers, <i>Atlantic Plaza Towers</i>
                 </CreditAuthors>

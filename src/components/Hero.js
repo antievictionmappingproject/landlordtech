@@ -17,7 +17,7 @@ const Container = styled.div`
 const Wrap = styled.div`
   position: relative;
   min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
 `;
 
 const Subtitle = styled.div`
