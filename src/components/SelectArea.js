@@ -104,8 +104,8 @@ class SelectArea extends Component {
         <ExpandBtn isFullScreen={isFullScreen} href="#" onClick={this.handleFullScreenClick.bind(this)}>
             {
               isFullScreen ? 
-              <img src="/assets/fullscreen_cancel_btn.svg" alt="fullscreen cancel button" /> :
-              <img src="/assets/fullscreen_btn.svg" alt="fullscreen button" />
+              <img src={`${process.env.PUBLIC_URL}/assets/fullscreen_cancel_btn.svg`} alt="fullscreen cancel button" /> :
+              <img src={`${process.env.PUBLIC_URL}/assets/fullscreen_btn.svg`} alt="fullscreen button" />
             }
           </ExpandBtn>
         <Select
