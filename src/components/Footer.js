@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Inner, Title, Gutter } from '../stylesheets/components';
-
+import media from '../stylesheets/media';
 
 const FooterArea = styled.footer`
   background-color: black;
@@ -10,10 +10,21 @@ const FooterArea = styled.footer`
 const ColumnContainer = styled.div` 
   display: flex;
   justify-content: space-between;
+
+
+  ${media.mobileSmall `
+    display: block;
+  `}
+
 `;
 
 const Column = styled.div`
   width: calc(50% - 20px);
+  
+  ${media.mobileSmall `
+    width: 100%;
+  `}
+
 `;
 
 const Subtitle = styled.div`

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import _ from 'lodash';
 import { Question } from './';
 import { Gutter, Inner } from '../stylesheets/components'
+import media from '../stylesheets/media';
 
 const Container = styled.div`
   background-color: black;
@@ -15,7 +16,8 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  overflow-x: hidden;
 `;
 
 const Subtitle = styled.div`
@@ -32,6 +34,17 @@ const Subtitle = styled.div`
     font-weight: 500;
     color: white;
   }
+
+
+
+  ${media.padLandscape `
+    width: calc(100% - 20px);
+    font-size:2.3em;
+  `}
+
+  ${media.mobileSmall `
+    width: 100%;
+  `}
 `;
 
 
@@ -39,12 +52,19 @@ const Subtitle = styled.div`
 const HeroImageContainer = styled.div`
   display: flex;
   justify-content: center;
+
+  img {
+
+    ${media.padLandscape `
+      width: calc(100% - 20px);
+    `}
+  }
 `;
 
 const QUESTIONS = [
   {
     q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
-    pos: [70, 11],
+    pos: [6, 11],
     image: `${process.env.PUBLIC_URL}/assets/p1.png`,
     alt: "A login interface screenshot of a building management website",
     imagePos: [161, -88],
@@ -52,7 +72,7 @@ const QUESTIONS = [
   },
   {
     q: <p>Are there <b>new cameras</b> that have been installed?</p>,
-    pos: [600, 30],
+    pos: [43, 30],
     image: `${process.env.PUBLIC_URL}/assets/p2.png`,
     alt: "A photo of surveilance camera installed in the public area",
     imagePos: [75, -98],
@@ -60,7 +80,7 @@ const QUESTIONS = [
   },
   {
     q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
-    pos: [150, 50],
+    pos: [14, 50],
     image: `${process.env.PUBLIC_URL}/assets/p3.png`,
     alt: "A tenant screening app running on a smartphone",
     imagePos: [-22, -88],
@@ -68,10 +88,10 @@ const QUESTIONS = [
   },
   {
     q: <p>Has access to your building changed, <b>for instance: you no longer have a key?</b></p>,
-    pos: [550, 70],
+    pos: [42, 70],
     image: `${process.env.PUBLIC_URL}/assets/p4.png`,
     alt: "A photo of a key fob",
-    imagePos: [50, -126],
+    imagePos: [45, -126],
     imageWidth: "90%"
   }
 ];
@@ -80,6 +100,12 @@ const HeroTitleContainer = styled.div`
   display: flex;
   width: 100%;
   justify-content: space-between;
+
+  ${media.mobileSmall `
+
+    display: block;
+
+  `}
 `;
 
 const HeroTitle = styled.h1`
@@ -87,6 +113,18 @@ const HeroTitle = styled.h1`
   font-size: 3.571em;
   line-height: 1.1;
   color: white;
+
+  ${media.mobileLarge`
+    text-align: left;
+    font-size: 2.3em;
+  `}
+
+  ${media.mobileSmall `
+    font-size: 2.3em;
+    text-align: center;
+    margin-bottom: 30px;
+  `}
+
 `;
 
 const HeroSub = styled.div`
@@ -95,6 +133,18 @@ const HeroSub = styled.div`
   color: white;
   line-height: 1.4;
   width: 450px;
+
+
+  ${media.mobileLarge`
+    width: auto;
+    font-size:1.1em;
+    width: 400px;
+  `}
+
+  ${media.mobileSmall `
+    width: auto;
+    font-size:1.1em;
+  `}
 `;              
 
 

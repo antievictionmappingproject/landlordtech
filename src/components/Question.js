@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { connect } from 'react-redux';
+import media from '../stylesheets/media';
 
 const QImage = styled.img`
   position: relative;
@@ -20,6 +22,11 @@ const QuestionContainer = styled(motion.div)`
   width: 350px;
   cursor: pointer;
 
+
+  ${media.mobileSmall `
+    position: static;
+  `}
+
   p {
     z-index:2;
     position: relative;
@@ -38,8 +45,7 @@ const QuestionContainer = styled(motion.div)`
 
 
 
-
-export default class Question extends Component {
+class Question extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -82,10 +88,19 @@ export default class Question extends Component {
         animate="show"
         onMouseEnter={this.handleMouseEnter} 
         onMouseLeave={this.handleMouseLeave} 
-        style={{ left: this.props.pos[0], top: `${this.props.pos[1]}%` }}>
+        style={{ left: `${this.props.pos[0]}%`, top: `${this.props.pos[1]}%` }}>
         { this.props.q }
         <QImage style={{ opacity: this.state.imageShow ? 1 : 0, width: this.props.imageWidth, left: this.props.imagePos[0], top: this.props.imagePos[1] }} src={this.props.image} alt={this.props.alt}></QImage>
       </QuestionContainer>
     )
   }
 }
+
+let mapStateToProps = state => {
+  return {
+    screenWidth: state.screenWidth,
+    screenHeight: state.screenHeight,
+  }
+};
+
+export default connect(mapStateToProps)(Question);

@@ -2,11 +2,18 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { motion } from "framer-motion";
+import media from '../stylesheets/media';
 
 const LegendContainer = styled.div`
   position: absolute;
   left: 15px;
   bottom: 15px;
+
+
+  ${media.padLandscape `
+    left: 0;
+    bottom: 0;
+  `}
 `;
 
 class Legend extends Component {

@@ -6,11 +6,16 @@ import { changeCurrentNomenclature } from '../actions';
 import { TECH_LIST } from '../constants/defaults';
 import { connect } from 'react-redux';
 import _ from 'lodash';
+import media from '../stylesheets/media';
 
 const BlackTitle = styled(Title)`
   color: black;
   width: 400px;
   margin: 0 auto;
+  
+  ${media.mobileSmall `
+    width: auto;
+  `}
 `;
 
 const BlackSubtitle = styled(Subtitle)`
@@ -34,6 +39,11 @@ const TechLink = styled.a`
   &:hover {
     opacity: 1;
   }
+  
+
+  ${media.padLandscape `
+    font-size:2.3em;
+  `}
 `;
 
 const ListTitle = styled.div`

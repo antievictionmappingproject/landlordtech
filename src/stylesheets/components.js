@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import media from './media';
 
 const CenterArea = styled.div`
   display: flex;
@@ -8,6 +9,10 @@ const CenterArea = styled.div`
 const Inner = styled.div`
   width: 1024px;
   margin:0 auto;
+
+  ${media.padLandscape `
+    width: calc(100% - 20px);
+  `}
 `;
 
 const Gutter = styled.div`
@@ -18,6 +23,10 @@ const Gutter = styled.div`
 const Container = styled.div`
   width: 1024px;
   margin: 0 auto;
+
+  ${media.padLandscape `
+    width: calc(100% - 20px);
+  `}
 `;
 
 const Title = styled.div`
@@ -27,6 +36,12 @@ const Title = styled.div`
   text-align: center;
   color: white;
   padding: 0 20px;
+
+
+
+  ${media.padLandscape `
+    font-size: 2.3em;
+  `}
 `;
 
 const Circle = styled.div`
@@ -45,6 +60,12 @@ const Subtitle = styled.div`
   width: 635px;
   margin: 0 auto;
   color: white;
+
+  ${media.mobileSmall `
+    width: auto;
+    font-size: 1.4em;
+  `}
+
 `;
 
 const Paragraph = styled.div`
@@ -55,6 +76,11 @@ const Paragraph = styled.div`
   width: 480px;
   margin: 0 auto;
   color: white;
+
+
+  ${media.mobileSmall `
+    width: auto;
+  `}
 `;
 
 export {

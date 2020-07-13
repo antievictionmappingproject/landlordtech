@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Select from 'react-select';
 import { changeCurrentTechType, changeIsFullScreen, changeCurrentResponseID } from '../actions';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 const SelectContainer = styled.div`
   position: absolute;
@@ -13,6 +14,11 @@ const SelectContainer = styled.div`
   z-index:5;
   display: flex;
   align-items: center;
+  
+  ${media.padLandscape `
+    left: 10px;
+    top: 10px;
+  `}
 `;
 
 const ExpandBtn = styled.a`

@@ -6,6 +6,7 @@ import { Title, CenterArea, Gutter, Subtitle, Inner } from '../stylesheets/compo
 import { TECH_LIST } from '../constants/defaults';
 import _ from 'lodash';
 import * as d3 from 'd3';
+import media from '../stylesheets/media';
 
 const Fragment = React.Fragment;
 const Back = styled.div`
@@ -18,6 +19,8 @@ const Back = styled.div`
   opacity: 0.8;
   z-index: 99998;
   cursor:pointer;
+
+  
 `;
 
 const CloseBtn = styled.div`
@@ -38,7 +41,18 @@ const Container = styled.div`
   transform: translate(-50%, -50%);
   background-color: black;
   z-index: 99999;
+  overflow-x: hidden;
   overflow-y: scroll;
+
+  ${media.mobileLarge `
+    width: calc(100vw - 100px);
+    height: calc(100vh - 100px);
+  `} 
+
+  ${media.mobileSmall `
+    width: calc(100vw - 20px);
+    height: calc(100vh - 120px);
+  `} 
 `;
 
 const NCTitle = styled(Title)`
@@ -96,6 +110,10 @@ const HarmText = styled.div`
   font-size: 1.2em;
   margin-bottom: 15px;
   width: 40%;
+
+  ${media.mobileSmall `
+    width: calc(100% - 20px);
+  `}
 `;
 
 class Nomenclature extends Component {
@@ -112,7 +130,7 @@ class Nomenclature extends Component {
   }
 
   initForce(){
-    let { currentNomenclature } = this.props;
+    let { currentNomenclature, screenWidth } = this.props;
     let tech = _.find(TECH_LIST, tech => tech.id === currentNomenclature);
 
     let examples = _.map(tech.examples, example => {
@@ -124,10 +142,21 @@ class Nomenclature extends Component {
     let simulation = d3.forceSimulation()
 					//add nodes
 					.nodes(examples);	
-                    
+    
+    let center = [ 800 / 2, 450 / 2];
+
+    if (screenWidth <= 414) {
+
+      center[0] = (screenWidth - 20) / 2;
+
+    } else if (screenWidth <= 768) {
+      
+      center[0] = (screenWidth - 100) / 2; 
+    } 
+
     simulation
         .force("charge_force", d3.forceManyBody())
-        .force("center_force", d3.forceCenter(800 / 2, 400 / 2))
+        .force("center_force", d3.forceCenter(center[0], center[1]))
         .force("collision_force", d3.forceCollide([25]));
 
     
@@ -252,6 +281,8 @@ class Nomenclature extends Component {
 
 let mapStateToProps = state => {
   return {
+    screenWidth: state.screenWidth,
+    screenHeight: state.screenHeight,
     currentNomenclature: state.currentNomenclature
   }
 }

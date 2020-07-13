@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { Gutter } from '../stylesheets/components';
 import gsap from 'gsap';
+import media from '../stylesheets/media';
+
 const HeaderContainer = styled.header`
   background-color: black;
   position: fixed;
@@ -20,6 +22,16 @@ const Container = styled.div`
   padding: 20px 0;
   display: flex;
   justify-content: space-between;
+
+
+
+  ${media.padLandscape`
+    width: calc(100% - 20px);
+  `}
+
+  ${media.mobileSmall `
+    justify-content: center;
+  `}
 `;
 
 
@@ -33,14 +45,18 @@ const Title = styled.div`
     cursor: pointer;
     color: white;
 
-  font-family:'Staatliches', cursive;
-  font-size: 1.1em;
+    font-family:'Staatliches';
+    font-size: 1.1em;
     margin-right: 15px;
 
     &:last-child {
       margin: 0;
     }
   }
+
+  ${media.mobileSmall `
+    display:none;
+  `}
 `;
 
 const Menu = styled.div`

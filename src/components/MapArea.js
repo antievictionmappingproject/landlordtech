@@ -3,11 +3,12 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { MapContainer, Legend, SelectArea, CurrentResponse } from './';
 import { Title, Subtitle, Inner, Gutter, CenterArea } from '../stylesheets/components';
-
+import media from '../stylesheets/media';
 const Container = styled.div`
   background-color: black;
   padding: 20px 0;
   justify-content:center;
+
 `;
 
 const RelativeWrap = styled.div`
@@ -17,6 +18,12 @@ const RelativeWrap = styled.div`
   left: ${props => props.isFullScreen ? 0 : "auto"};
   top: ${props => props.isFullScreen ? 0 : "auto"};
   z-index: ${props => props.isFullScreen ? 10000 : 9998 };
+
+
+  ${media.padLandscape `
+    width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 20px)"};
+    height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 50px)"};
+  `}
 `;
 
 class MapArea extends Component {

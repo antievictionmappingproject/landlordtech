@@ -5,6 +5,7 @@ import _ from 'lodash';
 import { changeCurrentResponseID } from '../actions';
 import { Gutter } from '../stylesheets/components';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
+import media from '../stylesheets/media';
 
 const ResponseContainer = styled.div`
   position: absolute;
@@ -19,6 +20,17 @@ const ResponseContainer = styled.div`
   color: white;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+
+  ${media.mobileLarge `
+    right: 10px;
+    bottom: 10px;
+  `}
+
+  ${media.mobileSmall `
+    left: 0;
+    bottom: 0;
+    width: calc(100vw - 53px);
+  `}
 `;
 
 const AnswerArea = styled.div`
