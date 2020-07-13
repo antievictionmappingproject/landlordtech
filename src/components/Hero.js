@@ -64,7 +64,7 @@ const HeroImageContainer = styled.div`
 const QUESTIONS = [
   {
     q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
-    pos: [6, 11],
+    pos: [12, 11],
     image: `${process.env.PUBLIC_URL}/assets/p1.png`,
     alt: "A login interface screenshot of a building management website",
     imagePos: [161, -88],
@@ -72,7 +72,7 @@ const QUESTIONS = [
   },
   {
     q: <p>Are there <b>new cameras</b> that have been installed?</p>,
-    pos: [43, 30],
+    pos: [48, 30],
     image: `${process.env.PUBLIC_URL}/assets/p2.png`,
     alt: "A photo of surveilance camera installed in the public area",
     imagePos: [75, -98],
@@ -80,7 +80,7 @@ const QUESTIONS = [
   },
   {
     q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
-    pos: [14, 50],
+    pos: [19, 50],
     image: `${process.env.PUBLIC_URL}/assets/p3.png`,
     alt: "A tenant screening app running on a smartphone",
     imagePos: [-22, -88],
