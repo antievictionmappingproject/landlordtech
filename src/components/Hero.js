@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 import _ from 'lodash';
+import { Question } from './';
 import { Gutter, Inner } from '../stylesheets/components'
 
 const Container = styled.div`
@@ -34,26 +35,6 @@ const Subtitle = styled.div`
 `;
 
 
-const Question = styled.div`
-  
-  position: absolute; 
-  left: 30px;
-  top: 30px;
-  width: 350px;
-
-  p {
-    font-family: "Source Sans Pro";
-    color: white;
-    font-size: 1.429em;
-    line-height: 1.2;
-    font-weight: 300;
-  }
-
-  b {
-    color: white;
-    font-weight: 600;
-  }
-`;
 
 const HeroImageContainer = styled.div`
   display: flex;
@@ -63,19 +44,35 @@ const HeroImageContainer = styled.div`
 const QUESTIONS = [
   {
     q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
-    pos: [70, 11]
+    pos: [70, 11],
+    image: `${process.env.PUBLIC_URL}/assets/p1.png`,
+    alt: "A login interface screenshot of a building management website",
+    imagePos: [161, -88],
+    imageWidth: "60%"
   },
   {
     q: <p>Are there <b>new cameras</b> that have been installed?</p>,
-    pos: [600, 30]
+    pos: [600, 30],
+    image: `${process.env.PUBLIC_URL}/assets/p2.png`,
+    alt: "A photo of surveilance camera installed in the public area",
+    imagePos: [75, -98],
+    imageWidth: "100%"
   },
   {
     q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
-    pos: [150, 50]
+    pos: [150, 50],
+    image: `${process.env.PUBLIC_URL}/assets/p3.png`,
+    alt: "A tenant screening app running on a smartphone",
+    imagePos: [-22, -88],
+    imageWidth: "60%"
   },
   {
     q: <p>Has access to your building changed, <b>for instance: you no longer have a key?</b></p>,
-    pos: [550, 70]
+    pos: [550, 70],
+    image: `${process.env.PUBLIC_URL}/assets/p4.png`,
+    alt: "A photo of a key fob",
+    imagePos: [50, -126],
+    imageWidth: "90%"
   }
 ];
 
@@ -100,6 +97,7 @@ const HeroSub = styled.div`
   width: 450px;
 `;              
 
+
 export default class Hero extends Component {
   render() {
     return (
@@ -110,9 +108,7 @@ export default class Hero extends Component {
             {
               _.map(QUESTIONS, (q, i) => {
                 return (
-                  <Question key={i} style={{ left: q.pos[0], top: `${q.pos[1]}%` }}>
-                    { q.q }
-                  </Question>
+                  <Question key={i} idx={i} {...q} />
                 );
               })
             }

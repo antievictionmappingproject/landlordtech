@@ -9,6 +9,7 @@ import Nomenclature from './Nomenclature';
 import Legend from './Legend';
 import SelectArea from './SelectArea';
 import CurrentResponse from './CurrentResponse';
+import Question from './Question';
 
 export {
   Header,
@@ -21,5 +22,6 @@ export {
   Nomenclature,
   Legend,
   SelectArea,
-  CurrentResponse
+  CurrentResponse,
+  Question
 };

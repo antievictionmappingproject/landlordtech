@@ -6,6 +6,7 @@ const SurveyFrame = styled.iframe`
   width: 100%;
 
   height: calc(100vh - 300px);
+  min-height: 400px;
 `;
 
 const BlackTitle = styled(Title)`

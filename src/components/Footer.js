@@ -142,7 +142,7 @@ export default class Footer extends Component {
                   MIT DUSP
                 </Subtitle>
                 <CreditAuthors>
-                  <a href="https://wonyoung.so" target="_blank" rel="noopener noreferer">Wonyoung So</a>
+                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferer">Wonyoung So</a>
                 </CreditAuthors>
                 <Gutter h={30} />
                 <Subtitle>
@@ -156,6 +156,10 @@ export default class Footer extends Component {
                   Fabian Rogers, <i>Atlantic Plaza Towers</i>
                 </CreditAuthors>
                 <Gutter h={30} />
+                <CreditAuthors>
+                  Photo CC-BY-NC Tom Woodward
+
+                </CreditAuthors>
               </ArticleArea>
             </Column>
           </ColumnContainer>
