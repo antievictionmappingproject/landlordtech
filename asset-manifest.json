@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/landlordtech/static/css/main.a28274e0.chunk.css",
-    "main.js": "/landlordtech/static/js/main.89767eb4.chunk.js",
-    "main.js.map": "/landlordtech/static/js/main.89767eb4.chunk.js.map",
+    "main.js": "/landlordtech/static/js/main.578fedb6.chunk.js",
+    "main.js.map": "/landlordtech/static/js/main.578fedb6.chunk.js.map",
     "runtime-main.js": "/landlordtech/static/js/runtime-main.31d0d67e.js",
     "runtime-main.js.map": "/landlordtech/static/js/runtime-main.31d0d67e.js.map",
     "static/js/2.f60ae651.chunk.js": "/landlordtech/static/js/2.f60ae651.chunk.js",
     "static/js/2.f60ae651.chunk.js.map": "/landlordtech/static/js/2.f60ae651.chunk.js.map",
     "index.html": "/landlordtech/index.html",
-    "precache-manifest.884db1246342cd7192417943357f4cca.js": "/landlordtech/precache-manifest.884db1246342cd7192417943357f4cca.js",
+    "precache-manifest.2943585b2ff3698a9fcd6f336deb969f.js": "/landlordtech/precache-manifest.2943585b2ff3698a9fcd6f336deb969f.js",
     "service-worker.js": "/landlordtech/service-worker.js",
     "static/css/main.a28274e0.chunk.css.map": "/landlordtech/static/css/main.a28274e0.chunk.css.map",
     "static/js/2.f60ae651.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.f60ae651.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.31d0d67e.js",
     "static/js/2.f60ae651.chunk.js",
     "static/css/main.a28274e0.chunk.css",
-    "static/js/main.89767eb4.chunk.js"
+    "static/js/main.578fedb6.chunk.js"
   ]
 }
