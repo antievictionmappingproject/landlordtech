@@ -50,7 +50,7 @@ export const TECH_SELECT_VALUES = [
     color: "#8342D7"
   },
   {
-    value: "Lock Boxes",
+    value: "Lock boxes",
     label: "Lock Boxes",
     color: "#D7AD42"
   },

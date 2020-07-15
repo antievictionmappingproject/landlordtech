@@ -56,6 +56,9 @@ const TechTypeArea = styled.div`
 
   div.tech-color-area {
     display: flex;
+    width: 50%;
+    flex-wrap: wrap;
+    flex-direction: row-reverse;
   }
 `;
 
@@ -70,10 +73,12 @@ const Answer = styled.div`
 `;
 
 const ColorCircle = styled.div`
+  margin-bottom: 10px;
+
   width: 35px;
   height: 35px;
   border-radius: 40px;
-  margin-right: 5px;
+  margin-left: 5px;
   &:last-child {
     margin: 0;
   }
@@ -139,7 +144,7 @@ class CurrentResponse extends Component {
         <TechTypeArea style={{borderBottom: 'none'}}>
           <div className="tech-title-area">
           {
-            _.map(response.properties.techType, (tt) => {
+            _.map(response.properties.techType.reverse(), (tt) => {
               return (
                 <div className="tech-title" key={tt}>
                   { tt }
@@ -150,7 +155,7 @@ class CurrentResponse extends Component {
           </div>
           <div className="tech-color-area">
             {
-              _.map(response.properties.techType, (tt, i) => {
+              _.map(response.properties.techType.reverse(), (tt, i) => {
                 return (
                   <ColorCircle style={{ backgroundColor: this.determineColor(tt) }} key={i} />
                 );

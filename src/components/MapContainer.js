@@ -32,9 +32,9 @@ class MapContainer extends Component {
     this.map = new window.mapboxgl.Map({
       container: this.refsMapContainer,
       style: 'mapbox://styles/dataplusfeminism/ckbyelidz303i1hqr6cqsjgj6',
-      zoom: 11,
-      minZoom: 11,
-      center: [ -73.935242, 40.730610],
+      zoom: 4,
+      minZoom: 4,
+      center: [ -98.98407012500502, 38.97649404715861],
       scrollZoom: false
       // interactive: false
     });
@@ -121,7 +121,7 @@ class MapContainer extends Component {
       'id': 'responses_layer',
       'source': 'responses',
       'type': 'circle',
-      "minzoom": 10,
+      "minzoom": 4,
       'paint': {
         'circle-radius': {
           'base': 5,

@@ -43,7 +43,7 @@ class MapArea extends Component {
 
           <Gutter h={50} />
           <Subtitle>
-            We need to add some description of the map
+            This map indicates where and what type of landlord tech is being deployed. Please fill out the survey below to add landlord tech in your building to the map.
           </Subtitle>
           
         </Inner>
