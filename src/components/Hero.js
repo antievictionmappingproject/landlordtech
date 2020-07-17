@@ -182,7 +182,7 @@ export default class Hero extends Component {
               Deployment
             </HeroTitle>
             <HeroSub>
-              Landlord Tech—in industry so-called property tech or proptech—is leading to new forms of housing injustice in ways that increase the power of landlords and further disempower tenants and those seeking shelter.
+              Landlord Tech—what the real estate industry describes as residential property technology, or “proptech”—is leading to new forms of housing injustice. By employing digital surveillance, data collection, data accumulation, artificial intelligence, and platform real estate, landlord tech increases the power of landlords while further disempowering tenants and those seeking shelter.
             </HeroSub>
           </HeroTitleContainer>
           <Gutter h={50} />

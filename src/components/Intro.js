@@ -97,7 +97,7 @@ class Intro extends Component {
         </BlackSubtitle>
         <Gutter h={50} />
         <BlackParagraph>
-          While such technologies have celebrated the “disruption” of the real estate industry with new technology and data infrastructures, they often exacerbate housing inequality and gentrification. We are particularly worried that proptech is leading to new forms of housing injustice in the wake of COVID-19—expanding surveillance, data accumulation, and algorithmic means testing—in ways that increase the power of landlords and further disempower tenants and those seeking shelter.
+          While landlord tech has celebrated the “disruption” of the real estate industry with new technology and data infrastructures, it often exacerbates housing inequality, racial profiling, speculation, and gentrification. We are particularly worried that landlord tech is leading to new forms of housing injustice in the wake of COVID-19 by amplifying surveillance, tracking, data accumulation, and algorithmic means testing into domestic and neighborhood spaces.
         </BlackParagraph>
         
         <Gutter h={50} />

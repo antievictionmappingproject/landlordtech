@@ -128,6 +128,20 @@ export default class Footer extends Component {
                   Public Books
                 </Publisher>
               </ArticleArea>
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://medium.com/@AINowInstitute/atlantic-plaza-towers-tenants-won-a-halt-to-facial-recognition-in-their-building-now-theyre-274289a6d8eb" target="_blank" rel="noopener noreferrer">Atlantic Plaza Towers tenants won a halt to facial recognition in their building: Now they’re calling on a moratorium on all residential use</a>
+                </Subtitle>
+                <Authors>
+                  Tranae' Moran
+                </Authors>
+                <Publisher>
+                  AI Now Institute Medium
+                </Publisher>
+              </ArticleArea>
+
+              
+
             </Column>
             <Column>
               
