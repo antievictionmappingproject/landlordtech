@@ -82,23 +82,69 @@ class MapContainer extends Component {
 
     if (currentTechTypeValue === "All"){
 
-      this.map.setFilter('responses_layer', null);
-    
-      this.map.setPaintProperty('responses_layer', 'circle-color', this.renderCircleColors());
-    } else {  
+      this.map.setFilter('unclustered_responses_layer', ['!', ['has', 'point_count']]);
+      this.map.setFilter('clusters', ['has', 'point_count']);
+      this.map.setLayoutProperty('cluster-count', 'text-field', `{point_count_abbreviated}`);
+      this.map.setPaintProperty('clusters', 'circle-stroke-color', "#FFFFFF");
+      this.map.setPaintProperty('cluster-count', 'text-color', "#FFFFFF");
 
-      this.map.setFilter('responses_layer', [
-        'in',
-        currentTechTypeValue,
-        ['get', 'techType']
-      ]);
+    
+      this.map.setPaintProperty('unclustered_responses_layer', 'circle-color', this.renderCircleColors());
+    } else {  
+      this.map.setFilter('unclustered_responses_layer', 
+        [
+          "all",
+          [
+            'in',
+            currentTechTypeValue,
+            ['get', 'techType']
+          ], // tech filter
+          ['!', ['has', 'point_count']]
+        ]
+      );
+
+      this.map.setFilter('clusters', 
+        [
+          "all",
+          [
+            '>',
+            ['get', currentTechTypeValue],
+            0
+          ], // tech filter
+          ['has', 'point_count']
+        ]
+      );
+
+      this.map.setFilter('cluster-count', 
+        [
+          "all",
+          [
+            '>',
+            ['get', currentTechTypeValue],
+            0
+          ], // tech filter
+          ['has', 'point_count']
+        ]
+      );
+
+      this.map.setLayoutProperty('cluster-count', 'text-field', `{${currentTechTypeValue}}`);
+
 
       let color = _.find(TECH_SELECT_VALUES, v => v.value === currentTechTypeValue).color;
-      this.map.setPaintProperty('responses_layer', 'circle-color', [
+      this.map.setPaintProperty('unclustered_responses_layer', 'circle-color', [
         'case',
         ["in", currentTechTypeValue, ['get', 'techType']], color,
         "#ccc"
       ]);
+
+      this.map.setPaintProperty('clusters', 'circle-stroke-color', color);
+      this.map.setPaintProperty('cluster-count', 'text-color', color);
+
+      // this.map.setPaintProperty('unclustered_responses_layer', 'circle-stroke-color', [
+      //   'case',
+      //   ["in", currentTechTypeValue, ['get', 'techType']], color,
+      //   "#ccc"
+      // ]);
 
       // console.log(this.map.getFilter('responses_layer'))
     }
@@ -109,19 +155,83 @@ class MapContainer extends Component {
     this.map.getSource('responses').setData(data);
   }
 
+  determineClusterProperties() {
+    let result = {};
+    _.each([...TECH_SELECT_VALUES].splice(1, TECH_SELECT_VALUES.length), v => {
+      // circleColors.push(["in", v.value, ['get', 'techType']], v.color);
+      result[v.value] = [
+        '+', 
+        [
+          'case', [
+            'in',
+            v.value,
+            ['get', 'techType']
+          ], 
+          1, 
+          0
+        ]
+      ];
+    }); 
+
+    return result;
+  }
+
   async handleStyleLoad(e) {
 
     this.map.addSource('responses', {
-      "type": 'geojson',
-      "data": this.props.data
+      type: 'geojson',
+      data: this.props.data,
+      cluster: true,
+      clusterMaxZoom: 14,
+      clusterRadius: 50,
+      clusterProperties: this.determineClusterProperties()
     });
 
-    
     this.map.addLayer({
-      'id': 'responses_layer',
+      id: 'clusters',
+      type: 'circle',
+      source: 'responses',
+      filter: ['has', 'point_count'],
+      paint: {
+        'circle-color': 'rgba(0,0,0,0)',
+        'circle-stroke-color': '#FFFFFF',
+        'circle-stroke-width': 3,
+        
+        'circle-radius': [
+          'step',
+          ['get', 'point_count'],
+          20,
+          100,
+          30,
+          750,
+          40
+        ]
+      }
+    });
+
+    this.map.addLayer({
+      id: 'cluster-count',
+      type: 'symbol',
+      source: 'responses',
+      filter: ['has', 'point_count'],
+      layout: {
+      'text-field': '{point_count_abbreviated}',
+      'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+      'text-size': 12
+      },
+      paint: {
+
+        'text-color': '#FFFFFF'
+      }
+    });
+ 
+      
+    this.map.addLayer({
+      'id': 'unclustered_responses_layer',
       'source': 'responses',
       'type': 'circle',
       "minzoom": 4,
+      filter: ['!', ['has', 'point_count']],
       'paint': {
         'circle-radius': {
           'base': 5,
@@ -140,8 +250,14 @@ class MapContainer extends Component {
         ]
       }
     }, "admin-0-boundary-disputed");
+    
+    this.map.on('click', 'clusters', e => {
+      if (e.features.length > 0) {
+        console.log(e.features[0]);
+      }
+    });
 
-    this.map.on('click', 'responses_layer', e => {
+    this.map.on('click', 'unclustered_responses_layer', e => {
       if (e.features.length > 0) {
         let feature = e.features[0];
         let pointed = point([Number(feature.properties.Longitude), Number(feature.properties.Latitude)]);
@@ -157,7 +273,7 @@ class MapContainer extends Component {
       }
     });
 
-    this.map.on('mousemove', 'responses_layer', e => {
+    this.map.on('mousemove', 'unclustered_responses_layer', e => {
       if (e.features.length > 0) {
         if (this.hoveredStateId) {
        
@@ -180,7 +296,7 @@ class MapContainer extends Component {
       } 
     });
 
-    this.map.on("mouseleave", "responses_layer", e => {
+    this.map.on("mouseleave", "unclustered_responses_layer", e => {
       if (this.hoveredStateId) {
         this.map.setFeatureState({
           source: 'responses',
