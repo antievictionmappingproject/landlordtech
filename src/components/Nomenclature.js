@@ -70,7 +70,7 @@ const ExampleInner = styled(Inner)`
   position: relative;
   margin-left: 10px;
   width: 100%;
-  height: 450px;
+  height: 650px;
   background-color: #111;
 
   div.example {
@@ -83,12 +83,12 @@ const ExampleInner = styled(Inner)`
     padding: 8px;
     transform: translate(-50%, -50%);
     transform-origin: center;
-    max-width: 200px;
+    max-width: 150px;
     cursor:pointer;
     transition: 0.4s transform;
     &:hover {
       transform-origin: center;
-      transform: translateX(-50%) translateY(-50%) scale(1.2, 1.2);
+      transform: translateX(-50%) translateY(-50%) scale(1.3, 1.3);
       z-index: 88888;
 
     }
@@ -100,6 +100,10 @@ const ExampleInner = styled(Inner)`
       text-align: center;
       color: #000000;
     }
+
+    img {
+      width: 100%;
+    }
   }
 `;
 
@@ -109,7 +113,7 @@ const HarmText = styled.div`
   line-height: 1.1;
   font-size: 1.2em;
   margin-bottom: 15px;
-  width: 40%;
+  width: 60%;
 
   ${media.mobileSmall `
     width: calc(100% - 20px);
@@ -135,7 +139,7 @@ class Nomenclature extends Component {
 
     let examples = _.map(tech.examples, example => {
       return {
-        str: example
+        properties: example
       };
     });
 
@@ -143,7 +147,7 @@ class Nomenclature extends Component {
 					//add nodes
 					.nodes(examples);	
     
-    let center = [ 800 / 2, 450 / 2];
+    let center = [ 800 / 2, 650 / 2];
 
     if (screenWidth <= 414) {
 
@@ -157,9 +161,8 @@ class Nomenclature extends Component {
     simulation
         .force("charge_force", d3.forceManyBody())
         .force("center_force", d3.forceCenter(center[0], center[1]))
-        .force("collision_force", d3.forceCollide([25]));
+        .force("collision_force", d3.forceCollide().radius(d => d.properties.type === "img" ? 90 : (d.properties.desc.length > 25 ? 70 : d.properties.desc.length * 1.3)));
 
-    
     //draw circles for the nodes 
     let innerElem = d3.select(this.exampleRef.current);
     innerElem.selectAll("div.example")
@@ -170,9 +173,17 @@ class Nomenclature extends Component {
       //   d3.select(this).style('z-index', 88888);
       // })
       .attr("class", 'example')
-        .append("div")
+        .append(d => {
+          // debugger;
+          return d.properties.type === "text" ? document.createElement('div') : document.createElement('img')
+        })
         .attr("class", "title")
-        .text(d => d.str);
+        .text(d => {
+          return d.properties.type === "text" ? d.properties.desc : "";
+        })
+        .attr("src", d => {
+          return d.properties.type === "img" ? d.properties.desc : "";
+        })
       
 
 
@@ -233,7 +244,7 @@ class Nomenclature extends Component {
           <Gutter h={25} />
 
           <CenterArea>
-            <NCSubtitle>
+            <NCSubtitle style={{width: 330}}>
               { tech.services }
             </NCSubtitle>
           </CenterArea>

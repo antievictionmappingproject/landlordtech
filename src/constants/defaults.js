@@ -66,30 +66,37 @@ export const TECH_SELECT_VALUES = [
   }
 ];
 
+
 export const TECH_LIST = [
   {
     id: 1,
     type: "direct",
-    title: "Tenant Screening & Protection",
+    title: "Tenant Screening & Selection",
     services: [
       "Background and credit checks for tenant and roommate selection."
     ],
     examples: [
-      "Enhanced Credit Checks",
-      "Tenant Background Checks",
-      "Tenant Means Testing",
-      "Roommate Matching",
-      "Co-living",
-      "Intergenerational Home Sharing",
-      "Tenant Selection / Rental Listings"
+      { type: "text", desc: "Enhanced credit checks" },
+      { type: "text", desc: "Tenant background checks" },
+      { type: "text", desc: "Tenant means testing" },
+      { type: "text", desc: "Denying housing to those with “criminal” backgrounds and poor credit" },
+      { type: "text", desc: "Denying housing to those with prior eviction records" },
+      { type: "text", desc: "Roommate matching and screening" },
+      { type: "img", desc: `${process.env.PUBLIC_URL}/assets/nomenclature/tenant_screening_01.jpg` },
+      { type: "img", desc: `${process.env.PUBLIC_URL}/assets/nomenclature/tenant_screening_02.jpg` },
+      { type: "img", desc: `${process.env.PUBLIC_URL}/assets/nomenclature/tenant_screening_03.png` }
     ],
     harm: [
-      "Discrimination: Lack of compliance with Fair Housing Act",
-      "Collection and Aggregation of data",
-      "Denial of housing based on incorrect information",
+      "Lack of compliance with Fair Housing Act",
+      "Discrimination based on false and/or racist credit and conviction information",
+      "Denial of housing based on incorrect data",
+      "Denial of housing based on eviction filings (rather than eviction outcomes)",
+      "Denial of housing based on prior tenant complaints of landlord abuse",
+      "Denial of housing based upon past late utility and rental payments",
       "Invasion of privacy through background checks",
-      "Means testing of tenants in non-means tested housing to enable speculation",
-      "Predatory fees"
+      "Targeting of priorly convicted and incarcerated people",
+      "Predatory fees",
+      "False positives based on name misspellings and common names"
     ],
     companies: [
       "Badi",
@@ -110,18 +117,21 @@ export const TECH_LIST = [
       "Property management functions automated and outsourced to third parties. This includes virtual landlordism."
     ],
     examples: [
-      "Remote management",
-      "Rental payments",
-      "Security deposits",
-      "Renters Insurance",
-      "Utility Payments",
-      "Short-term management"      
+      { type: "text", desc: "Remote management" },
+      { type: "text", desc: "Rental payments" },
+      { type: "text", desc: "Security deposits" },
+      { type: "text", desc: "Renters insurance" },
+      { type: "text", desc: "Utility payments" },
+      { type: "text", desc: "Short-term management" },
+      { type: "text", desc: "Virtual landlord" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/property_management_01.jpg`},
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/property_management_02.png`},
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/property_management_03.png`},
     ],
     harm: [
       "Absentee, less responsive management",
-      "Reduction in labor required to respond to management issues",
       "Automated evictions",
-      "Automated notices including late notices",
+      "Automated notices, including late notices",
       "Tenant vulnerability with security deposits and rents paid through a 3rd party",
     ],
     companies: [
@@ -143,15 +153,18 @@ export const TECH_LIST = [
       "Platforms and devices for monitoring neighborhood activities."
     ],
     examples: [
-      "Cameras",
-      "License plate readers",
-      "Neighborhood Networking",
-      "Neighbor snitching",
+      { type: "text", desc: "Cameras" },
+      { type: "text", desc: "License plate readers" },
+      { type: "text", desc: "Neighborhood Networking" },
+      { type: "text", desc: "Neighbor snitching" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/neighborhood_surveillance_01.jpg`},
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/neighborhood_surveillance_02.jpg`}
     ],
     harm: [
       "Unhoused residents are disproportionately targeted",
       "Residents and visitors of color are disproportionately targeted",
-      "Tenants are reported to city officials for quality of life “violations,” such as playing loud music or not cutting grass. These are racially coded.",   
+      "Tenants are reported to city officials for quality of life “violations,” such as playing loud music or not cutting grass. These are racially coded.", 
+      "Data can be handed over to police or ICE."  
     ],
     companies: [
       "Flocksafety",
@@ -167,15 +180,12 @@ export const TECH_LIST = [
       "Security devices for patrolling access and use of apartment buildings."
     ],
     examples: [
-      "Cameras",
-      "Facial Recognition",
-      "Biometric Data Collection",
-      "Building Entry Systems",
-      "In-home Voice Enabled Assistants",
-      "Thermostat monitoring systems",
-      "Home Furnishings (with in-home voice enabled assistants)",
-      "Virtual landlord",
-      "Virtual doorman / automated check-in or entry",      
+      { type: "text", desc: "Cameras" },
+      { type: "text", desc: "Facial Recognition" },
+      { type: "text", desc: "Biometric Data Collection" },
+      { type: "text", desc: "Building Entry Systems" },
+      { type: "text", desc: "Virtual doorman / automated check-in or entry" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/home_surveillance_01.jpg`},
     ],
     harm: [
       "Invasion of privacy",
@@ -183,11 +193,17 @@ export const TECH_LIST = [
       "Can lead to evictions for petty lease violations",
       "Can keep you from entering your own home",
       "Facial recognition systems are known to misrecognize or not recognized people of color",   
+      "Biometric data can be handed over to police or ICE",
+      "Makes homes more desirable for gentrifiers"
     ],
     companies: [
+      "Stonelock",
+      "PooPrints",
+      "GateGuard",
+      "Carson",
       "Bumblebee Spaces",
       "Amazon Ring",
-      "Google Nest Hello",
+      "Google Nest Hello"
     ]
   },
   {
@@ -198,19 +214,23 @@ export const TECH_LIST = [
       "Personal assistants and other smart devices, such as utilities and metering systems built into or added to a home."
     ],
     examples: [
-      "Management",
-      "Metering",
-      "Development",
-      "Integration with smart devices such as Amazon’s Alexa",
-      "Aggregating of real time data about tenants’ utilities",
-      "Compiling data on building and utility usage",
-      "Integration with smart phones",       
+      { type: "text", desc: "Virtual management and landlordism" },
+      { type: "text", desc: "Smart metering" },
+      { type: "text", desc: "Thermostat monitoring systems" },
+      { type: "text", desc: "In-home voice enabled assistants" },
+      { type: "text", desc: "IoT Home Furnishings " },
+      { type: "text", desc: "Integration with smart devices such as Amazon’s Alexa" },
+      { type: "text", desc: "Aggregating real time data about tenants’ utilities" },
+      { type: "text", desc: "Compiling data on building and utility usage" },
+      { type: "text", desc: "Integration with smart phones" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/smart_home_01.jpg`},
     ],
-    harm: [
+    harm: [ 
       "All of the information landlords take from you, gather from surveillance and monitoring of your homes",
       "Access of personal information by third parties that sell personal information can be used for data mining",
       "Data used to determine who deserves shelter, who’s a good tenant",
-      "Data used to establish pricing and determine who gets evicted.",      
+      "Data used to establish pricing and determine who gets evicted.",
+      "Makes homes more desirable for gentrifiers",
     ],
     companies: [
       "Abode",
@@ -226,17 +246,21 @@ export const TECH_LIST = [
     type: "direct",
     title: "Non-residential Leases",
     services: [
-      "Corporate, Executive and Impermanent or Intermediate term rentals"
+      "Corporate, executive and impermanent or intermediate/short term rentals."
     ],
     examples: [
-      "Provides rental opportunities for longer than 30 days without committing to a permanent residence",
-      "Provides rental opportunities for stays longer than typical hotel stays but still shorter than 30 days, and typically for a lower daily rate than a hotel",
-      "Provides for a diversity of locations and amenities.",           
+      { type: "text", desc: "Hotel-like living opportunities for short and long term housing" },
+      { type: "text", desc: "Airbnb-like accommodations" },
+      { type: "text", desc: "Tech dorms" },     
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/non-residential_leases_01.jpg`},
     ],
     harm: [
+      "No permanent residence status or protection",
       "Converts apartments and condo units from residential to commercial use",
-      "Encourages other managers & landlords to convert their units, evict tenants, recover more in profit",
-      "Some of these platforms master lease units in order not to be regulated as a short term rental platform",          
+      "Encourages other managers and landlords to convert their units, evict tenants, and recover more in profit",
+      "Some of these units are turned into master lease units in order not to be regulated as a short term rental",
+      "Replaces long term housing into short term rentals, facilitating gentrification",
+      "Disrupts building and neighborhood community",              
     ],
     companies: [
       "WhyHotel",
@@ -264,11 +288,12 @@ export const TECH_LIST = [
     type: "direct",
     title: "Membership Housing",
     services: [
-      "Corporate, Executive and Impermanent or Intermediate term rentals"
+      "People subscribe to a platform that allows them to move from site to site within that platform's network."
     ],
     examples: [
-      "The resident doesn't have a long term commitment of a lease",
-      "The tenant can move from one location to another without the complications of security deposits, reviewing listings, etc.",            
+      { type: "text", desc: "Housing in which tenants can easily move from one location to another" },
+      { type: "text", desc: "Platforms in which tenants don’t have to pay security deposits or reviewing listings" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/membership-housing_01.png`},
     ],
     harm: [
       "Tenants in cities with tenant protections may either be unaware of their protections or are forfeiting their protections",
@@ -287,19 +312,20 @@ export const TECH_LIST = [
     type: "indirect",
     title: "Brokers for Home Sales",
     services: [
-      "Brokers for home sales"
+      "Platforms that act as a broker for home sales, and that  therefore facilitate new configurations of corporate landlordism."
     ],
     examples: [
-      "Reduced fee brokerage",
-      "Real time pricing",
-      "Streamlined, automated transaction process",
-      "Act as broker in multiple locations for the same party as selling and buying agent",                
+      { type: "text", desc: "Reduced fee brokerage" },
+      { type: "text", desc: "Real time pricing" },
+      { type: "text", desc: "Streamlined, automated transaction process" },
+      { type: "text", desc: "Brokers can also operate as the selling and buying agent" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/broker-for-home-sales_01.jpg`} 
     ],
     harm: [
+      "Enables speculation",
       "Monopolization of data",
-      "Unequal competition because of unequal access to information",
-      "Enabling of corporate buyers who out-maneuver individuals",
-      "Enables speculation",        
+      "Enables corporate buyers who out maneuver individual owners",
+      "Facilitates corporate landlordism",      
     ],
     companies: [
       "Redfin",
@@ -316,21 +342,20 @@ export const TECH_LIST = [
     type: "indirect",
     title: "Home Sales Financing",
     services: [
-      "Home Sales Financing"
+      "Platforms and services that facilitate home sales financing, and therefore new configurations of corporate landlordism."
     ],
     examples: [
-      "Real time pricing",
-      "Convenience that your broker can also originate your loan",
-      "Using cryptocurrency to purchase homes",
-      "Equity share",                     
+      { type: "text", desc: "Real time pricing" },
+      { type: "text", desc: "Convenience that your broker can also originate your loan" },
+      { type: "text", desc: "Using cryptocurrency to purchase homes" },
+      { type: "text", desc: "Equity share" },
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/home_sales_financing_01.jpg`}                   
     ],
     harm: [
+      "Enables speculation, monopolization, discrimination",
       "Not regulated by the Community Reinvestment Act",
-      "Monopolization of data",
-      "Unequal competition",
-      "Using cryptocurrencies for home transactions deregulates the process, changing real estate from an illiquid to liquid asset that can be readily traded.",
-      "Individuals don't have access to these platforms - leading to further concentration of ownership",
-      "Enables speculation, monopolization, discrimination",           
+      "Individuals don't have access to these platforms - leading to further concentration of ownership and landlordism",
+      "Can use cryptocurrencies for home transactions, which allows housing to become a liquid and readily traded asset",        
     ],
     companies: [
       "Flyhomes",
@@ -345,18 +370,17 @@ export const TECH_LIST = [
     type: "indirect",
     title: "Platforms that Buy Homes",
     services: [
-      "Platforms that Buy Homes"
+      "Platforms that buy homes and that  therefore facilitate new configurations of corporate landlordism."
     ],
     examples: [
-      "\"iBuyer\" that facilitates buying and selling transactions",
-      "For someone selling their home and buying a new one at the same time, the platform can act as a broker to help them buy their new home, then at the same time buys the person's \"old\" home.",
-      "For some, the platform buys the home for you with \"all cash\" making the offer more competitive on the market- then you buy it back from the platform",                
+      { type: "text", desc: "“iBuyer” that facilitates buying and selling transactions" },
+      { type: "text", desc: "The platform acts as a broker to help people buy new homes, and then buys their “old” home" },
+      { type: "text", desc: "The platform can purchase with “all cash,” making the offer more competitive" },      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/platforms_01.jpg`} 
     ],
     harm: [
-      "Lack of competitive bidding",
-      "Concentration of ownership (this happens with some platforms)",
-      "Leveraging of unfair competitive advantage",
-      "Enables speculation",                 
+      "Enables speculation",
+      "Lack of competitive bidding between corporations and individual owners, therefore favoring corporate landlords",
+      "Concentration of corporate ownership",                       
     ],
     companies: [
       "Perch",
@@ -374,11 +398,11 @@ export const TECH_LIST = [
     type: "indirect",
     title: "Rent-to-Own Platforms",
     services: [
-      "Platforms designed to help with homeownership"
+      "Platforms designed to help renters become owners, and therefore at times also landlords."
     ],
     examples: [
-      "Less up-front financial obligation for the buyer",
-      "More fluid duration of financial commitment for the buyer",                     
+      "Platforms that require less upfront financial buyer obligations",
+      "Platforms that enable fluid financial commitment for the buyer"                 
     ],
     harm: [
       "Tenants stripped of their rights",
