@@ -67,7 +67,7 @@ const QUESTIONS = [
     pos: [12, 11],
     image: `${process.env.PUBLIC_URL}/assets/p1.png`,
     alt: "A login interface screenshot of a building management website",
-    imagePos: [161, -88],
+    imagePos: [151, -88],
     imageWidth: "60%"
   },
   {
