@@ -97,7 +97,9 @@ const EXCLUDE_QUESTIONS = ["Timestamp", "techType", "Optional", "Latitude", "Lon
 
 class CurrentResponse extends Component {
   determineColor(tt) {
-    return _.find(TECH_SELECT_VALUES, value => value.value === tt).color;
+    let tech = _.find(TECH_SELECT_VALUES, value => value.value === tt);
+
+    return tech ? tech.color : "#ccc";
   }
 
   handleClose(e){
