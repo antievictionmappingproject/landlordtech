@@ -103,7 +103,7 @@ class Header extends Component {
           <Container>
             <Title>
               <button className="menu-link" onClick={this.handleClick.bind(this, 'top')}>
-                Crowdsourcing Landlord Tech Deployment
+                Crowdsourcing Landlord Tech
               </button>
             </Title>
             <Menu>

@@ -375,7 +375,8 @@ export const TECH_LIST = [
     examples: [
       { type: "text", desc: "“iBuyer” that facilitates buying and selling transactions" },
       { type: "text", desc: "The platform acts as a broker to help people buy new homes, and then buys their “old” home" },
-      { type: "text", desc: "The platform can purchase with “all cash,” making the offer more competitive" },      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/platforms_01.jpg`} 
+      { type: "text", desc: "The platform can purchase with “all cash,” making the offer more competitive" },      
+      { type: "img",  desc: `${process.env.PUBLIC_URL}/assets/nomenclature/platforms_01.jpg`} 
     ],
     harm: [
       "Enables speculation",
@@ -401,8 +402,8 @@ export const TECH_LIST = [
       "Platforms designed to help renters become owners, and therefore at times also landlords."
     ],
     examples: [
-      "Platforms that require less upfront financial buyer obligations",
-      "Platforms that enable fluid financial commitment for the buyer"                 
+      { type: "text", desc: "Platforms that require less upfront financial buyer obligations" },
+      { type: "text", desc: "Platforms that enable fluid financial commitment for the buyer" },
     ],
     harm: [
       "Tenants stripped of their rights",
