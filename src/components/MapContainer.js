@@ -275,23 +275,22 @@ class MapContainer extends Component {
         if (e.features[0].properties.cluster) {
           let cluster = e.features[0].properties;
           let allMarkers = this.map.queryRenderedFeatures({
-            layers: ['markers_layer_dot']
+            layers: ['unclustered_responses_layer']
           });
 
           let pointsInCluster = _.filter(allMarkers, mk => {
             var pixelDistance, pointPixels;
-            pointPixels = this..map.project(mk.geometry.coordinates);
+            pointPixels = this.map.project(mk.geometry.coordinates);
             pixelDistance = Math.sqrt(Math.pow(e.point.x - pointPixels.x, 2) + Math.pow(e.point.y - pointPixels.y, 2));
-            return Math.abs(pixelDistance) <= self.clusterRadius;
+            return Math.abs(pixelDistance) <= this.clusterRadius;
           });
 
-          bounds = new mapboxgl.LngLatBounds;
+          let bounds = new window.mapboxgl.LngLatBounds();
           pointsInCluster.forEach(function(feature) {
             bounds.extend(feature.geometry.coordinates);
           });
-          return _this.map.fitBounds(bounds, {
-            padding: 45,
-            maxZoom: 16
+          return this.map.fitBounds(bounds, {
+            padding: 45
           });
         }
 
