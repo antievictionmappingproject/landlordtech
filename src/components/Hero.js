@@ -63,7 +63,7 @@ const HeroImageContainer = styled.div`
 
 const QUESTIONS = [
   {
-    q: <p>Have there been <b>changes in the way your building is managed?</b></p>,
+    q: <p>Is your building management <b>moving online?</b></p>,
     pos: [12, 11],
     image: `${process.env.PUBLIC_URL}/assets/p1.png`,
     alt: "A login interface screenshot of a building management website",
@@ -71,7 +71,7 @@ const QUESTIONS = [
     imageWidth: "60%"
   },
   {
-    q: <p>Are there <b>new cameras</b> that have been installed?</p>,
+    q: <p>Have <b>new cameras</b> been installed?</p>,
     pos: [48, 30],
     image: `${process.env.PUBLIC_URL}/assets/p2.png`,
     alt: "A photo of surveilance camera installed in the public area",
@@ -79,7 +79,7 @@ const QUESTIONS = [
     imageWidth: "100%"
   },
   {
-    q: <p>Are there <b>different payment, notification, or screening systems?</b></p>,
+    q: <p>Is your landlord using <b>new payment, notification, or screening systems?</b></p>,
     pos: [19, 50],
     image: `${process.env.PUBLIC_URL}/assets/p3.png`,
     alt: "A tenant screening app running on a smartphone",
@@ -87,7 +87,7 @@ const QUESTIONS = [
     imageWidth: "60%"
   },
   {
-    q: <p>Has access to your building changed, <b>for instance: you no longer have a key?</b></p>,
+    q: <p>Has access to your building changed? For instance, you <b>no longer have a standard key?</b></p>,
     pos: [42, 70],
     image: `${process.env.PUBLIC_URL}/assets/p4.png`,
     alt: "A photo of a key fob",
@@ -178,8 +178,7 @@ export default class Hero extends Component {
           <HeroTitleContainer>
             <HeroTitle>
               Crowdsourcing<br/>
-              Landlord Tech<br/>
-              Deployment
+              Landlord Tech
             </HeroTitle>
             <HeroSub>
               Landlord Tech—what the real estate industry describes as residential property technology, or “proptech”—is leading to new forms of housing injustice. By employing digital surveillance, data collection, data accumulation, artificial intelligence, and platform real estate, landlord tech increases the power of landlords while further disempowering tenants and those seeking shelter.

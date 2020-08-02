@@ -10,11 +10,6 @@ import media from '../stylesheets/media';
 
 const Fragment = React.Fragment;
 const Back = styled.div`
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
   background-color: black;
   opacity: 0.8;
   z-index: 99998;
@@ -32,27 +27,8 @@ const CloseBtn = styled.div`
 `;
 
 const Container = styled.div`
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  width: calc(100vw - 50px);
-  max-width: 800px;
-  height: calc(100vh - 50px);
-  transform: translate(-50%, -50%);
   background-color: black;
   z-index: 99999;
-  overflow-x: hidden;
-  overflow-y: scroll;
-
-  ${media.mobileLarge `
-    width: calc(100vw - 100px);
-    height: calc(100vh - 100px);
-  `} 
-
-  ${media.mobileSmall `
-    width: calc(100vw - 20px);
-    height: calc(100vh - 120px);
-  `} 
 `;
 
 const NCTitle = styled(Title)`
@@ -253,18 +229,6 @@ class Nomenclature extends Component {
 
           <CenterArea>
             <NCSubtitle style={{ textAlign: 'center' }}>
-              Examples
-            </NCSubtitle>
-          </CenterArea>
-          <Gutter h={15} />
-
-          <CenterArea>
-            <ExampleInner ref={this.exampleRef}>
-            </ExampleInner>
-          </CenterArea>
-          <Gutter h="20" />
-          <CenterArea>
-            <NCSubtitle style={{ textAlign: 'center' }}>
               Harms for Tenants
             </NCSubtitle>
           </CenterArea>
@@ -284,6 +248,20 @@ class Nomenclature extends Component {
             }
 
           <Gutter h={50} />
+
+
+          <CenterArea>
+            <NCSubtitle style={{ textAlign: 'center' }}>
+              Examples
+            </NCSubtitle>
+          </CenterArea>
+          <Gutter h={15} />
+
+          <CenterArea>
+            <ExampleInner ref={this.exampleRef}>
+            </ExampleInner>
+          </CenterArea>
+          <Gutter h="20" />
         </Container>
       </Fragment>
     )

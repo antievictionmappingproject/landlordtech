@@ -93,16 +93,20 @@ class Intro extends Component {
         <Gutter h={50} />
         
         <BlackSubtitle>
-          By Landlord Tech, we mean technical products and platforms that have facilitated the merging of the technology and real estate industries in novel ways. 
+          By Landlord Tech, we mean technical products and platforms that have facilitated the merging of the technology and real estate industries in novel ways, particularly as they impact tenant housing.
         </BlackSubtitle>
         <Gutter h={50} />
         <BlackParagraph>
-          While landlord tech has celebrated the “disruption” of the real estate industry with new technology and data infrastructures, it often exacerbates housing inequality, racial profiling, speculation, and gentrification. We are particularly worried that landlord tech is leading to new forms of housing injustice in the wake of COVID-19 by amplifying surveillance, tracking, data accumulation, and algorithmic means testing into domestic and neighborhood spaces.
+          There are few laws and regulations governing the collection and use of data in the context of landlord tech, and because it is generally sold to owners and landlords, not tenants, it’s often installed without notifying or discussing potential harms with tenants and community members. These harms include the possibility that sensitive data could be handed over to Police, ICE, or other law enforcement or government agencies, and that it can be used to aid in evictions, gentrification, and tenant harassment.
+{/*           
+          While landlord tech has celebrated the “disruption” of the real estate industry with new technology and data infrastructures, it often exacerbates housing inequality, racial profiling, speculation, and gentrification. We are particularly worried that landlord tech is leading to new forms of housing injustice in the wake of COVID-19 by amplifying surveillance, tracking, data accumulation, and algorithmic means testing into domestic and neighborhood spaces. */}
         </BlackParagraph>
         
         <Gutter h={50} />
         <ListTitle>
-          For instance...
+          Here are examples of landlord tech. <br/>
+          Click on each to learn more about how these technologies function, and <br/>
+          the potential harms.
         </ListTitle>
 
 
