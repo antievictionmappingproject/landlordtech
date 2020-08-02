@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { changeMapLoaded, changeCurrentResponseID } from '../actions';
 import { TECH_SELECT_VALUES } from '../constants/defaults';
 import _ from 'lodash';
+import { ResetZoomControl } from './';
 import styled from 'styled-components';
 import { point, bbox, buffer } from '@turf/turf';
 import media from '../stylesheets/media';
@@ -44,6 +45,15 @@ class MapContainer extends Component {
     window.map = this.map;
     this.map.on('style.load', this.handleStyleLoad.bind(this));
   
+  }
+
+  handleResetZoom(e){
+    this.map.easeTo({
+      zoom: 4,
+      center: [ -98.98407012500502, 38.97649404715861]
+    });
+    this.props.dispatch(changeCurrentResponseID(null));
+
   }
 
   componentDidUpdate(prevProps){
@@ -268,35 +278,25 @@ class MapContainer extends Component {
         this.map.getCanvas().style.cursor = '';
     });
 
-    // this.map.on('click', 'clusters', e => {
-    //   if (e.features.length > 0) {
+    this.map.on('click', 'clusters', e => {
+      var features = this.map.queryRenderedFeatures(e.point, {
+        layers: ['clusters']
+      });
+      var clusterId = features[0].properties.cluster_id;
+      
+      this.map.getSource('responses').getClusterExpansionZoom(
+        clusterId,
+        (err, zoom) => {
+          if (err) return;
+       
+          this.map.easeTo({
+            center: features[0].geometry.coordinates,
+            zoom: zoom
+          });
+        }
+      );
+    });
 
-  
-    //     if (e.features[0].properties.cluster) {
-    //       let cluster = e.features[0].properties;
-    //       let allMarkers = this.map.queryRenderedFeatures({
-    //         layers: ['markers_layer_dot']
-    //       });
-
-    //       let pointsInCluster = _.filter(allMarkers, mk => {
-    //         var pixelDistance, pointPixels;
-    //         pointPixels = this.map.project(mk.geometry.coordinates);
-    //         pixelDistance = Math.sqrt(Math.pow(e.point.x - pointPixels.x, 2) + Math.pow(e.point.y - pointPixels.y, 2));
-    //         return Math.abs(pixelDistance) <= self.clusterRadius;
-    //       });
-
-    //       bounds = new mapboxgl.LngLatBounds;
-    //       pointsInCluster.forEach(function(feature) {
-    //         bounds.extend(feature.geometry.coordinates);
-    //       });
-    //       return _this.map.fitBounds(bounds, {
-    //         padding: 45,
-    //         maxZoom: 16
-    //       });
-    //     }
-
-    //   }
-    // });
 
     this.map.on('click', 'unclustered_responses_layer', e => {
       if (e.features.length > 0) {
@@ -361,6 +361,7 @@ class MapContainer extends Component {
 
     return (
       <MapDiv isFullScreen={isFullScreen} ref={c => { this.refsMapContainer = c; }} className="map-container">
+        <ResetZoomControl handleZoomReset={this.handleResetZoom.bind(this)}/>
       </MapDiv>
     );
   }

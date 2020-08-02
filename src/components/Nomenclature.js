@@ -10,6 +10,11 @@ import media from '../stylesheets/media';
 
 const Fragment = React.Fragment;
 const Back = styled.div`
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
   opacity: 0.8;
   z-index: 99998;
@@ -27,16 +32,34 @@ const CloseBtn = styled.div`
 `;
 
 const Container = styled.div`
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  width: calc(100vw - 50px);
+  max-width: 850px;
+  height: calc(100vh - 50px);
+  transform: translate(-50%, -50%);
   background-color: black;
   z-index: 99999;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  ${media.mobileLarge `
+    width: calc(100vw - 100px);
+    height: calc(100vh - 100px);
+  `} 
+
+  ${media.mobileSmall `
+    width: calc(100vw - 20px);
+    height: calc(100vh - 120px);
+  `} 
 `;
 
 const NCTitle = styled(Title)`
-  width: 300px;
 `;
 
 const NCSubtitle = styled(Subtitle)`
-  font-size: 1.2em;
+  font-size: 2.0em;
   text-align: center;
   
 `;
@@ -70,7 +93,7 @@ const ExampleInner = styled(Inner)`
     }
 
     .title {
-      font-family: 'Staatliches', cursive;;
+      font-family: 'Staatliches';
       font-size: 1.0em;
       line-height: 1.2;
       text-align: center;
@@ -84,12 +107,12 @@ const ExampleInner = styled(Inner)`
 `;
 
 const HarmText = styled.div`
-  font-family: 'Staatliches', cursive;
+  font-family: 'Staatliches';
   color: white;
   line-height: 1.1;
-  font-size: 1.2em;
+  font-size: 1.5em;
   margin-bottom: 15px;
-  width: 60%;
+  width: 80%;
 
   ${media.mobileSmall `
     width: calc(100% - 20px);
@@ -220,13 +243,12 @@ class Nomenclature extends Component {
           <Gutter h={25} />
 
           <CenterArea>
-            <NCSubtitle style={{width: 330}}>
+            <NCSubtitle>
               { tech.services }
             </NCSubtitle>
           </CenterArea>
 
           <Gutter h={50} />
-
           <CenterArea>
             <NCSubtitle style={{ textAlign: 'center' }}>
               Harms for Tenants
@@ -247,9 +269,9 @@ class Nomenclature extends Component {
               })
             }
 
-          <Gutter h={50} />
 
 
+            <Gutter h="20" />
           <CenterArea>
             <NCSubtitle style={{ textAlign: 'center' }}>
               Examples
@@ -261,7 +283,8 @@ class Nomenclature extends Component {
             <ExampleInner ref={this.exampleRef}>
             </ExampleInner>
           </CenterArea>
-          <Gutter h="20" />
+          
+          <Gutter h={50} />
         </Container>
       </Fragment>
     )

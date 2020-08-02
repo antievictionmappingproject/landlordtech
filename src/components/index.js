@@ -10,6 +10,7 @@ import Legend from './Legend';
 import SelectArea from './SelectArea';
 import CurrentResponse from './CurrentResponse';
 import Question from './Question';
+import ResetZoomControl from './ResetZoomControl';
 
 export {
   Header,
@@ -23,5 +24,6 @@ export {
   Legend,
   SelectArea,
   CurrentResponse,
-  Question
+  Question,
+  ResetZoomControl
 };

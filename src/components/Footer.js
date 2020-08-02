@@ -81,9 +81,10 @@ export default class Footer extends Component {
           <ColumnContainer>
             <Column>
               <Title>
-                Articles
+                Resources
               </Title>
               <Gutter h={10}></Gutter>
+
               <ArticleArea>
                 <Subtitle>
                   <a href="http://bostonreview.net/class-inequality-science-nature/erin-mcelroy-meredith-whittaker-genevieve-fried-covid-19-crisis" target="_blank" rel="noopener noreferrer">COVID-19 Crisis Capitalism Comes to Real Estate</a>
@@ -139,6 +140,12 @@ export default class Footer extends Component {
                   AI Now Institute Medium
                 </Publisher>
               </ArticleArea>
+              <ArticleArea>
+                <Authors>
+
+                  Want to ask questions or more resources? Please reach out to <a className="wy" href="mailto:landlordtech@riseup.net">landlordtech@riseup.net</a>
+                </Authors>
+              </ArticleArea>
 
               
 
@@ -153,6 +160,15 @@ export default class Footer extends Component {
 
               <ArticleArea>
                 <Subtitle>
+                  Anti-Eviction Mapping Project
+                </Subtitle>
+                <CreditAuthors>
+                  Erin McElroy<br/>
+                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>, <i>MIT DUSP</i>
+                </CreditAuthors>
+                <Gutter h={30} />
+
+                <Subtitle>
                   AI Now Institute
                 </Subtitle>
                 <CreditAuthors>
@@ -160,14 +176,7 @@ export default class Footer extends Component {
                   Genevieve Fried<br/>
                   Deborah Raji
                 </CreditAuthors>
-                <Gutter h={30} />
-                <Subtitle>
-                  Anti-Eviction Mapping Project
-                </Subtitle>
-                <CreditAuthors>
-                  Erin McElroy<br/>
-                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>, <i>MIT DUSP</i>
-                </CreditAuthors>
+                
                 <Gutter h={30} />
                 <Subtitle>
                   People Power Media
