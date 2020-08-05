@@ -40,13 +40,13 @@ export const TECH_SELECT_VALUES = [
     color: "#FF0000"
   },
   {
-    value: "Smart meter",
+    value: "Smart home technology",
     label: "Smart Meter",
     color: "#00FFC2",
   },
   {
-    value: "App",
-    label: "App",
+    value: "Phone app",
+    label: "Phone App",
     color: "#8342D7"
   },
   {
@@ -55,8 +55,8 @@ export const TECH_SELECT_VALUES = [
     color: "#D7AD42"
   },
   {
-    value: "Related to short term rentals",
-    label: "Related to Short Term Rentals",
+    value: "Short term rentals",
+    label: "Short term rentals",
     color: "#42D75A"
   },
   {

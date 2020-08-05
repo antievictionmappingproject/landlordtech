@@ -8,7 +8,11 @@ export const convGeoJSON = (data) => {
 
   _.each(data, (datum, i) => {
 
-    datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ')
+    datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ');
+
+    for (let j = 0; i < datum["techType"].length; j++) {
+      datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").strip();
+    }
 
     let feature = {
       "id": i + 1,
