@@ -6,27 +6,39 @@ export const convGeoJSON = (data) => {
     "features": []
   }
 
+  console.log(data);
   _.each(data, (datum, i) => {
 
-    datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ');
+    if (datum.Timestamp.length > 0) {
+      datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ');
 
-    for (let j = 0; i < datum["techType"].length; j++) {
-      datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").strip();
-    }
-
-    let feature = {
-      "id": i + 1,
-      "properties": datum,
-      "geometry": {
-        "type": "Point",
-        "coordinates": [
-          Number(datum.Longitude),
-          Number(datum.Latitude)
-        ]
+      
+      if (!_.isArray(datum["techType"])){
+        datum["techType"] = [datum["techType"]];
       }
-    };
 
-    result.features.push(feature);
+      for (let j = 0; j < datum["techType"].length; j++) {
+        console.log(datum["techType"][j]);
+        datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").replace(/\s+/g, '');
+      }
+    
+
+  
+      let feature = {
+        "id": i + 1,
+        "properties": datum,
+        "geometry": {
+          "type": "Point",
+          "coordinates": [
+            Number(datum.Longitude),
+            Number(datum.Latitude)
+          ]
+        }
+      };
+  
+      result.features.push(feature);
+    }
+   
   })
 
   return result;

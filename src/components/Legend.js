@@ -75,7 +75,7 @@ class Legend extends Component {
             initial={{ opacity: 1 }}
             animate={{ opacity: this.isMatchedWithCurrentTechType("App") }}
           >
-            <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="167.977">Product Management App</tspan></text>
+            <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="167.977">Phone App</tspan></text>
             <circle cx="25" cy="164" r="8" fill="#8342D7"/>
           </motion.g>
           <motion.g
