@@ -32,8 +32,8 @@ class Legend extends Component {
 
     return (
       <LegendContainer>
-        <svg width="235" height="252" viewBox="0 0 235 252" fill="none">
-          <rect x="0.5" y="0.5" width="234" height="251" fill="#111111" stroke="#333333"/>
+        <svg width="171" height="252" viewBox="0 0 171 252" fill="none">
+          <rect x="0.5" y="0.5" width="170" height="251" fill="#111111" stroke="#333333"/>
           <text fill="white" fontFamily="Staatliches" fontSize="18" letterSpacing="0em"><tspan x="17.0332" y="28.35">Legend</tspan></text>
 
           <motion.g
@@ -89,7 +89,7 @@ class Legend extends Component {
             initial={{ opacity: 1 }}
             animate={{ opacity: this.isMatchedWithCurrentTechType("Related to short term rentals") }}
           >
-            <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="213.977">Related to Short Term Rentals</tspan></text>
+            <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="213.977">Short Term Rentals</tspan></text>
             <circle cx="25" cy="210" r="8" fill="#42D75A"/>
           </motion.g>
           <motion.g
