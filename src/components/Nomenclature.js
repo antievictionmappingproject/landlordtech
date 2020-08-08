@@ -19,8 +19,6 @@ const Back = styled.div`
   opacity: 0.8;
   z-index: 99998;
   cursor:pointer;
-
-  
 `;
 
 const CloseBtn = styled.div`
@@ -33,44 +31,80 @@ const CloseBtn = styled.div`
 
 const Container = styled.div`
   position: fixed;
-  left: 50%;
-  top: 50%;
-  width: calc(100vw - 50px);
-  max-width: 850px;
-  height: calc(100vh - 50px);
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
   z-index: 99999;
   overflow-x: hidden;
   overflow-y: scroll;
-
-  ${media.mobileLarge `
-    width: calc(100vw - 100px);
-    height: calc(100vh - 100px);
-  `} 
-
-  ${media.mobileSmall `
-    width: calc(100vw - 20px);
-    height: calc(100vh - 120px);
-  `} 
 `;
 
 const NCTitle = styled(Title)`
+  text-align: left;
+  width: 300px;
+  font-size: 2.857em;
+  padding: 0;
 `;
 
 const NCSubtitle = styled(Subtitle)`
-  font-size: 2.0em;
-  text-align: center;
-  
+  font-size: 2.143em;
+  text-align: left;
+  width: 450px;
+  margin: 0;
+`;
+
+const ColumnContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+`;
+const HarmHeader = styled(ColumnContainer)`
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  padding: 15px 20px;
+`;
+
+const HarmArea = styled(ColumnContainer)`
+  border-bottom: 1px solid #555555;
+  padding: 15px 20px;
+`;
+
+const ColumnLeft = styled.div`
+  width: calc(40% - 20px);
+  font-size: 1.0em;
+  font-family: "Source Sans Pro";
+  color: white;
+`;
+const ColumnRight = styled.div`
+  width: calc(60% - 20px);
+  font-size: 1.0em;
+  font-family: "Source Sans Pro";
+  color: white;
+`;
+
+const MainDesc = styled.div`
+  margin-top: 10px;
+  p {
+    font-family: "Source Sans Pro";
+    color: #B5B5B5;
+    line-height: 1.4;
+    font-size:1.0em;
+    width: 400px;
+
+    a {
+      color: white;
+      font-weight: 600;
+    }
+  }
 `;
 
 
 const ExampleInner = styled(Inner)`
   position: relative;
-  margin-left: 10px;
   width: 100%;
-  height: 650px;
-  background-color: #111;
+  height: 800px;
 
   div.example {
     position: absolute;
@@ -82,7 +116,7 @@ const ExampleInner = styled(Inner)`
     padding: 8px;
     transform: translate(-50%, -50%);
     transform-origin: center;
-    max-width: 150px;
+    max-width: 120px;
     cursor:pointer;
     transition: 0.4s transform;
     &:hover {
@@ -107,17 +141,15 @@ const ExampleInner = styled(Inner)`
 `;
 
 const HarmText = styled.div`
-  font-family: 'Staatliches';
   color: white;
-  line-height: 1.1;
-  font-size: 1.5em;
-  margin-bottom: 15px;
-  width: 80%;
-
-  ${media.mobileSmall `
-    width: calc(100% - 20px);
-  `}
+  font-family: 'Staatliches';
+  line-height: 1.4;
+  font-size: 1.429em;
+  max-width: 500px;
+  text-indent: -50px;
+  margin-left: 50px;
 `;
+
 
 class Nomenclature extends Component {
   constructor(props){
@@ -132,21 +164,8 @@ class Nomenclature extends Component {
     this.initForce();
   }
 
-  initForce(){
-    let { currentNomenclature, screenWidth } = this.props;
-    let tech = _.find(TECH_LIST, tech => tech.id === currentNomenclature);
-
-    let examples = _.map(tech.examples, example => {
-      return {
-        properties: example
-      };
-    });
-
-    let simulation = d3.forceSimulation()
-					//add nodes
-					.nodes(examples);	
-    
-    let center = [ 800 / 2, 650 / 2];
+  getCenter(screenWidth) {
+    let center = [ screenWidth / 2, 800 / 2];
 
     if (screenWidth <= 414) {
 
@@ -157,10 +176,36 @@ class Nomenclature extends Component {
       center[0] = (screenWidth - 100) / 2; 
     } 
 
-    simulation
+    return center;
+  }
+
+  componentDidUpdate(prevProps){
+    if (prevProps.screenWidth !== this.props.screenWidth) {
+      let center = this.getCenter(this.props.screenWidth);
+      this.simulation.force("center_force", d3.forceCenter(center[0], center[1]));
+    }
+  }
+
+  initForce(){
+    let { currentNomenclature, screenWidth } = this.props;
+    let tech = _.find(TECH_LIST, tech => tech.id === currentNomenclature);
+
+    let examples = _.map(tech.companies, example => {
+      return {
+        properties: example
+      };
+    });
+
+    this.simulation = d3.forceSimulation()
+					//add nodes
+					.nodes(examples);	
+    
+    let center = this.getCenter(this.props.screenWidth);
+
+    this.simulation
         .force("charge_force", d3.forceManyBody())
         .force("center_force", d3.forceCenter(center[0], center[1]))
-        .force("collision_force", d3.forceCollide().radius(d => d.properties.type === "img" ? 90 : (d.properties.desc.length > 25 ? 70 : d.properties.desc.length * 1.3)));
+        .force("collision_force", d3.forceCollide().radius(70));
 
     //draw circles for the nodes 
     let innerElem = d3.select(this.exampleRef.current);
@@ -174,20 +219,20 @@ class Nomenclature extends Component {
       .attr("class", 'example')
         .append(d => {
           // debugger;
-          return d.properties.type === "text" ? document.createElement('div') : document.createElement('img')
+          return document.createElement('img')
         })
         .attr("class", "title")
-        .text(d => {
-          return d.properties.type === "text" ? d.properties.desc : "";
-        })
         .attr("src", d => {
-          return d.properties.type === "img" ? d.properties.desc : "";
+          return d.properties.img;
         })
+      .on('click', d => {
+        window.open(d.properties.link, '_blank');
+      });
       
 
 
     this.nodes = innerElem.selectAll("div.example");
-    simulation.on("tick", this.tickActions);
+    this.simulation.on("tick", this.tickActions);
   }
 
   tickActions(e){
@@ -215,8 +260,9 @@ class Nomenclature extends Component {
 
     return (
       <Fragment>
-        <Back onClick={this.handleBackClick.bind(this)}>
-          <CloseBtn>
+        <Container>
+
+          <CloseBtn onClick={this.handleBackClick.bind(this)}>
 
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
               <path d="M1 1L27 27" stroke="#D7D7D7"/>
@@ -224,67 +270,74 @@ class Nomenclature extends Component {
             </svg>
 
           </CloseBtn>
-          
-        </Back>
-        <Container>
-          <Gutter h={50} />
-
-          <CenterArea style={{color: "white", textAlign: 'center'}}>
-            Types of <br/>
-            Landlord Tech
-          </CenterArea>
-          <Gutter h={20} />
-          <CenterArea>
-            <NCTitle>
-              { tech.title }
-            </NCTitle>
-          </CenterArea>
 
           <Gutter h={25} />
+          <ColumnContainer>
+            <ColumnLeft>
+              <NCTitle>
+                { tech.title }
+              </NCTitle>
+            </ColumnLeft>
+            <ColumnRight>
+              <NCSubtitle>
+                { tech.subtitle }
+              </NCSubtitle>
+              <MainDesc dangerouslySetInnerHTML={{ __html: tech.services }} />
+            </ColumnRight>
+          </ColumnContainer>
 
-          <CenterArea>
+
+          <ColumnContainer>
             <NCSubtitle>
-              { tech.services }
+              Harm for Tenants
             </NCSubtitle>
-          </CenterArea>
-
-          <Gutter h={50} />
-          <CenterArea>
-            <NCSubtitle style={{ textAlign: 'center' }}>
-              Harms for Tenants
-            </NCSubtitle>
-          </CenterArea>
-
+          </ColumnContainer>
           <Gutter h={20} />
 
-            {
-              _.map(tech.harm, (h, i) => {
-                return (
-                  <CenterArea key={i}>
+          <HarmHeader>
+            <ColumnLeft>
+              Example of { tech.title }
+            </ColumnLeft>
+            <ColumnRight>
+              Harms for Tenants
+            </ColumnRight>
+          </HarmHeader>
+          {
+            _.map(tech.harms, (harm, i) => {
+              return (
+                <HarmArea key={i}>
+                  <ColumnLeft>
                     <HarmText>
-                      { h }
+                      { harm.example }
                     </HarmText>
-                  </CenterArea>
-                );
-              })
-            }
+                  </ColumnLeft>
+                  <ColumnRight>
+                    {
+                      _.map(harm.harms, h => {
+                        return (
+                          <HarmText>
+                            { h }
+                          </HarmText>
+                        )
+                      })
+                    }
+                  </ColumnRight>
+                </HarmArea>
+              )
+            })
+          }
 
 
-
-            <Gutter h="20" />
-          <CenterArea>
-            <NCSubtitle style={{ textAlign: 'center' }}>
-              Examples
-            </NCSubtitle>
-          </CenterArea>
-          <Gutter h={15} />
-
-          <CenterArea>
-            <ExampleInner ref={this.exampleRef}>
-            </ExampleInner>
-          </CenterArea>
-          
           <Gutter h={50} />
+          <ColumnContainer>
+            <NCSubtitle>
+              Companies
+            </NCSubtitle>
+          </ColumnContainer>
+          <Gutter h={20} />
+
+          <ExampleInner ref={this.exampleRef}>
+          </ExampleInner>
         </Container>
       </Fragment>
     )

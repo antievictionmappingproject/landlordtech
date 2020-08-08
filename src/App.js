@@ -28,7 +28,7 @@ class App extends Component {
 
   async loadData(){
 
-    const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vT6CdlROYPNn9Z6xGZqcFgh9toXFFlR510iX24tJk1Mb3NclHDqv4Tq5bw93vBVaYQNVZrBaMjMJI1h/pub?output=csv', { method: "get" });
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://docs.google.com/spreadsheets/d/e/2PACX-1vT6CdlROYPNn9Z6xGZqcFgh9toXFFlR510iX24tJk1Mb3NclHDqv4Tq5bw93vBVaYQNVZrBaMjMJI1h/pub?output=csv', { method: "get" });
 
     if (response.ok) {
       let responseText = await response.text();
