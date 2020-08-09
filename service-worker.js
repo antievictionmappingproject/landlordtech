@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/landlordtech/precache-manifest.1bea0061b722a63d32d97ea1334a9de2.js"
+  "/landlordtech/precache-manifest.2921754414582095646839b6c86c83b5.js"
 );
 
 self.addEventListener('message', (event) => {
