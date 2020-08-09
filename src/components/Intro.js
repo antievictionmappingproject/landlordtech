@@ -101,7 +101,7 @@ class Intro extends Component {
 {/*           
           While landlord tech has celebrated the “disruption” of the real estate industry with new technology and data infrastructures, it often exacerbates housing inequality, racial profiling, speculation, and gentrification. We are particularly worried that landlord tech is leading to new forms of housing injustice in the wake of COVID-19 by amplifying surveillance, tracking, data accumulation, and algorithmic means testing into domestic and neighborhood spaces. */}
         </BlackParagraph>
-{/*         
+         
         <Gutter h={50} />
         <ListTitle>
           Here are examples of landlord tech. <br/>
@@ -117,7 +117,7 @@ class Intro extends Component {
             </svg>
           </LineArea>
           <ListTitle>
-            Direct Impact to Tenants:
+            Surveillance Tech (Direct Impact to Tenants):
           </ListTitle>
           {
             _.map (directTechList, tech => {
@@ -137,7 +137,7 @@ class Intro extends Component {
           </LineArea>
 
           <ListTitle>
-            Indirect Impact to Tenants:
+            Speculation Tech (Indirect Impact to Tenants):
           </ListTitle>
           {
             _.map (indirectTechList, tech => {
@@ -156,7 +156,7 @@ class Intro extends Component {
             </svg>
           </LineArea> 
             
-        </ListContainer>*/}
+        </ListContainer>
         
         <Gutter h={100} />
 

@@ -46,6 +46,10 @@ const NCTitle = styled(Title)`
   width: 300px;
   font-size: 2.857em;
   padding: 0;
+
+  ${media.mobileSmall `
+    margin-bottom: 10px;
+  `}
 `;
 
 const NCSubtitle = styled(Subtitle)`
@@ -59,11 +63,20 @@ const ColumnContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 0 20px;
+
+  ${media.mobileSmall `
+    display: block;
+  `}
 `;
+
 const HarmHeader = styled(ColumnContainer)`
   border-top: 1px solid white;
   border-bottom: 1px solid white;
   padding: 15px 20px;
+
+  ${media.mobileSmall `
+    display: none;
+  `}
 `;
 
 const HarmArea = styled(ColumnContainer)`
@@ -76,12 +89,22 @@ const ColumnLeft = styled.div`
   font-size: 1.0em;
   font-family: "Source Sans Pro";
   color: white;
+
+  ${media.mobileSmall `
+    width: 100%;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #333; 
+  `}
 `;
 const ColumnRight = styled.div`
   width: calc(60% - 20px);
   font-size: 1.0em;
   font-family: "Source Sans Pro";
   color: white;
+
+  ${media.mobileSmall `
+      width: 100%;
+  `}
 `;
 
 const MainDesc = styled.div`
@@ -93,6 +116,9 @@ const MainDesc = styled.div`
     font-size:1.0em;
     width: 400px;
 
+    ${media.mobileSmall `
+      width: 100%;
+    `}
     a {
       color: white;
       font-weight: 600;
@@ -106,6 +132,9 @@ const ExampleInner = styled(Inner)`
   width: 100%;
   height: 800px;
 
+  ${media.mobileSmall `
+    height: 400px;
+  `}
   div.example {
     position: absolute;
     background: #FFFFFF;
@@ -118,11 +147,19 @@ const ExampleInner = styled(Inner)`
     transform-origin: center;
     max-width: 120px;
     cursor:pointer;
-    transition: 0.4s transform;
+    transition: 0.4s transform, filter;
+    filter: grayscale(100%);
+    
+
+    ${media.mobileSmall `
+      max-width: 70px;
+    `}
+
     &:hover {
       transform-origin: center;
       transform: translateX(-50%) translateY(-50%) scale(1.3, 1.3);
       z-index: 88888;
+      filter: grayscale(0);
 
     }
 
@@ -148,6 +185,10 @@ const HarmText = styled.div`
   max-width: 500px;
   text-indent: -50px;
   margin-left: 50px;
+
+  ${media.mobileSmall `
+    font-size: 1.2em;
+  `}
 `;
 
 
@@ -167,9 +208,10 @@ class Nomenclature extends Component {
   getCenter(screenWidth) {
     let center = [ screenWidth / 2, 800 / 2];
 
-    if (screenWidth <= 414) {
+    if (screenWidth <= 650) {
 
       center[0] = (screenWidth - 20) / 2;
+      center[1] = 400 / 2;
 
     } else if (screenWidth <= 768) {
       
@@ -182,7 +224,15 @@ class Nomenclature extends Component {
   componentDidUpdate(prevProps){
     if (prevProps.screenWidth !== this.props.screenWidth) {
       let center = this.getCenter(this.props.screenWidth);
+      let radius = 70;
+
+
+      if (window.innerWidth <= 650) {
+        radius = 10;
+      } 
       this.simulation.force("center_force", d3.forceCenter(center[0], center[1]));
+      this.simulation.force("collision_force", d3.forceCollide().radius(radius));
+      this.simulation.restart();
     }
   }
 
@@ -202,10 +252,18 @@ class Nomenclature extends Component {
     
     let center = this.getCenter(this.props.screenWidth);
 
+    let radius = 70;
+
+
+    if (window.innerWidth <= 650) {
+      radius = 10;
+    } 
+
+
     this.simulation
         .force("charge_force", d3.forceManyBody())
         .force("center_force", d3.forceCenter(center[0], center[1]))
-        .force("collision_force", d3.forceCollide().radius(70));
+        .force("collision_force", d3.forceCollide().radius(radius));
 
     //draw circles for the nodes 
     let innerElem = d3.select(this.exampleRef.current);
@@ -224,6 +282,9 @@ class Nomenclature extends Component {
         .attr("class", "title")
         .attr("src", d => {
           return d.properties.img;
+        })
+        .attr("alt", d => {
+          return d.properties.name;
         })
       .on('click', d => {
         window.open(d.properties.link, '_blank');
@@ -286,7 +347,7 @@ class Nomenclature extends Component {
             </ColumnRight>
           </ColumnContainer>
 
-
+          <Gutter h={50} />
           <ColumnContainer>
             <NCSubtitle>
               Harm for Tenants
