@@ -197,12 +197,24 @@ class Nomenclature extends Component {
     super(props);
     this.exampleRef = React.createRef();
     this.tickActions = this.tickActions.bind(this);
+    this.keyPress = this.keyPress.bind(this);
 
   }
   componentDidMount(){
     document.body.style.overflow = 'hidden';
     
     this.initForce();
+    document.addEventListener("keyup", this.keyPress);
+  }
+  componentWillUnmount(){
+    document.removeEventListener("keyup", this.keyPress);
+  }
+
+  keyPress(evt){
+    evt = evt || window.event;
+    if (evt.keyCode === 27) {
+      this.props.dispatch(changeCurrentNomenclature(null));
+    }
   }
 
   getCenter(screenWidth) {
