@@ -177,6 +177,114 @@ export const TECH_LIST = [
         img: `${process.env.PUBLIC_URL}/assets/nomenclature/20mission_logo.jpg`
       }
     ]
+  },
+  {
+    id: 2,
+    type: "direct",
+    title: "Virtual Property Management and Landlordism",
+    subtitle: "Background, “criminal,” income, and credit checks on prospective tenants for landlords",
+    services: `
+      <p>
+        Tenant screening companies produce reports about prospective tenants for landlords to determine whether they should allow a tenant to move into their property. <br/><br/>
+        There is no registry of all tenant screening companies, nor any impetus for tenant screening companies to register, but <a href="https://themarkup.org/locked-out/2020/05/28/access-denied-faulty-automated-background-checks-freeze-out-renters" target="_blank">it is estimated that there are over 2,000 companies.</a>
+      </p>
+    `,
+    harms: [
+      {
+        example: "Criminal history screening may:",
+        harms: [
+          "Fail to comply with the Fair Housing Act",
+          "Target and exclude people who have been convicted or incarcerated",
+          "Target and exclude people deemed “terrorists” based on racist and inaccurate assumptions",
+          "Discriminate based on false and/or racist conviction information",
+          "Rely on law enforcement, court, and FBI data, which may be flawed",
+          "Produce false positives based on name misspellings and duplicative common names"
+        ]
+      },
+      {
+        example: "Tenant income verification, means testing, and credit check systems may:",
+        harms: [
+          "Discriminate based on false and/or racist credit information",
+          "Deny people housing because they are poor",
+          "Force tenants to pay for background checks that could be used to deny them housing",
+          "Deny people housing due to gaps in their rental payment history, which disproportionately targets people who have experienced houselessness"
+        ]
+      },
+      {
+        example: "Prior eviction checks, based on housing court filings may:",
+        harms: [
+          "Deny people housing based on past late utility and rental payments",
+          "Deny people housing based on eviction filings (rather than eviction outcomes)",
+          "Deny people housing based on their having previously complained about landlord abuse",
+          "Deny people housing based on incorrect data and information about them."   
+        ]
+      },
+      {
+        example: "Roommate matching and screening may:",
+        harms: [
+          "Fail to comply with the Fair Housing Act",
+          "Use social media and other online data to “pick” some roommates and discriminate against others",
+          "Aid in removing SROs and other long term housing and replacing it with “hacker dorms” that are often more expensive and screen against those not in the tech industry. This is particularly common in areas with a large tech presence"
+        ]
+      }
+    ],
+    companies: [
+      {
+        name: "CoreLogic",
+        link: "https://www.cohenmilstein.com/case-study/connecticut-fair-housing-center-et-al-v-corelogic-rental-property-solutions",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/corelogic_logo.svg`
+      },
+      {
+        name: "TransUnion Smart Move",
+        link: "https://www.mysmartmove.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/smartmove_logo.jpg`
+      },
+      {
+        name: "Tenant Background Search",
+        link: "https://www.tenantbackgroundsearch.com/index.aspx?adid=5&gclid=EAIaIQobChMIpq-Fi8n36gIVD43ICh1kiAbIEAAYAiAAEgJkk_D_BwE",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/tenant_background_search.jpg`
+      },
+      {
+        name: "Zillow",
+        link: "https://www.zillow.com/z/rental-manager/tenant-screening/?itc=icon_tenantscreening_fillvacancies",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/zillow_logo_blue.png`
+      },
+      {
+        name: "Tenant Verification",
+        link: "https://www.tenantverification.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/tenant_verification_logo.png`
+      },
+      {
+        name: "Cozy",
+        link: "https://cozy.co/for-landlords/tenant-screening/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/cozy_logo.png`
+      },
+      {
+        name: "Instant Background Check",
+        link: "https://instantbackgroundchecks.us/services/tenant-screening/?id=ppc&keyword_session_id=vt~adwords|kt~landlord%20tenant%20background%20check|mt~b|ta~315215187117&_vsrefdom=wordstream&gclid=EAIaIQobChMIgoOU6pP96gIVxp6zCh1NeQXmEAAYASAAEgKoIfD_BwE",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/instant_logo.png`
+      },
+      {
+        name: "Naborly",
+        link: "https://naborly.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/naborly_logo.png`
+      },
+      {
+        name: "Roomster",
+        link: "https://www.roomster.com/login",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/roomster_logo.png`
+      },
+      {
+        name: "Chez JJ",
+        link: "https://www.wired.com/2015/08/sf-hacker-hostel-faces-real-world-loses/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/chejj-logo.png`
+      },
+      {
+        name: "20 Mission",
+        link: "http://www.20mission.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/20mission_logo.jpg`
+      }
+    ]
   }
   // ,{
   //   id: 2,
