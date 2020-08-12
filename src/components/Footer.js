@@ -163,7 +163,7 @@ export default class Footer extends Component {
                   Anti-Eviction Mapping Project
                 </Subtitle>
                 <CreditAuthors>
-                  Erin McElroy<br/>
+                  <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a>, <i>AI Now Institute, NYU</i><br/>
                   <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>, <i>MIT DUSP</i>
                 </CreditAuthors>
                 <Gutter h={30} />
