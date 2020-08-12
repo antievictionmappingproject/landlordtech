@@ -43,7 +43,7 @@ class MapArea extends Component {
 
           <Gutter h={50} />
           <Subtitle>
-            This map indicates where and what type of landlord tech is being deployed. Please fill out the survey below to add landlord tech in your building to the map.
+            This map indicates where and what type of landlord tech is being deployed. Please fill out the survey below to add landlord tech in your building or neighborhood to the map.
           </Subtitle>
           
         </Inner>
