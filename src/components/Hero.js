@@ -71,7 +71,7 @@ const QUESTIONS = [
     imageWidth: "60%"
   },
   {
-    q: <p>Have <b>new cameras</b> been installed?</p>,
+    q: <p>Have <b>new cameras</b> been installed in your home or neighborhood?</p>,
     pos: [48, 30],
     image: `${process.env.PUBLIC_URL}/assets/p2.png`,
     alt: "A photo of surveilance camera installed in the public area",
