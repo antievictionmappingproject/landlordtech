@@ -177,8 +177,8 @@ export default class Hero extends Component {
           <Gutter h={50} />
           <HeroTitleContainer>
             <HeroTitle>
-              Crowdsourcing<br/>
-              Landlord Tech
+              Landlord Tech<br/>
+              Watch
             </HeroTitle>
             <HeroSub>
               Landlord Tech—what the real estate industry describes as residential property technology, is leading to new forms of housing injustice. Property technology, or “proptech,” has grown dramatically since 2008, and applies to residential, commercial, and industrial buildings, effectively merging the real estate, technology, and finance industries. By employing digital surveillance, data collection, data accumulation, artificial intelligence, dashboards, and platform real estate in tenant housing and neighborhoods, Landlord Tech increases the power of landlords while disempowering tenants and those seeking shelter.
