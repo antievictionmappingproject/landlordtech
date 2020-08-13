@@ -73,21 +73,21 @@ class Legend extends Component {
           </motion.g>
           <motion.g
             initial={{ opacity: 1 }}
-            animate={{ opacity: this.isMatchedWithCurrentTechType("App") }}
+            animate={{ opacity: this.isMatchedWithCurrentTechType("Phone app") }}
           >
             <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="167.977">Phone App</tspan></text>
             <circle cx="25" cy="164" r="8" fill="#8342D7"/>
           </motion.g>
           <motion.g
             initial={{ opacity: 1 }}
-            animate={{ opacity: this.isMatchedWithCurrentTechType("Lock Boxes") }}
+            animate={{ opacity: this.isMatchedWithCurrentTechType("Lock boxes") }}
           >
             <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="190.977">Lock Boxes</tspan></text>
             <circle cx="25" cy="187" r="8" fill="#D7AD42"/>
           </motion.g>
           <motion.g
             initial={{ opacity: 1 }}
-            animate={{ opacity: this.isMatchedWithCurrentTechType("Related to short term rentals") }}
+            animate={{ opacity: this.isMatchedWithCurrentTechType("Short term rentals") }}
           >
             <text fill="white" fontFamily="Source Sans Pro" fontSize="14" letterSpacing="0em"><tspan x="39" y="213.977">Short Term Rentals</tspan></text>
             <circle cx="25" cy="210" r="8" fill="#42D75A"/>

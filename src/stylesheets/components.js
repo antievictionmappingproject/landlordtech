@@ -19,6 +19,29 @@ const Gutter = styled.div`
   height: ${props => props.h}px;
 `;
 
+const WhiteBtn = styled.button`
+  background: #FFFFFF;
+  border: 1px solid #000000;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 0px #AAA;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: 'Staatliches';
+  transform-origin: center;
+  margin-right: 10px;
+  max-width: 200px;
+  cursor:pointer;
+  text-align: center;
+  font-size:1.1em;
+
+  &:hover {
+    opacity: 1;
+    background: black;
+    color: white;
+    border: 1px solid #444;
+  }
+`;
+
 
 const Container = styled.div`
   width: 1024px;
@@ -91,5 +114,6 @@ export {
   Circle,
   Subtitle,
   Paragraph,
-  Inner
+  Inner,
+  WhiteBtn
 };

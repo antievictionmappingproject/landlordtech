@@ -14,7 +14,7 @@ const ResponseContainer = styled.div`
   bottom: 15px;
   background-color: #111;
   border: 1px solid #333333;
-  padding: 15px;
+  padding: 15px 9px 15px 20px;
   max-width: 350px;
   height: calc(100vh - 300px);
   color: white;
@@ -51,6 +51,7 @@ const TechTypeArea = styled.div`
       font-family: 'Staatliches';
       font-size: 1.2em;
       color: white;
+      margin-bottom: 5px;
     }
   }
 
@@ -63,13 +64,18 @@ const TechTypeArea = styled.div`
 `;
 
 const QuestionTitle = styled.div`
-  font-family: 'Staatliches';
+  font-family: 'Source Sans Pro';
   font-size: 1.0em;
-  color: white;
+  color: #666;
+  font-style: italic;
+  line-height: 1.3;
+  margin-bottom: 5px;
+
 `;
 
 const Answer = styled.div`
   color: white;
+  line-height: 1.3;
 `;
 
 const ColorCircle = styled.div`
@@ -98,7 +104,6 @@ const EXCLUDE_QUESTIONS = ["Timestamp", "techType", "Optional", "Latitude", "Lon
 class CurrentResponse extends Component {
   determineColor(tt) {
     let tech = _.find(TECH_SELECT_VALUES, value => value.value === tt);
-
     return tech ? tech.color : "#ccc";
   }
 

@@ -160,7 +160,7 @@ export default class Footer extends Component {
 
               <ArticleArea>
                 <Subtitle>
-                  Anti-Eviction Mapping Project
+                  <a href="https://antievictionmap.com/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Mapping Project</a>
                 </Subtitle>
                 <CreditAuthors>
                   <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a>, <i>AI Now Institute, NYU</i><br/>
@@ -169,7 +169,7 @@ export default class Footer extends Component {
                 <Gutter h={30} />
 
                 <Subtitle>
-                  AI Now Institute
+                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute</a>
                 </Subtitle>
                 <CreditAuthors>
                   Meredith Whittaker<br/>
@@ -179,7 +179,7 @@ export default class Footer extends Component {
                 
                 <Gutter h={30} />
                 <Subtitle>
-                  People Power Media
+                <a href="https://www.peoplepowermedia.org/" target="_blank" rel="noopener noreferrer" className="wy">People Power Media</a>
                 </Subtitle>
                 <CreditAuthors>
                   Joseph Smooke<br/>

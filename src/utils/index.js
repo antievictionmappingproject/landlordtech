@@ -19,10 +19,9 @@ export const convGeoJSON = (data) => {
 
       for (let j = 0; j < datum["techType"].length; j++) {
         console.log(datum["techType"][j]);
-        datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").replace(/\s+/g, '');
+        datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").replace(/\s+$/g, '');
       }
     
-
   
       let feature = {
         "id": i + 1,

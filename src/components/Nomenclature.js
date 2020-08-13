@@ -70,8 +70,8 @@ const ColumnContainer = styled.div`
 `;
 
 const HarmHeader = styled(ColumnContainer)`
-  border-top: 1px solid white;
-  border-bottom: 1px solid white;
+  border-top: 1px solid #555;
+  border-bottom: 1px solid #555;
   padding: 15px 20px;
 
   ${media.mobileSmall `
@@ -80,12 +80,12 @@ const HarmHeader = styled(ColumnContainer)`
 `;
 
 const HarmArea = styled(ColumnContainer)`
-  border-bottom: 1px solid #555555;
+  border-bottom: 1px solid #222;
   padding: 15px 20px;
 `;
 
 const ColumnLeft = styled.div`
-  width: calc(40% - 20px);
+  width: calc(48% - 20px);
   font-size: 1.0em;
   font-family: "Source Sans Pro";
   color: white;
@@ -93,11 +93,11 @@ const ColumnLeft = styled.div`
   ${media.mobileSmall `
     width: 100%;
     margin-bottom: 20px;
-    border-bottom: 1px solid #333; 
+    border-bottom: 1px solid #222; 
   `}
 `;
 const ColumnRight = styled.div`
-  width: calc(60% - 20px);
+  width: calc(52% - 20px);
   font-size: 1.0em;
   font-family: "Source Sans Pro";
   color: white;
@@ -149,7 +149,10 @@ const ExampleInner = styled(Inner)`
     cursor:pointer;
     transition: 0.4s transform, filter;
     filter: grayscale(100%);
-    
+    text-align: center;
+    font-size:0.9em;
+    color: #AAA;
+
 
     ${media.mobileSmall `
       max-width: 70px;
@@ -157,7 +160,7 @@ const ExampleInner = styled(Inner)`
 
     &:hover {
       transform-origin: center;
-      transform: translateX(-50%) translateY(-50%) scale(1.3, 1.3);
+      transform: translateX(-50%) translateY(-50%) scale(1.15, 1.15);
       z-index: 88888;
       filter: grayscale(0);
 
@@ -172,6 +175,7 @@ const ExampleInner = styled(Inner)`
     }
 
     img {
+      margin-top: 10px;
       width: 100%;
     }
   }
@@ -287,6 +291,9 @@ class Nomenclature extends Component {
       //   d3.select(this).style('z-index', 88888);
       // })
       .attr("class", 'example')
+        .text(d => { 
+          return d.properties.name;
+        })
         .append(d => {
           // debugger;
           return document.createElement('img')

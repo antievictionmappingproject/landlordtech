@@ -51,6 +51,7 @@ const ListTitle = styled.div`
   color: black;
   margin: 5px 0;
   font-weight: 600;
+  line-height:1.4;
   text-align: center;
 `;
 
@@ -106,7 +107,8 @@ class Intro extends Component {
         <Gutter h={50} />
         <ListTitle>
           Here are examples of Landlord Tech. <br/>
-          Click on each to learn more about how these technologies function, and <br/>
+          Click on each to learn more about how these<br/>
+          technologies function, and <br/>
           the potential harms.
         </ListTitle>
 
