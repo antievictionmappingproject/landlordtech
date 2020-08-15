@@ -562,26 +562,18 @@ export const TECH_LIST = [
     services: "",
     harms: [
       {
-        example: "Brokers can also operate as the selling and buying agent may:",
+        example: "Brokers who operate as all-in-one selling and buying agents may:",
         harms: [
-          "Contributes to monopolization of data",
-          "Enables corporate buyers to out maneuver individual owners",
-          "Produces corporate landlordism"                   
+          "Monopolize data collection, which provides significant insight and an unfair advantage that individual buyers and tenants don’t enjoy.",
+          "Give corporate buyers an unfair advantage over individual buyers.",
+          "Encourage the growth of corporate landlordism, which is often more neglectful and exploitative than individual landlords."                   
         ]
       },
       {
-        example: "Utilization of AI and machine learning systems for streamlined, automated transaction processes may:",
+        example: "AI and machine learning systems used to automate real estate transactions (buying, selling, etc.) may:",
         harms: [
-          "Systems are known to reproduce bias and discrimination",
-          "Systems contribute to data monopolization"        
-        ]
-      },
-      {
-        example: "Internet-connected “IoT” appliances may:",
-        harms: [
-          "Collect personal data on appliance use, and potentially other personal activity, and make this available to companies for re-use",
-          "Be buggy or flawed, and lead to failure and unusable appliances due to technical problems or power outages",
-          "Be vulnerable to hacks and security breaches"
+          "Reproduce and amplify racist bias and discrimination due to faulty data and flawed assumptions built in to these systems.",
+          "Provide corporate landlords and speculators an unfair advantage over individual buyers."        
         ]
       }
     ],
@@ -632,26 +624,31 @@ export const TECH_LIST = [
     id: 6,
     type: "indirect",
     title: "Home Sales Financing",
-    subtitle: "Platforms and services that facilitate home sales financing, and therefore new configurations of corporate landlordism.",
+    subtitle: "Platforms and services that facilitate home sales financing outside of traditional banking.",
     services: "",
     harms: [
       {
-        example: "Real time pricing with AI and machine learning may:",
+        example: "Platforms that adjust home prices in real-time, using AI and machine learning, based on what they believe a buyer can afford may:",
         harms: [
-          "Automates data and real estate accumulation"
+          "Lead to predatory pricing that favors corporations and wealthy buyers without giving others a chance.",
+          "Encode bias and discriminatory logics through use of faulty or racist data.",
+          "Help accelerate real estate accumulation in the hands of corporations and the wealthy."
         ]
       },
       {
-        example: "Individuals don't have access to these platforms may:",
+        example: "Platforms that provide automated and data-intensive home buying and selling services only to corporations and the wealthy, not to individual buyers, may:",
         harms: [
-          "May facilitate further concentration of ownership and landlordism"   
+          "Facilitate further concentration of corporate ownership.",
+          "Enable corporations to become larger landowners.",
+          "Provide platforms with competitive advantages over individual buyers, as platforms accrue more and more valuable data that individuals don’t have access to."
+          
         ]
       },
       {
-        example: "May utilize cryptocurrency to purchase homes may:",
+        example: "Platforms that permit the purchase of homes using cryptocurrency, may:",
         harms: [
-          "Not regulated by the Community Reinvestment Act",
-          "May allow housing to become a liquid and readily traded asset"      
+          "Not be regulated by the Community Reinvestment Act, a federal law that applies to traditional banking and requires reinvestment in low income neighborhoods. This further empoverishes communities who have already suffered from redlining and discrimination.",
+          "May allow housing to become a liquid and readily traded asset, treated more like stocks and similar financial instruments. This accelerates the buying and selling of fractional housing units. It also favors corporations and the wealthy who treat housing as a tradable  asset rather than as spaces of home, community, and shelter."      
         ]
       }
     ],
@@ -682,21 +679,21 @@ export const TECH_LIST = [
     id: 7,
     type: "indirect",
     title: "Platforms that Buy Homes",
-    subtitle: "Platforms used to buy new homes,  after which the platform purchases old homes",
+    subtitle: "Platforms used to buy new homes, after which the platform itself purchases the old homes",
     services: "",
     harms: [
       {
-        example: "\"iBuyer\" that facilitates buying and selling transactions",
+        example: "\"iBuyer\" that facilitates buying and selling transactions, may:",
         harms: [
-          "Contributes to monopolization of data",
-          "May enable real estate speculation",
-          "May facilitate new configurations of corporate landlordism"      
+          "Monopolize data collection, which provides significant insight and an unfair advantage that individual buyers and tenants don’t enjoy.",
+          "Encourage the growth of corporate landlordism, which is often more neglectful and exploitative than individual landlords.",
+          "Help accelerate real estate accumulation in the hands of tech corporations, investment companies, real estate speculators, and the wealthy."      
         ]
       },
       {
-        example: "The platform can purchase with \"all cash,\" making the offer more competitive",
+        example: "Platforms that purchase with \"all cash,\" may:",
         harms: [
-          "Favors corporations over and individual owners"   
+          "Make their offers more competitive than those of individual owners unable to make such purchases, thereby supporting the growth of corporate landlordism."
         ]
       }
     ],
@@ -742,15 +739,14 @@ export const TECH_LIST = [
     id: 8,
     type: "indirect",
     title: "Rent-to-Own Platforms",
-    subtitle: "Platforms designed to help renters become owners",
+    subtitle: "Platforms marketed as helping renters become owners",
     services: "",
     harms: [
       {
-        example: "The platform, rather than the tenant, may purchase the unit",
+        example: "Platforms, rather than tenants, may purchase units, leading to:",
         harms: [
-          "Tenant are stripped of their rights",
-          "Ownership rights are unclear",
-          "Contributes to monopolization of data"            
+          "Tenants being stripped of their prior rights as they become owners indebted to platforms.",
+          "Increased data and real estate being accumulated by platforms, and therefore corporate landlordism."         
         ]
       },
       {
@@ -761,9 +757,9 @@ export const TECH_LIST = [
         ]
       },
       {
-        example: "Platforms may enable fluid financial commitment for the buyer",
+        example: "Platforms may enable fluid financial commitment for the buyer, which may:",
         harms: [
-          "Risky financial proposition, especially if the platform defaults"         
+          "Lead to a risky financial proposition, especially if the platform defaults."         
         ]
       }
     ],
@@ -794,7 +790,7 @@ export const TECH_LIST = [
     id: 9,
     type: "indirect",
     title: "Non-residential Leases and Short term Rentals",
-    subtitle: "Corporate, executive, vacation, and impermanent or intermediate and short term rentals.",
+    subtitle: "Vacation rentals, “Airbnb”-type platforms that allow landlords to treat housing as a hotel, and other tech-enabled short-term rental platforms",
     services: "",
     harms: [
       {
@@ -811,8 +807,7 @@ export const TECH_LIST = [
         harms: [
           "May result in lack of long term housing for residents",
           "May encourage managers and landlords to evict long term tenants",
-          "May disrupt building and neighborhood communities",
-          "May facilitate gentrification",
+          "May disrupt building and neighborhood communities, facilitating gentrification",
         ]
       }
     ],
@@ -913,27 +908,26 @@ export const TECH_LIST = [
     id: 10,
     type: "indirect",
     title: "Membership Housing",
-    subtitle: "Platforms in which members can move from location to location within that platform's network.",
+    subtitle: "Platforms in which members can move from location to location within that platform's network",
     services: "",
     harms: [
       {
-        example: "May have opaque or discriminatory membership requirements",
+        example: "Platforms may have opaque or discriminatory membership requirements",
         harms: [
-          "Selection criteria may not comply with the Fair Housing Act",               
+          "Selection criteria may not comply with the Fair Housing Act, and therefore may lead to housing discrimination",               
         ]
       },
       {
-        example: "May be unclear how this housing fits within existing housing protection legislation",
+        example: "It may be unclear how membership housing fits within existing housing protection legislation",
         harms: [
-          "Tenants in cities with protections may be unaware of their protections forfeit their protections",
-          "Tenants may no longer  have long term lease commitments"         
+          "Tenants in cities with renter protections may forfeit them when moving into membership housing",
+          "Tenants may no longer have long term lease commitments"         
         ]
       },
       {
         example: "Long term tenants may be displaced so landlords can instead contract instead with membership services",
         harms: [
-          "May facilitate gentrification",
-          "Tenants may no longer  have long term lease commitments"           
+          "Long term tenants are gentrified out of their homes and neighborhoods to be replaced with membership housing platforms"           
         ]
       }
     ],
@@ -970,21 +964,21 @@ export const TECH_LIST = [
       {
         example: "Compiles property data in proprietary packages for landlords",
         harms: [
-          "May encourage corporate landlordism",               
+          "May encourage corporate landlordism by favoring those with capital to purchase data services",               
         ]
       },
       {
         example: "Platforms often highlight foreclosed homes for speculators to purchase",
         harms: [
-          "May encourage foreclosure",
-          "May facilitate real estate speculation"              
+          "Capitalizes upon foreclosures, which disproportionately lead to Black and Latinx residents being displaced",
+          "Facilitates real estate speculation"              
         ]
       },
       {
         example: "Gathers information including owner name, contact details, foreclosure histories, property characteristics, property value, zoning, sales history, and title documents",
         harms: [
-          "Powers corporate landlords and landlord tech companies with data",
-          "Compromises tenant privacy",              
+          "Powers corporate landlords and Landlord Tech companies with data",
+          "Compromises tenant privacy by providing tenant information to prospective buyers and speculators",              
         ]
       }
     ],
