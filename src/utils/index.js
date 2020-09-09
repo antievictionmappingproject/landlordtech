@@ -6,19 +6,21 @@ export const convGeoJSON = (data) => {
     "features": []
   }
 
-  console.log(data);
+  // console.log(data);
   _.each(data, (datum, i) => {
 
     if (datum.Timestamp.length > 0) {
-      datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ');
+      // datum["techType"] = datum["Would you consider this technology any of the following:"].split(', ');
+      datum["techType"] = datum["Would you consider this technology any of the following:"].replace(/\([^)]*\)/g, "").replace(/\s+$/g, '').replace(/ ,/g, ",").split(", ")
 
+      console.log("techtype parent", datum["techType_parent"]);
       
       if (!_.isArray(datum["techType"])){
         datum["techType"] = [datum["techType"]];
       }
 
       for (let j = 0; j < datum["techType"].length; j++) {
-        console.log(datum["techType"][j]);
+        // console.log(datum["techType"][j]);
         datum["techType"][j] = datum["techType"][j].replace(/\([^)]*\)/, "").replace(/\s+$/g, '');
       }
     
