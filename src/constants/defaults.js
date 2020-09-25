@@ -467,7 +467,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     type: "direct",
     title: "Smart Homes",
     subtitle: "Personal assistants and other smart devices, such as utilities and metering systems built into or added to a house or apartment.",
@@ -555,7 +555,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     type: "indirect",
     title: "Brokers for Home Sales",
     subtitle: "Platforms that act as a broker for home sales, and that therefore facilitate new opportunities for corporate landlords.",
@@ -621,7 +621,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     type: "indirect",
     title: "Home Sales Financing",
     subtitle: "Platforms and services that facilitate home sales financing outside of traditional banking.",
@@ -676,7 +676,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 7,
+    id: 8,
     type: "indirect",
     title: "Platforms that Buy Homes",
     subtitle: "Platforms used to buy new homes, after which the platform itself purchases the old homes",
@@ -736,7 +736,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 8,
+    id: 9,
     type: "indirect",
     title: "Rent-to-Own Platforms",
     subtitle: "Platforms marketed as helping renters become owners",
@@ -787,7 +787,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     type: "indirect",
     title: "Non-residential Leases and Short term Rentals",
     subtitle: "Vacation rentals, “Airbnb”-type platforms that allow landlords to treat housing as a hotel, and other tech-enabled short-term rental platforms",
@@ -905,7 +905,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 10,
+    id: 11,
     type: "indirect",
     title: "Membership Housing",
     subtitle: "Platforms in which members can move from location to location within that platform's network",
@@ -955,7 +955,7 @@ export const TECH_LIST = [
     ]
   },
   {
-    id: 11,
+    id: 12,
     type: "indirect",
     title: "Property Listing Services",
     subtitle: "Platforms that enable speculators to better buy up properties, and renters to find homes",
