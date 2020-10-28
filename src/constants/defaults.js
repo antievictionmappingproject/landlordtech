@@ -179,6 +179,55 @@ export const TECH_LIST = [
     ]
   },
   {
+    id: 50,
+    type: "direct",
+    title: "Eviction and Debt Recovery Apps",
+    subtitle: "Apps that assist landlords and property managers in evicting tenants",
+    services: "",
+    harms: [
+      {
+        example: "Automates lawsuits, judgement collections, and evictions:",
+        harms: [
+          "Speeds up evictions",
+          "Makes it more difficult for tenants to negotiate with landlords or understand why they are being evicted",
+          "Supplies tenant screening and credit screening platforms with data, thereby leading to increased housing precarity for those evicted",
+          "Promises to automate removing “bothersome tenants,” relying upon racist and classist classification systems",
+        ]
+      },
+      {
+        example: "Automates debt acquisition and recovery:",
+        harms: [
+          "Removes possibility of tenants negotiating repayment plans with landlords",
+          "No eviction judgments are  required to submit an account to a debt collection agency, meaning than companies can target those who have not actually been evicted",
+          "Every judgment debtor is placed on a nationwide tracking system, leading to increased tenant surveillance",
+          "Private investigators and trained collection agents will locate assets and arrange for levy or repossession of tenant belongings"
+        ]
+      }
+    ],
+    companies: [
+      {
+        name: "Civvl",
+        link: "https://civvl.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/civil_logo.jpg`
+      },
+      {
+        name: "SueYa",
+        link: "https://sueya.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/sueya_logo.png`
+      },
+      {
+        name: "ClickNotices",
+        link: "http://www.clicknotices.com",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/clicknotices_logo.jpg`
+      },
+      {
+        name: "Rent Recovery Services",
+        link: "https://www.rentrecoveryservice.com/",
+        img: `${process.env.PUBLIC_URL}/assets/nomenclature/rrs_logo.png`
+      }
+    ]
+  },
+  {
     id: 2,
     type: "direct",
     title: "Virtual Property Management & Landlordism",

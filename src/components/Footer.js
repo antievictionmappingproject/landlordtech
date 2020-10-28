@@ -141,6 +141,29 @@ export default class Footer extends Component {
                 </Publisher>
               </ArticleArea>
               <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.peoplepowermedia.org/solutions/exclusive-expose-wild-west-landlord-technology" target="_blank" rel="noopener noreferrer">Exclusive Exposé: The Wild West Of Landlord Technology</a>
+                </Subtitle>
+                <Authors>
+                  Joseph Smooke, Dyan Ruiz
+                </Authors>
+                <Publisher>
+                  People Power Media
+                </Publisher>
+              </ArticleArea>
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://themarkup.org/series/locked-out" target="_blank" rel="noopener noreferrer">Locked out</a>
+                </Subtitle>
+                <Authors>
+                  Lauren Kirchner
+                </Authors>
+                <Publisher>
+                  The Markup
+                </Publisher>
+              </ArticleArea>
+              
+              <ArticleArea>
                 <Authors>
 
                   Want to ask questions or more resources? Please reach out to <a className="wy" href="mailto:landlordtech@riseup.net">landlordtech@riseup.net</a>
