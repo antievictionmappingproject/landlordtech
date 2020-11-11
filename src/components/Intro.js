@@ -30,11 +30,13 @@ const TechLink = styled.a`
   display: block;
   font-family: 'Staatliches', cursive;
   padding-bottom: 5px;
-  font-size: 3.571em;
-  line-height: 1.2;
+  font-size: 2.5em;
+  line-height: 1.1;
+  text-indent: -30px;
+  margin-left: 30px;
   color: black;
-  text-align: center;
-  opacity: 0.2;
+  text-align: left;
+  opacity: 0.4;
 
   &:hover {
     opacity: 1;
@@ -71,6 +73,63 @@ const HeroImage = styled.img`
   width: 100%;
 `;
 
+const ListFloatContainer = styled.div`
+  display: flex;
+  margin-bottom: 50px;
+  position: relative;
+
+
+  ${media.mobileSmall `
+    display: block;
+  `}
+`;
+
+const ListFloatTitle = styled.h3`
+  font-family: 'Staatliches', cursive;
+  padding-bottom: 15px;
+  font-size: 2.285em;
+`;
+
+const ListFloatDesc = styled.div`
+  font-family: "Source Sans Pro";
+  color: black;
+  line-height: 1.3;
+  font-style: italic;
+`;
+
+const ListFloatColumn = styled.div`
+  width: calc(50% - 40px);
+
+  ${media.mobileSmall `
+    width: auto;
+  `}
+`;
+
+const ListFloatImage = styled.img`
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  ${media.mobileSmall `
+    position: static;
+    width: 100%;
+  `}
+`;
+
+const Credit = styled.div`
+  font-style: italic;
+  font-family: "Source Sans Pro";
+  opacity: 0.5;
+  margin-bottom: 20px;
+  font-size: 0.8em;
+`;
+
+const ListFloatGutter = styled.div`
+  height: 500px;
+  ${media.mobileSmall `
+    height: 50px;
+  `}
+`;
 
 class Intro extends Component {
   handleClick(id){
@@ -110,64 +169,66 @@ class Intro extends Component {
             While landlord tech has celebrated the “disruption” of the real estate industry with new technology and data infrastructures, it often exacerbates housing inequality, racial profiling, speculation, and gentrification. We are particularly worried that landlord tech is leading to new forms of housing injustice in the wake of COVID-19 by amplifying surveillance, tracking, data accumulation, and algorithmic means testing into domestic and neighborhood spaces. */}
           </BlackParagraph>
           
-          <Gutter h={50} />
-          <ListTitle>
-            Here are examples of Landlord Tech. <br/>
-            Click on each to learn more about how these<br/>
-            technologies function, and <br/>
-            the potential harms.
-          </ListTitle>
-
-
-          <ListContainer>
-            <LineArea>
-              <svg width="2" height="69" viewBox="0 0 2 69" fill="none">
-                <path d="M1 0V69" stroke="black"/>
-              </svg>
-            </LineArea>
-            <ListTitle>
-              Surveillance Tech (Direct Impact to Tenants):
-            </ListTitle>
-            {
-              _.map (directTechList, tech => {
-                // eslint-disable-next-line no-unused-expressions
-                return (
-                  <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
-                    { tech.title }
-                  </TechLink>
-                )
-              })
-            }
-
-            <LineArea>
-              <svg width="2" height="50" viewBox="0 0 2 50" fill="none">
-                <path d="M1 0V150" stroke="black"/>
-              </svg>
-            </LineArea>
-
-            <ListTitle>
-              Speculation Tech (Indirect Impact to Tenants):
-            </ListTitle>
-            {
-              _.map (indirectTechList, tech => {
-                // eslint-disable-next-line no-unused-expressions
-                return (
-                  <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
-                    { tech.title }
-                  </TechLink>
-                )
-              })
-            }
-
-            <LineArea>
-              <svg width="2" height="150" viewBox="0 0 2 150" fill="none">
-                <path d="M1 0V150" stroke="black"/>
-              </svg>
-            </LineArea> 
-              
-          </ListContainer>
-          
           <Gutter h={100} />
+          
+          <ListFloatContainer>
+            <ListFloatColumn>
+              <ListFloatTitle>
+                Surveillance Tech
+              </ListFloatTitle>
+              <ListFloatDesc>
+                Surveillance Tech perpetuates housing inequality through predatory data collection, automatic profiling, and eviction. 
+              </ListFloatDesc>
+              <Gutter h={20} />
+              {
+                _.map (directTechList, tech => {
+                  // eslint-disable-next-line no-unused-expressions
+                  return (
+                    <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
+                      { tech.title }
+                    </TechLink>
+                  )
+                })
+              }
+            </ListFloatColumn>
+            <ListFloatImage src={`${process.env.PUBLIC_URL}/assets/surveillance_tech_02.png`} alt="surveillance tech illustration" style={{ left: "50%"}} />
+            <ListFloatImage src={`${process.env.PUBLIC_URL}/assets/surveillance_tech_01.png`} alt="surveillance tech illustration" style={{ left: "30%", top: "95%"}}  />
+            
+          </ListFloatContainer>
+
+          <ListFloatGutter />
+
+          <ListFloatContainer>
+
+           
+            <ListFloatColumn>
+
+            </ListFloatColumn>
+            <ListFloatColumn>
+              <ListFloatTitle>
+                Speculation Tech
+              </ListFloatTitle>
+
+              <ListFloatDesc>
+                Speculation Tech is facilitating capital accumulation in ways that undermine housing stability and affordability.
+              </ListFloatDesc>
+
+              <Gutter h={20} />
+              {
+                _.map (indirectTechList, tech => {
+                  // eslint-disable-next-line no-unused-expressions
+                  return (
+                    <TechLink key={tech.id} href="javascript:void();" onClick={this.handleClick.bind(this, tech.id)}>
+                      { tech.title }
+                    </TechLink>
+                  )
+                })
+              }
+            </ListFloatColumn>
+            <ListFloatImage src={`${process.env.PUBLIC_URL}/assets/speculation_tech_01.png`} alt="speculation tech illustration" style={{ left: -30, top: -30 }} />
+            <ListFloatImage src={`${process.env.PUBLIC_URL}/assets/speculation_tech_02.png`} alt="speculation tech illustration" style={{ width: 350, left: "30%", top: "calc(100% + 20px)"}}  />
+          </ListFloatContainer>
+          <ListFloatGutter />
 
           {
             currentNomenclature ? 

@@ -219,8 +219,8 @@ export default class Footer extends Component {
                 </CreditAuthors>
                 <Gutter h={30} />
                 <CreditAuthors>
-                  Photo CC-BY-NC Tom Woodward
-
+                  Photo CC-BY-NC Tom Woodward<br/>
+                  Illustration by Frederick Noland / [people. power. media]
                 </CreditAuthors>
               </ArticleArea>
             </Column>
