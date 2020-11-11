@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/landlordtech/static/css/main.b8d8b40a.chunk.css",
-    "main.js": "/landlordtech/static/js/main.d12b68af.chunk.js",
-    "main.js.map": "/landlordtech/static/js/main.d12b68af.chunk.js.map",
+    "main.js": "/landlordtech/static/js/main.ab5e294c.chunk.js",
+    "main.js.map": "/landlordtech/static/js/main.ab5e294c.chunk.js.map",
     "runtime-main.js": "/landlordtech/static/js/runtime-main.31d0d67e.js",
     "runtime-main.js.map": "/landlordtech/static/js/runtime-main.31d0d67e.js.map",
-    "static/js/2.370d3bb0.chunk.js": "/landlordtech/static/js/2.370d3bb0.chunk.js",
-    "static/js/2.370d3bb0.chunk.js.map": "/landlordtech/static/js/2.370d3bb0.chunk.js.map",
+    "static/js/2.ad163ee8.chunk.js": "/landlordtech/static/js/2.ad163ee8.chunk.js",
+    "static/js/2.ad163ee8.chunk.js.map": "/landlordtech/static/js/2.ad163ee8.chunk.js.map",
     "index.html": "/landlordtech/index.html",
-    "precache-manifest.70b9090c5095a1320fc654c5fdcc1e2f.js": "/landlordtech/precache-manifest.70b9090c5095a1320fc654c5fdcc1e2f.js",
+    "precache-manifest.198c90c170769f4e96c9ee068ed25ffb.js": "/landlordtech/precache-manifest.198c90c170769f4e96c9ee068ed25ffb.js",
     "service-worker.js": "/landlordtech/service-worker.js",
     "static/css/main.b8d8b40a.chunk.css.map": "/landlordtech/static/css/main.b8d8b40a.chunk.css.map",
-    "static/js/2.370d3bb0.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.370d3bb0.chunk.js.LICENSE.txt"
+    "static/js/2.ad163ee8.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.ad163ee8.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.31d0d67e.js",
-    "static/js/2.370d3bb0.chunk.js",
+    "static/js/2.ad163ee8.chunk.js",
     "static/css/main.b8d8b40a.chunk.css",
-    "static/js/main.d12b68af.chunk.js"
+    "static/js/main.ab5e294c.chunk.js"
   ]
 }
