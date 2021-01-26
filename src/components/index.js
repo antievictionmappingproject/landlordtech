@@ -11,6 +11,7 @@ import SelectArea from './SelectArea';
 import CurrentResponse from './CurrentResponse';
 import Question from './Question';
 import ResetZoomControl from './ResetZoomControl';
+import PamphletArea from './PamphletArea';
 
 export {
   Header,
@@ -25,5 +26,6 @@ export {
   SelectArea,
   CurrentResponse,
   Question,
-  ResetZoomControl
+  ResetZoomControl,
+  PamphletArea
 };

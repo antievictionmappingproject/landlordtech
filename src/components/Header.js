@@ -118,6 +118,9 @@ class Header extends Component {
                 Survey
               </button>
 
+              <button className="menu-link" onClick={this.handleClick.bind(this, 'pamphlet')}>
+                A.I.M.S.
+              </button>
               <button className="menu-link" onClick={this.handleClick.bind(this, 'articles')}>
                 Articles
               </button>
