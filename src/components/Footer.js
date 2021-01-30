@@ -186,8 +186,8 @@ export default class Footer extends Component {
                   <a href="https://antievictionmap.com/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Mapping Project</a>
                 </Subtitle>
                 <CreditAuthors>
-                  <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a>, <i>AI Now Institute, NYU</i><br/>
-                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>, <i>MIT DUSP</i>
+                  <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
+                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>
                 </CreditAuthors>
                 <Gutter h={30} />
 
@@ -196,8 +196,18 @@ export default class Footer extends Component {
                 </Subtitle>
                 <CreditAuthors>
                   Meredith Whittaker<br/>
+                  Nicole Weber<br/>
                   Genevieve Fried<br/>
                   Deborah Raji
+                </CreditAuthors>
+
+                <Gutter h={30} />
+                <Subtitle>
+                  Oceanhill-Brownsville Alliance
+                </Subtitle>
+                <CreditAuthors>
+                  Tranae’ Moran<br/>
+                  Fabian Rogers
                 </CreditAuthors>
                 
                 <Gutter h={30} />
@@ -209,18 +219,10 @@ export default class Footer extends Component {
                   Dyan Ruiz
                 </CreditAuthors>
                 <Gutter h={30} />
-                <Subtitle>
-                  Community Partners
-                </Subtitle>
-                <CreditAuthors>
-                  Desiree Fields, <i>UC Berkeley</i><br/>
-                  Tranae’ Moran, <i>Atlantic Plaza Towers</i><br/>
-                  Fabian Rogers, <i>Atlantic Plaza Towers</i>
-                </CreditAuthors>
-                <Gutter h={30} />
+                
                 <CreditAuthors>
                   Photo CC-BY-NC Tom Woodward<br/>
-                  Illustration by Frederick Noland / [people. power. media]
+                  Illustration by <a href="https://www.instagram.com/frednoland/" target="_blank" className="wy" rel="noopener noreferrer">Frederick Noland</a> / [people. power. media]
                 </CreditAuthors>
               </ArticleArea>
             </Column>
