@@ -12,6 +12,7 @@ import CurrentResponse from './CurrentResponse';
 import Question from './Question';
 import ResetZoomControl from './ResetZoomControl';
 import PamphletArea from './PamphletArea';
+import DataVizArea from './DataVizArea';
 
 export {
   Header,
@@ -24,6 +25,7 @@ export {
   Nomenclature,
   Legend,
   SelectArea,
+  DataVizArea,
   CurrentResponse,
   Question,
   ResetZoomControl,

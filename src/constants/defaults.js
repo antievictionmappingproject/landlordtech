@@ -57,6 +57,11 @@ export const TECH_SELECT_VALUES = [
     color: "#D7AD42"
   },
   {
+    value: "Smart home technology",
+    label: "Smart Home Technology",
+    color: "#c9d0c8"
+  },
+  {
     value: "Short term rentals",
     label: "Short Term Rentals",
     color: "#42D75A"

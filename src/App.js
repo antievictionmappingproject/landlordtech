@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { windowResize, updateData } from './actions';
 import { csvParse } from 'd3';
 import { convGeoJSON } from './utils';
-import { Header, Hero, Intro, MapArea, SurveyArea, Footer, PamphletArea } from './components';
+import { Header, Hero, Intro, MapArea, SurveyArea, Footer, PamphletArea, DataVizArea } from './components';
 
 const Fragment = React.Fragment;
 
@@ -62,6 +62,7 @@ class App extends Component {
         <Hero />
         <Intro />
         <MapArea />
+        <DataVizArea />
         <SurveyArea />
         <PamphletArea />
         <Footer />
