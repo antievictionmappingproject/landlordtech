@@ -84,7 +84,28 @@ export default class Footer extends Component {
                 Resources
               </Title>
               <Gutter h={10}></Gutter>
-
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://shelterforce.org/2021/03/25/keeping-an-eye-on-landlord-tech/" target="_blank" rel="noopener noreferrer">Keeping an Eye on Landlord Tech</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy, Wonyoung So, and Nicole Weber 
+                </Authors>
+                <Publisher>
+                  Shelterforce
+                </Publisher>
+              </ArticleArea>
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://metropolitics.org/Landlord-Tech-in-Covid-19-Times.html" target="_blank" rel="noopener noreferrer">Landlord Tech in Covid‑19 Times</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy and Wonyoung So
+                </Authors>
+                <Publisher>
+                  Metropolitics
+                </Publisher>
+              </ArticleArea>
               <ArticleArea>
                 <Subtitle>
                   <a href="http://bostonreview.net/class-inequality-science-nature/erin-mcelroy-meredith-whittaker-genevieve-fried-covid-19-crisis" target="_blank" rel="noopener noreferrer">COVID-19 Crisis Capitalism Comes to Real Estate</a>
