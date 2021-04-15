@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "58b090c69ce30cfc640762cf1fcf9b7f",
+    "revision": "c5c760faa9087f2a8f211e34eb5deba0",
     "url": "/landlordtech/index.html"
   },
   {
-    "revision": "e41f0f4967061866a9c7",
+    "revision": "a118c5ccdb2676588dd3",
     "url": "/landlordtech/static/css/main.b8d8b40a.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/landlordtech/static/js/2.d6b042fc.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e41f0f4967061866a9c7",
-    "url": "/landlordtech/static/js/main.b5fb750b.chunk.js"
+    "revision": "a118c5ccdb2676588dd3",
+    "url": "/landlordtech/static/js/main.33e1a3ea.chunk.js"
   },
   {
     "revision": "fdf1cad7351bd8002067",
