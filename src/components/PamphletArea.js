@@ -41,7 +41,7 @@ class PamphletArea extends Component {
           <Gutter h={5} />
           <Subtitle>
             Click the image below to download the pamphlet PDF for your building!<br/>
-            Brought to you by the Oceanhill-Brownsville Alliance.
+            Brought to you by the Ocean Hill-Brownsville Tenants Alliance.
           </Subtitle>
         </Inner>
         <Gutter h={50} />
