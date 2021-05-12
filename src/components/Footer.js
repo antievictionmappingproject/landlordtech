@@ -224,7 +224,7 @@ export default class Footer extends Component {
 
                 <Gutter h={30} />
                 <Subtitle>
-                  Oceanhill-Brownsville Alliance
+                  Ocean Hill-Brownsville Tenants Alliance
                 </Subtitle>
                 <CreditAuthors>
                   Tranae’ Moran<br/>
