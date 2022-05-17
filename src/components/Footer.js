@@ -183,7 +183,32 @@ export default class Footer extends Component {
                   The Markup
                 </Publisher>
               </ArticleArea>
+
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.publicbooks.org/prison-tech-comes-home/" target="_blank" rel="noopener noreferrer">Prison Tech Comes Home</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy, Meredith Whittaker, and Nicole Weber
+                </Authors>
+                <Publisher>
+                  Public Books
+                </Publisher>
+              </ArticleArea>
+
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.bloomberg.com/news/articles/2021-10-07/tenants-use-new-technology-to-combat-evictions" target="_blank" rel="noopener noreferrer">The Tech That Slumlords Hate</a>
+                </Subtitle>
+                <Authors>
+                  Ethan McLeod
+                </Authors>
+                <Publisher>
+                  Bloomberg CityLab
+                </Publisher>
+              </ArticleArea>
               
+
               <ArticleArea>
                 <Authors>
 

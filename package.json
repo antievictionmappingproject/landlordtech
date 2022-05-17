@@ -13,15 +13,15 @@
     "framer-motion": "^1.11.1",
     "gsap": "^3.4.0",
     "lodash": "^4.17.15",
-    "node-sass": "^4.14.1",
     "papaparse": "^5.2.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.0",
     "react-router": "^5.2.0",
-    "react-scripts": "3.4.1",
+    "react-scripts": "4.0.3",
     "react-select": "^3.1.0",
     "redux": "^4.0.5",
+    "sass": "^1.51.0",
     "styled-components": "^5.1.1"
   },
   "scripts": {
