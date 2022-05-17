@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/landlordtech/static/css/main.b8d8b40a.chunk.css",
-    "main.js": "/landlordtech/static/js/main.04f9299a.chunk.js",
-    "main.js.map": "/landlordtech/static/js/main.04f9299a.chunk.js.map",
-    "runtime-main.js": "/landlordtech/static/js/runtime-main.31d0d67e.js",
-    "runtime-main.js.map": "/landlordtech/static/js/runtime-main.31d0d67e.js.map",
-    "static/js/2.d6b042fc.chunk.js": "/landlordtech/static/js/2.d6b042fc.chunk.js",
-    "static/js/2.d6b042fc.chunk.js.map": "/landlordtech/static/js/2.d6b042fc.chunk.js.map",
+    "main.css": "/landlordtech/static/css/main.b42c5bd3.chunk.css",
+    "main.js": "/landlordtech/static/js/main.c548aa04.chunk.js",
+    "main.js.map": "/landlordtech/static/js/main.c548aa04.chunk.js.map",
+    "runtime-main.js": "/landlordtech/static/js/runtime-main.c0c54e04.js",
+    "runtime-main.js.map": "/landlordtech/static/js/runtime-main.c0c54e04.js.map",
+    "static/js/2.9af1dcef.chunk.js": "/landlordtech/static/js/2.9af1dcef.chunk.js",
+    "static/js/2.9af1dcef.chunk.js.map": "/landlordtech/static/js/2.9af1dcef.chunk.js.map",
     "index.html": "/landlordtech/index.html",
-    "precache-manifest.b19d4232804e795916ade1a0257c3ad1.js": "/landlordtech/precache-manifest.b19d4232804e795916ade1a0257c3ad1.js",
-    "service-worker.js": "/landlordtech/service-worker.js",
-    "static/css/main.b8d8b40a.chunk.css.map": "/landlordtech/static/css/main.b8d8b40a.chunk.css.map",
-    "static/js/2.d6b042fc.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.d6b042fc.chunk.js.LICENSE.txt"
+    "static/css/main.b42c5bd3.chunk.css.map": "/landlordtech/static/css/main.b42c5bd3.chunk.css.map",
+    "static/js/2.9af1dcef.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.9af1dcef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.31d0d67e.js",
-    "static/js/2.d6b042fc.chunk.js",
-    "static/css/main.b8d8b40a.chunk.css",
-    "static/js/main.04f9299a.chunk.js"
+    "static/js/runtime-main.c0c54e04.js",
+    "static/js/2.9af1dcef.chunk.js",
+    "static/css/main.b42c5bd3.chunk.css",
+    "static/js/main.c548aa04.chunk.js"
   ]
 }
