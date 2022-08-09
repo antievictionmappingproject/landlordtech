@@ -1,20 +1,20 @@
 {
   "files": {
     "main.css": "/landlordtech/static/css/main.b42c5bd3.chunk.css",
-    "main.js": "/landlordtech/static/js/main.c548aa04.chunk.js",
-    "main.js.map": "/landlordtech/static/js/main.c548aa04.chunk.js.map",
+    "main.js": "/landlordtech/static/js/main.2902ae24.chunk.js",
+    "main.js.map": "/landlordtech/static/js/main.2902ae24.chunk.js.map",
     "runtime-main.js": "/landlordtech/static/js/runtime-main.c0c54e04.js",
     "runtime-main.js.map": "/landlordtech/static/js/runtime-main.c0c54e04.js.map",
-    "static/js/2.9af1dcef.chunk.js": "/landlordtech/static/js/2.9af1dcef.chunk.js",
-    "static/js/2.9af1dcef.chunk.js.map": "/landlordtech/static/js/2.9af1dcef.chunk.js.map",
+    "static/js/2.e3a5be54.chunk.js": "/landlordtech/static/js/2.e3a5be54.chunk.js",
+    "static/js/2.e3a5be54.chunk.js.map": "/landlordtech/static/js/2.e3a5be54.chunk.js.map",
     "index.html": "/landlordtech/index.html",
     "static/css/main.b42c5bd3.chunk.css.map": "/landlordtech/static/css/main.b42c5bd3.chunk.css.map",
-    "static/js/2.9af1dcef.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.9af1dcef.chunk.js.LICENSE.txt"
+    "static/js/2.e3a5be54.chunk.js.LICENSE.txt": "/landlordtech/static/js/2.e3a5be54.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.c0c54e04.js",
-    "static/js/2.9af1dcef.chunk.js",
+    "static/js/2.e3a5be54.chunk.js",
     "static/css/main.b42c5bd3.chunk.css",
-    "static/js/main.c548aa04.chunk.js"
+    "static/js/main.2902ae24.chunk.js"
   ]
 }
