@@ -84,6 +84,44 @@ export default class Footer extends Component {
                 Resources
               </Title>
               <Gutter h={10}></Gutter>
+
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://doi.org/10.1080/10511482.2022.2113815" target="_blank" rel="noopener noreferrer">Which Information Matters? Measuring Landlord Assessment of Tenant Screening Reports</a>
+                </Subtitle>
+                <Authors>
+                  Wonyoung So
+                </Authors>
+                <Publisher>
+                  Housing Policy Debate
+                </Publisher>
+              </ArticleArea>
+
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://journals.sagepub.com/doi/full/10.1177/02637758221088868#bibr41-02637758221088868" target="_blank" rel="noopener noreferrer">Automating gentrification: Landlord technologies and housing justice organizing in New York City homes</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy and Manon Vergerio
+                </Authors>
+                <Publisher>
+                  Environment and Planning D: Society and Space
+                </Publisher>
+              </ArticleArea>
+
+
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://static1.squarespace.com/static/52b7d7a6e4b0b3e376ac8ea2/t/63601bd6c1d8e23287357db0/1667242990765/AEMP-LLTech-Final-r2.pdf" target="_blank" rel="noopener noreferrer">Landlord Technologies of Gentrification: Facial Recognition and Building Access Technologies in New York City Homes</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy, Manon Vergerio, & Paula Garcia-Salazar
+                </Authors>
+                <Publisher>
+                  Anti-Eviction Mapping Project
+                </Publisher>
+              </ArticleArea>
+
               <ArticleArea>
                 <Subtitle>
                   <a href="https://shelterforce.org/2021/03/25/keeping-an-eye-on-landlord-tech/" target="_blank" rel="noopener noreferrer">Keeping an Eye on Landlord Tech</a>
@@ -97,7 +135,7 @@ export default class Footer extends Component {
               </ArticleArea>
               <ArticleArea>
                 <Subtitle>
-                  <a href="https://metropolitics.org/Landlord-Tech-in-Covid-19-Times.html" target="_blank" rel="noopener noreferrer">Landlord Tech in Covid‑19 Times</a>
+                  <a href="https://metropolitics.org/Landlord-Tech-in-Covid-19-Times.html" target="_blank" rel="noopener noreferrer">Landlord Tech in Covid-19 Times</a>
                 </Subtitle>
                 <Authors>
                   Erin McElroy and Wonyoung So
@@ -207,6 +245,7 @@ export default class Footer extends Component {
                   Bloomberg CityLab
                 </Publisher>
               </ArticleArea>
+
               
 
               <ArticleArea>
