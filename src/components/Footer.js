@@ -295,7 +295,7 @@ export default class Footer extends Component {
                   <a href="https://antievictionmap.com/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Mapping Project</a>
                 </Subtitle>
                 <CreditAuthors>
-                  <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
+                  <a href="https://erinmcelroy.net" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
                   <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>
                   Gracie Harris<br/>
                   Matthew Martignoni<br/>
