@@ -339,6 +339,7 @@ export default class Footer extends Component {
                   Catherine Xu<br/>
                 </CreditAuthors>
 
+                <Gutter h={30} />
                 <Subtitle>
                   <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute and Collaborators</a>
                 </Subtitle>
