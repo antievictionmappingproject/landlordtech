@@ -99,6 +99,30 @@ export default class Footer extends Component {
 
               <ArticleArea>
                 <Subtitle>
+                  <a href="https://www.ijurr.org/article/dis-possessory-data-politics-from-tenant-screening-to-anti-eviction-organizing/" target="_blank" rel="noopener noreferrer">Dis/possessory Data Politics: From Tenant Screening to Anti-Eviction Organizing</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy
+                </Authors>
+                <Publisher>
+                  IJURR
+                </Publisher>
+              </ArticleArea>
+      
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://logicmag.io/beacons/organizing-as-joy-an-ocean-hill-brownsville-story-with-tranae-moran-and/" target="_blank" rel="noopener noreferrer">Organizing as Joy</a>
+                </Subtitle>
+                <Authors>
+                  Tranae' Moran and Fabian Rogers
+                </Authors>
+                <Publisher>
+                  Logic Magazine
+                </Publisher>
+              </ArticleArea>
+      
+            <ArticleArea>
+                <Subtitle>
                   <a href="https://doi.org/10.1080/10511482.2022.2113815" target="_blank" rel="noopener noreferrer">Which Information Matters? Measuring Landlord Assessment of Tenant Screening Reports</a>
                 </Subtitle>
                 <Authors>
@@ -111,7 +135,7 @@ export default class Footer extends Component {
 
               <ArticleArea>
                 <Subtitle>
-                  <a href="https://journals.sagepub.com/doi/full/10.1177/02637758221088868#bibr41-02637758221088868" target="_blank" rel="noopener noreferrer">Automating gentrification: Landlord technologies and housing justice organizing in New York City homes</a>
+                  <a href="https://journals.sagepub.com/doi/full/10.1177/02637758221088868#bibr41-02637758221088868" target="_blank" rel="noopener noreferrer">Automating Gentrification: Landlord Technologies and Housing Justice Organizing in New York City homes</a>
                 </Subtitle>
                 <Authors>
                   Erin McElroy and Manon Vergerio
@@ -309,19 +333,38 @@ export default class Footer extends Component {
                 </CreditAuthors>
                 <Gutter h={30} />
 
+               <Subtitle>
+                  <a href="https://antievictionlab.org/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Lab</a>
+                </Subtitle>
+                <CreditAuthors>
+                  Erin McElroy<br/>
+                  Noah Cohen<br/>
+                  Teja Desai<br/>
+                  Gracie Harris<br/>
+                  Andrew Liquigan<br/>
+                  Margaret McCarroll<br/>
+                  Giulia Oprea<br/>
+                  Lulia Pan<br/>
+                  Alyssa Ramirez<br/>
+                  Ashley Xu<br/>
+                  Byron Xu<br/>
+                  Catherine Xu<br/>
+                </CreditAuthors>
+
                 <Subtitle>
-                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute</a>
+                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute and Collaborators</a>
                 </Subtitle>
                 <CreditAuthors>
                   Meredith Whittaker<br/>
                   Nicole Weber<br/>
                   Genevieve Fried<br/>
-                  Deborah Raji
+                  Deborah Raji<br/>
+                  Paula Garcia-Salazar<br/>
                 </CreditAuthors>
 
                 <Gutter h={30} />
                 <Subtitle>
-                  Ocean Hill-Brownsville Tenants Alliance
+                  Ocean Hill-Brownsville Alliance
                 </Subtitle>
                 <CreditAuthors>
                   Tranae’ Moran<br/>
