@@ -96,18 +96,6 @@ export default class Footer extends Component {
                   International Journal of Urban and Regional Research
                 </Publisher>
               </ArticleArea>
-
-              <ArticleArea>
-                <Subtitle>
-                  <a href="https://www.ijurr.org/article/dis-possessory-data-politics-from-tenant-screening-to-anti-eviction-organizing/" target="_blank" rel="noopener noreferrer">Dis/possessory Data Politics: From Tenant Screening to Anti-Eviction Organizing</a>
-                </Subtitle>
-                <Authors>
-                  Erin McElroy
-                </Authors>
-                <Publisher>
-                  IJURR
-                </Publisher>
-              </ArticleArea>
       
               <ArticleArea>
                 <Subtitle>
