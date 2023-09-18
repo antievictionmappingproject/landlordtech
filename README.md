@@ -41,7 +41,7 @@ yarn start
 
 ### Compile production code
 ```bash
-yarn build
+yarn deploy
 ```
 
 
