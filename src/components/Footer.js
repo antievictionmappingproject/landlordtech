@@ -321,25 +321,6 @@ export default class Footer extends Component {
                 </CreditAuthors>
                 <Gutter h={30} />
 
-               <Subtitle>
-                  <a href="https://antievictionlab.org/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Lab</a>
-                </Subtitle>
-                <CreditAuthors>
-                  Erin McElroy<br/>
-                  Noah Cohen<br/>
-                  Teja Desai<br/>
-                  Gracie Harris<br/>
-                  Andrew Liquigan<br/>
-                  Margaret McCarroll<br/>
-                  Giulia Oprea<br/>
-                  Lulia Pan<br/>
-                  Alyssa Ramirez<br/>
-                  Ashley Xu<br/>
-                  Byron Xu<br/>
-                  Catherine Xu<br/>
-                </CreditAuthors>
-
-                <Gutter h={30} />
                 <Subtitle>
                   <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute and Collaborators</a>
                 </Subtitle>
