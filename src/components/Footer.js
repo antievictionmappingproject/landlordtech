@@ -84,6 +84,18 @@ export default class Footer extends Component {
                 Resources
               </Title>
               <Gutter h={10}></Gutter>
+              
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://doi.org/10.1080/10511482.2022.2113815" target="_blank" rel="noopener noreferrer">DIS/POSSESSORY DATA POLITICS: From Tenant Screening to Anti-Eviction Organizing</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy
+                </Authors>
+                <Publisher>
+                  International Journal of Urban and Regional Research
+                </Publisher>
+              </ArticleArea>
 
               <ArticleArea>
                 <Subtitle>
@@ -271,8 +283,29 @@ export default class Footer extends Component {
                   <a href="https://antievictionmap.com/" target="_blank" rel="noopener noreferrer" className="wy" >Anti-Eviction Mapping Project</a>
                 </Subtitle>
                 <CreditAuthors>
-                  <a href="https://ainowinstitute.org/people/erin-mcelroy.html" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
-                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a>
+                  <a href="https://www.erinmcelroy.net/" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
+                  <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a><br/>
+                  Gracie Harris<br/>
+                  Isa Knafo<br/>
+                  Matthew Martignoni<br/>
+                  Manon Vergerio
+                </CreditAuthors>
+                <Gutter h={30} />
+                <Subtitle>
+                  <a href="https://www.antievictionlab.org/" target="_blank" rel="noopener noreferrer" className="wy">Anti-Eviction Lab</a>
+                </Subtitle>
+                <CreditAuthors>
+                  Noah Cohen<br/>
+                  Teja Desai<br/>
+                  Paula Garcia-Salazar<br/>
+                  Andrew Liquigan<br/>
+                  Margaret McCarroll<br/>
+                  Giulia Oprea<br/>
+                  Lulia Pan<br/>
+                  Alyssa Ramirez<br/>
+                  Ashley Xu<br/>
+                  Byron Xu<br/>
+                  Catherine Xu
                 </CreditAuthors>
                 <Gutter h={30} />
 
@@ -301,7 +334,9 @@ export default class Footer extends Component {
                 </Subtitle>
                 <CreditAuthors>
                   Joseph Smooke<br/>
-                  Dyan Ruiz
+                  Dyan Ruiz<br/>
+                  Jeantelle Laberinto<br/>
+                  Priya Prabhakar
                 </CreditAuthors>
                 <Gutter h={30} />
                 
