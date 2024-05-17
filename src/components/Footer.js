@@ -338,6 +338,7 @@ export default class Footer extends Component {
                   Matthew Martignoni<br/>
                   Manon Vergerio
                 </CreditAuthors>
+        
                 <Gutter h={30} />
                 <Subtitle>
                   <a href="https://www.antievictionlab.org/" target="_blank" rel="noopener noreferrer" className="wy">Anti-Eviction Lab</a>
@@ -363,16 +364,6 @@ export default class Footer extends Component {
                 </CreditAuthors>
                 <Gutter h={30} />
 
-                <Subtitle>
-                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >Former AI Now Institute and Collaborators</a>
-                </Subtitle>
-                <CreditAuthors>
-                  Meredith Whittaker<br/>
-                  Nicole Weber<br/>
-                  Genevieve Fried<br/>
-                  Deborah Raji
-                </CreditAuthors>
-
                 <Gutter h={30} />
                 <Subtitle>
                   Ocean Hill-Brownsville Alliance
@@ -393,6 +384,16 @@ export default class Footer extends Component {
                   Priya Prabhakar
                 </CreditAuthors>
                 <Gutter h={30} />
+
+                <Subtitle>
+                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >Former AI Now Institute and Collaborators</a>
+                </Subtitle>
+                <CreditAuthors>
+                  Meredith Whittaker<br/>
+                  Nicole Weber<br/>
+                  Genevieve Fried<br/>
+                  Deborah Raji
+                </CreditAuthors>
                 
                 <CreditAuthors>
                   Photo CC-BY-NC Tom Woodward<br/>
