@@ -84,7 +84,43 @@ export default class Footer extends Component {
                 Resources
               </Title>
               <Gutter h={10}></Gutter>
-              
+               
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://journals.sagepub.com/doi/10.1177/02637758241232758" target="_blank" rel="noopener noreferrer">The work of Landlord Technology: The Fictions of Frictionless Property Management</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy
+                </Authors>
+                <Publisher>
+                   Environment and Planning D: Society and Space
+                </Publisher>
+              </ArticleArea>
+       
+              <ArticleArea>
+                <Subtitle>
+                  <a href="https://www.antievictionlab.org/sf-report" target="_blank" rel="noopener noreferrer">San Francisco Landlord Tech Report</a>
+                </Subtitle>
+                <Authors>
+                  Erin McElroy, Noah Cohen, Paula Garcia-Salazar, Gracie Harris, Andrew Liquigan, Matt Martignoni, Maggie McCarroll, Lulia Liu Pan, Alyssa Ramirez, and Shiyu Catherine Xu
+                </Authors>
+                <Publisher>
+                 Anti-Eviction Lab
+                </Publisher>
+              </ArticleArea>
+
+               <ArticleArea>
+                <Subtitle>
+                  <a href="https://static1.squarespace.com/static/634972c05f5af46e3c86d062/t/6525dd382317c41ac8477526/1696980283183/Privacy+and+Property.pdf" target="_blank" rel="noopener noreferrer">Privacy and Property: A Brief Analysis of California and Texas Tenant Rights</a>
+                </Subtitle>
+                <Authors>
+                  Andrew Liquigan
+                </Authors>
+                <Publisher>
+                 Anti-Eviction Lab
+                </Publisher>
+              </ArticleArea>
+      
               <ArticleArea>
                 <Subtitle>
                   <a href="https://doi.org/10.1080/10511482.2022.2113815" target="_blank" rel="noopener noreferrer">DIS/POSSESSORY DATA POLITICS: From Tenant Screening to Anti-Eviction Organizing</a>
@@ -132,7 +168,6 @@ export default class Footer extends Component {
                   Environment and Planning D: Society and Space
                 </Publisher>
               </ArticleArea>
-
 
               <ArticleArea>
                 <Subtitle>
@@ -297,6 +332,7 @@ export default class Footer extends Component {
                 <CreditAuthors>
                   <a href="https://www.erinmcelroy.net/" className="wy" target="_blank" rel="noopener noreferrer">Erin McElroy</a><br/>
                   <a href="https://wonyoung.so" className="wy" target="_blank" rel="noopener noreferrer">Wonyoung So</a><br/>
+                  Andrew Liquigan<br/>
                   Gracie Harris<br/>
                   Isa Knafo<br/>
                   Matthew Martignoni<br/>
@@ -307,10 +343,16 @@ export default class Footer extends Component {
                   <a href="https://www.antievictionlab.org/" target="_blank" rel="noopener noreferrer" className="wy">Anti-Eviction Lab</a>
                 </Subtitle>
                 <CreditAuthors>
+                  Erin McElroy<br/>
+                  Izzy Sanchez-Foster<br/>
+                  Justin Mai<br/>
+                  Simranjit Singh<br/>
+                  Brian Bui<br/>
+                  Kevin Neladjou Kemegue<br/>
+                  Andrew Liquigan<br/>
                   Noah Cohen<br/>
                   Teja Desai<br/>
                   Paula Garcia-Salazar<br/>
-                  Andrew Liquigan<br/>
                   Margaret McCarroll<br/>
                   Giulia Oprea<br/>
                   Lulia Pan<br/>
@@ -322,14 +364,13 @@ export default class Footer extends Component {
                 <Gutter h={30} />
 
                 <Subtitle>
-                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >AI Now Institute and Collaborators</a>
+                  <a href="https://ainowinstitute.org/" target="_blank" rel="noopener noreferrer" className="wy" >Former AI Now Institute and Collaborators</a>
                 </Subtitle>
                 <CreditAuthors>
                   Meredith Whittaker<br/>
                   Nicole Weber<br/>
                   Genevieve Fried<br/>
-                  Deborah Raji<br/>
-                  Paula Garcia-Salazar<br/>
+                  Deborah Raji
                 </CreditAuthors>
 
                 <Gutter h={30} />
@@ -343,7 +384,7 @@ export default class Footer extends Component {
                 
                 <Gutter h={30} />
                 <Subtitle>
-                <a href="https://www.peoplepowermedia.org/" target="_blank" rel="noopener noreferrer" className="wy">People Power Media</a>
+                <a href="https://www.peoplepowermedia.org/" target="_blank" rel="noopener noreferrer" className="wy">[people power media]</a>
                 </Subtitle>
                 <CreditAuthors>
                   Joseph Smooke<br/>
