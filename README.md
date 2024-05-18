@@ -43,6 +43,3 @@ yarn start
 ```bash
 yarn deploy
 ```
-
-
-
