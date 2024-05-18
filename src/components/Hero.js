@@ -283,7 +283,9 @@ export default class Hero extends Component {
             </HeroTitle>
             <HeroSub>
               Landlord Tech—what the real estate industry describes as residential property technology, is leading to new forms of housing injustice. Property technology, or “proptech,” has grown dramatically since 2008, and applies to residential, commercial, and industrial buildings, effectively merging the real estate, technology, and finance industries. By employing digital surveillance, data collection, data accumulation, artificial intelligence, dashboards, and platform real estate in tenant housing and neighborhoods, Landlord Tech increases the power of landlords while disempowering tenants and those seeking shelter.
-            </HeroSub>
+            
+           <b>Landlord Tech Watch produces data, scholarship, and popular educational materials related to tenant harms imposed by the property technology industry. It exists as a collaboration by members of the <a href="https://antievictionmap.com">Anti-Eviction Mapping Project</a>, the <a href="https://antievictionlab.org">Anti-Eviction Labt</a>, <a href="https://www.peoplepowermedia.org">[people.power.media]</a>, and the <a href="https://www.instagram.com/oceanhillbrownsvillealliance">OceanHill-Brownsville Alliance</a>.</b> 
+          </HeroSub>
           </HeroTitleContainer>
           <Gutter h={50} />
           
