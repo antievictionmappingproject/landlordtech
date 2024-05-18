@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/landlordtech/static/css/main.b42c5bd3.chunk.css",
-    "main.js": "/landlordtech/static/js/main.e08139b1.chunk.js",
-    "main.js.map": "/landlordtech/static/js/main.e08139b1.chunk.js.map",
+    "main.js": "/landlordtech/static/js/main.1cd35b93.chunk.js",
+    "main.js.map": "/landlordtech/static/js/main.1cd35b93.chunk.js.map",
     "runtime-main.js": "/landlordtech/static/js/runtime-main.c0c54e04.js",
     "runtime-main.js.map": "/landlordtech/static/js/runtime-main.c0c54e04.js.map",
     "static/js/2.d9e34e75.chunk.js": "/landlordtech/static/js/2.d9e34e75.chunk.js",
@@ -15,6 +15,6 @@
     "static/js/runtime-main.c0c54e04.js",
     "static/js/2.d9e34e75.chunk.js",
     "static/css/main.b42c5bd3.chunk.css",
-    "static/js/main.e08139b1.chunk.js"
+    "static/js/main.1cd35b93.chunk.js"
   ]
 }
