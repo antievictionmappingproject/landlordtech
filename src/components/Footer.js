@@ -225,18 +225,6 @@ export default class Footer extends Component {
                   Urban Omnibus
                 </Publisher>
               </ArticleArea>
-              <ArticleArea>
-                <Subtitle>
-                  <a href="https://www.e-flux.com/architecture/housing/333698/how-to-pick-a-smart-lock/" target="_blank" rel="noopener noreferrer">How to Pick a Smart Lock</a>
-                </Subtitle>
-                <Authors>
-                  Miranda Hall
-                </Authors>
-                <Publisher>
-                  e-flux
-                </Publisher>
-              </ArticleArea>
-              <ArticleArea>
                 <Subtitle>
                   <a href="https://www.publicbooks.org/uploading-housing-inequality-digitizing-housing-justice/" target="_blank" rel="noopener noreferrer">Uploading Housing Inequality, Digitizing Housing Justice?</a>
                 </Subtitle>
@@ -271,18 +259,6 @@ export default class Footer extends Component {
               </ArticleArea>
               <ArticleArea>
                 <Subtitle>
-                  <a href="https://themarkup.org/series/locked-out" target="_blank" rel="noopener noreferrer">Locked out</a>
-                </Subtitle>
-                <Authors>
-                  Lauren Kirchner
-                </Authors>
-                <Publisher>
-                  The Markup
-                </Publisher>
-              </ArticleArea>
-
-              <ArticleArea>
-                <Subtitle>
                   <a href="https://www.publicbooks.org/prison-tech-comes-home/" target="_blank" rel="noopener noreferrer">Prison Tech Comes Home</a>
                 </Subtitle>
                 <Authors>
@@ -292,25 +268,13 @@ export default class Footer extends Component {
                   Public Books
                 </Publisher>
               </ArticleArea>
-
-              <ArticleArea>
-                <Subtitle>
-                  <a href="https://www.bloomberg.com/news/articles/2021-10-07/tenants-use-new-technology-to-combat-evictions" target="_blank" rel="noopener noreferrer">The Tech That Slumlords Hate</a>
-                </Subtitle>
-                <Authors>
-                  Ethan McLeod
-                </Authors>
-                <Publisher>
-                  Bloomberg CityLab
-                </Publisher>
-              </ArticleArea>
-
+ 
               
 
               <ArticleArea>
                 <Authors>
 
-                  Want to ask questions or more resources? Please reach out to <a className="wy" href="mailto:landlordtech@riseup.net">landlordtech@riseup.net</a>
+                  Want to ask questions or more resources? Please reach out to <a className="wy" href="mailto:antievictionmap@riseup.net">antievictionmap@riseup.net</a>
                 </Authors>
               </ArticleArea>
 
