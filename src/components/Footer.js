@@ -225,6 +225,7 @@ export default class Footer extends Component {
                   Urban Omnibus
                 </Publisher>
               </ArticleArea>
+              <ArticleArea>
                 <Subtitle>
                   <a href="https://www.publicbooks.org/uploading-housing-inequality-digitizing-housing-justice/" target="_blank" rel="noopener noreferrer">Uploading Housing Inequality, Digitizing Housing Justice?</a>
                 </Subtitle>
