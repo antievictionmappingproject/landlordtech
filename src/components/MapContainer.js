@@ -32,7 +32,13 @@ class MapContainer extends Component {
 
     this.map = new window.mapboxgl.Map({
       container: this.refsMapContainer,
-      style: process.env.REACT_APP_MAP_STYLE,
+      style: 'mapbox://styles/mapbox/standard',
+      config: {
+          basemap: {
+              theme: 'monochrome',
+              lightPreset: 'night'
+          }
+      },
       zoom: 4,
       minZoom: 4,
       center: [ -98.98407012500502, 38.97649404715861],
@@ -43,7 +49,7 @@ class MapContainer extends Component {
     this.map.addControl(new window.mapboxgl.NavigationControl());
 
     window.map = this.map;
-    this.map.on('style.load', this.handleStyleLoad.bind(this));
+    this.map.on('load', this.handleStyleLoad.bind(this));
   
   }
 
@@ -95,8 +101,8 @@ class MapContainer extends Component {
       this.map.setFilter('unclustered_responses_layer', ['!', ['has', 'point_count']]);
       this.map.setFilter('clusters', ['has', 'point_count']);
       this.map.setLayoutProperty('cluster-count', 'text-field', `{point_count_abbreviated}`);
-      this.map.setPaintProperty('clusters', 'circle-stroke-color', "#FFFFFF");
-      this.map.setPaintProperty('cluster-count', 'text-color', "#FFFFFF");
+      this.map.setPaintProperty('clusters', 'circle-stroke-color', "#000000");
+      this.map.setPaintProperty('cluster-count', 'text-color', "#000000");
 
     
       this.map.setPaintProperty('unclustered_responses_layer', 'circle-color', this.renderCircleColors());
@@ -204,7 +210,7 @@ class MapContainer extends Component {
       filter: ['has', 'point_count'],
       paint: {
         'circle-color': 'rgba(0,0,0,0)',
-        'circle-stroke-color': '#FFFFFF',
+        'circle-stroke-color': 'rgba(255,255,255,0.8)',
         'circle-stroke-width': 3,
         
         'circle-radius': [
@@ -215,8 +221,9 @@ class MapContainer extends Component {
           30,
           750,
           40
-        ]
-      }
+        ],
+        'circle-emissive-strength': 1
+      },
     });
 
     this.map.addLayer({
@@ -257,9 +264,10 @@ class MapContainer extends Component {
           ['boolean', ['feature-state', 'hover'], false],
           1,
           0.7
-        ]
+        ],
+        'circle-emissive-strength': 1
       }
-    }, "admin-0-boundary-disputed");
+    });
     
     this.map.on('mousemove', 'clusters', e => {
       if (e.features.length > 0) {
