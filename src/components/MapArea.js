@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { MapContainer, Legend, SelectArea, CurrentResponse } from './';
+import Sidebar from './Sidebar';
 import { Title, Subtitle, Inner, Gutter, CenterArea } from '../stylesheets/components';
 import media from '../stylesheets/media';
 const Container = styled.div`
@@ -17,10 +18,10 @@ const RelativeWrap = styled.div`
   position: ${props => props.isFullScreen ? "fixed" : "relative"};
   left: ${props => props.isFullScreen ? 0 : "auto"};
   top: ${props => props.isFullScreen ? 0 : "auto"};
-  z-index: ${props => props.isFullScreen ? 10000 : 9998 };
+  z-index: ${props => props.isFullScreen ? 10000 : 9998};
 
 
-  ${media.padLandscape `
+  ${media.padLandscape`
     width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 20px)"};
     height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 50px)"};
   `}
@@ -36,7 +37,7 @@ class MapArea extends Component {
         <Inner>
           <CenterArea>
             <Title>
-              Landlord Tech<br/>
+              Landlord Tech<br />
               Deployment Map
             </Title>
           </CenterArea>
@@ -45,18 +46,19 @@ class MapArea extends Component {
           <Subtitle>
             This map indicates where and what type of landlord tech is being deployed. Please fill out the survey below to add landlord tech in your building or neighborhood to the map.
           </Subtitle>
-          
+
         </Inner>
         <Gutter h={50} />
         <CenterArea>
           <RelativeWrap isFullScreen={isFullScreen}>
             <SelectArea />
-            <MapContainer /> 
+            <MapContainer />
             {
-              currentResponseID ? 
-              <CurrentResponse /> : null
+              currentResponseID ?
+                <CurrentResponse /> : null
             }
             <Legend />
+            <Sidebar />
           </RelativeWrap>
         </CenterArea>
         <Gutter h={50} />

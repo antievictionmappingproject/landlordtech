@@ -3,7 +3,7 @@ export const windowResize = (width, height) => {
     type: 'WINDOW_RESIZE',
     payload: {
       screenWidth: width,
-      screenHeight: height  
+      screenHeight: height
     }
   }
 };
@@ -32,7 +32,7 @@ export const changeIsFullScreen = (isFullScreen) => {
     type: "CHANGE_IS_FULL_SCREEN",
     payload: {
       isFullScreen: isFullScreen
-    } 
+    }
   }
 }
 export const changeCurrentNomenclature = (currentNomenclature) => {
@@ -64,4 +64,6 @@ export const updateData = (data) => {
   }
 };
 
-
+export const toggleSentiment = () => ({
+  type: "TOGGLE_SENTIMENT"
+});

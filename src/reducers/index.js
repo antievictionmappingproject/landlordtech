@@ -2,7 +2,7 @@ import { INITIAL_STATE } from '../constants/defaults';
 
 
 var reducer = (state = INITIAL_STATE, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'WINDOW_RESIZE':
       return {
         ...state,
@@ -24,7 +24,7 @@ var reducer = (state = INITIAL_STATE, action) => {
         ...state,
         isFullScreen: action.payload.isFullScreen
       }
-  
+
     case "CHANGE_CURRENT_NOMENCLATURE":
       return {
         ...state,
@@ -39,6 +39,11 @@ var reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         data: action.payload.data
+      };
+    case "TOGGLE_SENTIMENT":
+      return {
+        ...state,
+        showSentiment: !state.showSentiment
       };
     default:
       return state;
