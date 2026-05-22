@@ -14,7 +14,7 @@ const MapDiv = styled.div`
   height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 100px)"};
 
 
-  ${media.padLandscape `
+  ${media.padLandscape`
     width: ${props => props.isFullScreen ? "100vw" : "calc(100vw - 20px)"};
     height: ${props => props.isFullScreen ? "100vh" : "calc(100vh - 50px)"};
   `}
@@ -23,7 +23,7 @@ const MapDiv = styled.div`
 
 
 class MapContainer extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.hoveredStateId = null;
   }
@@ -34,14 +34,14 @@ class MapContainer extends Component {
       container: this.refsMapContainer,
       style: 'mapbox://styles/mapbox/standard',
       config: {
-          basemap: {
-              theme: 'monochrome',
-              lightPreset: 'night'
-          }
+        basemap: {
+          theme: 'monochrome',
+          lightPreset: 'night'
+        }
       },
       zoom: 4,
       minZoom: 4,
-      center: [ -98.98407012500502, 38.97649404715861],
+      center: [-98.98407012500502, 38.97649404715861],
       scrollZoom: false
       // interactive: false
     });
@@ -50,19 +50,19 @@ class MapContainer extends Component {
 
     window.map = this.map;
     this.map.on('load', this.handleStyleLoad.bind(this));
-  
+
   }
 
-  handleResetZoom(e){
+  handleResetZoom(e) {
     this.map.easeTo({
       zoom: 4,
-      center: [ -98.98407012500502, 38.97649404715861]
+      center: [-98.98407012500502, 38.97649404715861]
     });
     this.props.dispatch(changeCurrentResponseID(null));
 
   }
 
-  componentDidUpdate(prevProps){
+  componentDidUpdate(prevProps) {
     if (prevProps.data.features.length === 0 && this.props.data.features.length > 0) {
       this.updateData(this.props.data);
     }
@@ -78,25 +78,49 @@ class MapContainer extends Component {
         this.map.scrollZoom.disable();
       }
     }
+    if (prevProps.showSentiment !== this.props.showSentiment && this.map.getLayer('clusters')) {
+
+      if (this.props.showSentiment) {
+
+        if (this.map.getLayer('sentiment-proportional')) {
+          this.map.setLayoutProperty('sentiment-proportional', 'visibility', 'visible');
+        }
+
+        this.map.setLayoutProperty('clusters', 'visibility', 'none');
+        this.map.setLayoutProperty('cluster-count', 'visibility', 'none');
+        this.map.setLayoutProperty('unclustered_responses_layer', 'visibility', 'none');
+
+      } else {
+
+        if (this.map.getLayer('sentiment-proportional')) {
+          this.map.setLayoutProperty('sentiment-proportional', 'visibility', 'none');
+        }
+
+        this.map.setLayoutProperty('clusters', 'visibility', 'visible');
+        this.map.setLayoutProperty('cluster-count', 'visibility', 'visible');
+        this.map.setLayoutProperty('unclustered_responses_layer', 'visibility', 'visible');
+
+      }
+    }
 
     this.map.resize();
   }
 
-  renderCircleColors(){
+  renderCircleColors() {
     let circleColors = ["case"];
 
     _.each([...TECH_SELECT_VALUES].splice(1, TECH_SELECT_VALUES.length).reverse(), v => {
       circleColors.push(["in", v.value, ['get', 'techType']], v.color);
-    }); 
+    });
 
     circleColors.push("#ccc");
-    
+
     return circleColors;
   }
 
   updateFilter(currentTechTypeValue) {
 
-    if (currentTechTypeValue === "All"){
+    if (currentTechTypeValue === "All") {
 
       this.map.setFilter('unclustered_responses_layer', ['!', ['has', 'point_count']]);
       this.map.setFilter('clusters', ['has', 'point_count']);
@@ -104,10 +128,10 @@ class MapContainer extends Component {
       this.map.setPaintProperty('clusters', 'circle-stroke-color', "#000000");
       this.map.setPaintProperty('cluster-count', 'text-color', "#000000");
 
-    
+
       this.map.setPaintProperty('unclustered_responses_layer', 'circle-color', this.renderCircleColors());
-    } else {  
-      this.map.setFilter('unclustered_responses_layer', 
+    } else {
+      this.map.setFilter('unclustered_responses_layer',
         [
           "all",
           [
@@ -119,7 +143,7 @@ class MapContainer extends Component {
         ]
       );
 
-      this.map.setFilter('clusters', 
+      this.map.setFilter('clusters',
         [
           "all",
           [
@@ -131,7 +155,7 @@ class MapContainer extends Component {
         ]
       );
 
-      this.map.setFilter('cluster-count', 
+      this.map.setFilter('cluster-count',
         [
           "all",
           [
@@ -166,9 +190,10 @@ class MapContainer extends Component {
     }
   }
 
-  updateData(data){
+  updateData(data) {
     console.log(data);
     this.map.getSource('responses').setData(data);
+    this.map.getSource('responses-raw').setData(data);
   }
 
   determineClusterProperties() {
@@ -176,18 +201,18 @@ class MapContainer extends Component {
     _.each([...TECH_SELECT_VALUES].splice(1, TECH_SELECT_VALUES.length), v => {
       // circleColors.push(["in", v.value, ['get', 'techType']], v.color);
       result[v.value] = [
-        '+', 
+        '+',
         [
           'case', [
             'in',
             v.value,
             ['get', 'techType']
-          ], 
-          1, 
+          ],
+          1,
           0
         ]
       ];
-    }); 
+    });
 
     return result;
   }
@@ -203,6 +228,12 @@ class MapContainer extends Component {
       clusterProperties: this.determineClusterProperties()
     });
 
+    this.map.addSource('responses-raw', {
+      type: 'geojson',
+      data: this.props.data,
+      cluster: false
+    });
+
     this.map.addLayer({
       id: 'clusters',
       type: 'circle',
@@ -212,7 +243,7 @@ class MapContainer extends Component {
         'circle-color': 'rgba(0,0,0,0)',
         'circle-stroke-color': 'rgba(255,255,255,0.8)',
         'circle-stroke-width': 3,
-        
+
         'circle-radius': [
           'step',
           ['get', 'point_count'],
@@ -232,17 +263,17 @@ class MapContainer extends Component {
       source: 'responses',
       filter: ['has', 'point_count'],
       layout: {
-      'text-field': '{point_count_abbreviated}',
-      'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
-      'text-size': 12
+        'text-field': '{point_count_abbreviated}',
+        'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
+        'text-size': 12
       },
       paint: {
 
         'text-color': '#FFFFFF'
       }
     });
- 
-      
+
+
     this.map.addLayer({
       'id': 'unclustered_responses_layer',
       'source': 'responses',
@@ -253,8 +284,8 @@ class MapContainer extends Component {
         'circle-radius': {
           'base': 5,
           'stops': [
-          [12, 10],
-          [22, 180]
+            [12, 10],
+            [22, 180]
           ]
         },
         'circle-color': this.renderCircleColors(),
@@ -268,12 +299,79 @@ class MapContainer extends Component {
         'circle-emissive-strength': 1
       }
     });
-    
+
+    this.map.addLayer({
+      id: 'sentiment-proportional',
+      type: 'circle',
+      source: 'responses-raw',
+      layout: {
+        visibility: 'none'
+      },
+      paint: {
+        'circle-radius': [
+          'match',
+          ['get', 'rent_bucket'],
+          'low', 6,
+          'mid', 12,
+          'high', 20,
+          8
+        ],
+
+        'circle-blur': .7,
+        'circle-color': [
+          'interpolate',
+          ['linear'],
+          ['coalesce', ['get', 'sentiment_score'], 0],
+          -1, '#e74c3c',
+          0, '#f1c40f',
+          1, '#2ecc71'
+        ],
+
+        'circle-opacity': 0.8,
+        'circle-stroke-width': 1,
+        'circle-stroke-color': '#222',
+        'circle-emissive-strength': 1
+      }
+    });
+
+    this.map.addLayer({
+      id: 'sentiment-heat',
+      type: 'circle',
+      source: 'responses-raw',
+      layout: {
+        visibility: 'none'
+      },
+      paint: {
+        'circle-color': [
+          'interpolate',
+          ['linear'],
+          ['coalesce', ['get', 'sentiment_score'], 0],
+          -1, '#ff4d4d',
+          0, '#ffffbf',
+          1, '#2ecc71'
+        ],
+        'circle-radius': [
+          'interpolate',
+          ['linear'], ['zoom'],
+          4, 15,
+          10, 40
+        ],
+        'circle-blur': 1,
+        'circle-opacity': [
+          'interpolate',
+          ['linear'], ['zoom'],
+          4, 0.6,
+          10, 0.4
+        ],
+        'circle-emissive-strength': 1.0
+      }
+    });
+
     this.map.on('mousemove', 'clusters', e => {
       if (e.features.length > 0) {
 
         this.map.getCanvas().style.cursor = 'pointer';
-      
+
       } else {
 
         this.map.getCanvas().style.cursor = '';
@@ -283,7 +381,7 @@ class MapContainer extends Component {
 
     this.map.on('mouseleave', 'clusters', e => {
 
-        this.map.getCanvas().style.cursor = '';
+      this.map.getCanvas().style.cursor = '';
     });
 
     this.map.on('click', 'clusters', e => {
@@ -291,12 +389,12 @@ class MapContainer extends Component {
         layers: ['clusters']
       });
       var clusterId = features[0].properties.cluster_id;
-      
+
       this.map.getSource('responses').getClusterExpansionZoom(
         clusterId,
         (err, zoom) => {
           if (err) return;
-       
+
           this.map.easeTo({
             center: features[0].geometry.coordinates,
             zoom: zoom
@@ -310,7 +408,7 @@ class MapContainer extends Component {
       if (e.features.length > 0) {
         let feature = e.features[0];
         let pointed = point([Number(feature.properties.Longitude), Number(feature.properties.Latitude)]);
-        let buffered = buffer(pointed, 0.15, {units: 'kilometers'});
+        let buffered = buffer(pointed, 0.15, { units: 'kilometers' });
         let bboxed = bbox(buffered);
 
         this.map.fitBounds([
@@ -325,16 +423,16 @@ class MapContainer extends Component {
     this.map.on('mousemove', 'unclustered_responses_layer', e => {
       if (e.features.length > 0) {
         if (this.hoveredStateId) {
-       
+
           this.map.setFeatureState(
             { source: 'responses', id: this.hoveredStateId },
             { hover: false }
           );
-       
+
         }
 
         this.hoveredStateId = e.features[0].id;
-        
+
         this.map.setFeatureState(
           { source: 'responses', id: this.hoveredStateId },
           { hover: true }
@@ -342,7 +440,7 @@ class MapContainer extends Component {
 
 
         this.map.getCanvas().style.cursor = 'pointer';
-      } 
+      }
     });
 
     this.map.on("mouseleave", "unclustered_responses_layer", e => {
@@ -354,7 +452,7 @@ class MapContainer extends Component {
           hover: false
         });
       }
-    
+
       this.hoveredStateId = null;
       this.map.getCanvas().style.cursor = '';
     });
@@ -362,14 +460,14 @@ class MapContainer extends Component {
     this.props.dispatch(changeMapLoaded(true));
   }
 
-  
+
 
   render() {
     let { isFullScreen } = this.props;
 
     return (
       <MapDiv isFullScreen={isFullScreen} ref={c => { this.refsMapContainer = c; }} className="map-container">
-        <ResetZoomControl handleZoomReset={this.handleResetZoom.bind(this)}/>
+        <ResetZoomControl handleZoomReset={this.handleResetZoom.bind(this)} />
       </MapDiv>
     );
   }
@@ -382,7 +480,8 @@ let mapStateToProps = state => {
     windowHeight: state.windowHeight,
     data: state.data,
     currentTechType: state.currentTechType,
-    isFullScreen: state.isFullScreen
+    isFullScreen: state.isFullScreen,
+    showSentiment: state.showSentiment || false
   }
 }
 

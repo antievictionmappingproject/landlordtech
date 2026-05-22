@@ -10,7 +10,7 @@ import media from '../stylesheets/media';
 const ResponseContainer = styled.div`
   position: absolute;
   z-index: 15;
-  right: 15px;
+  right: 125spx;
   bottom: 15px;
   background-color: #111;
   border: 1px solid #333333;
@@ -21,12 +21,12 @@ const ResponseContainer = styled.div`
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 
-  ${media.mobileLarge `
+  ${media.mobileLarge`
     right: 10px;
     bottom: 10px;
   `}
 
-  ${media.mobileSmall `
+  ${media.mobileSmall`
     left: 0;
     bottom: 0;
     width: calc(100vw - 53px);
@@ -99,7 +99,7 @@ const CloseBtn = styled.button`
   cursor:pointer;
 `;
 
-const EXCLUDE_QUESTIONS = ["Timestamp", "techType", "Optional", "Latitude", "Longitude", "zip code", "Would you consider this technology"];
+const EXCLUDE_QUESTIONS = ["Timestamp", "techType", "Optional", "Latitude", "Longitude", "zip code", "Would you consider this technology", "raw_sentiment", "tech_count", "sentiment_score", "rent_bucket"];
 
 class CurrentResponse extends Component {
   determineColor(tt) {
@@ -107,7 +107,7 @@ class CurrentResponse extends Component {
     return tech ? tech.color : "#ccc";
   }
 
-  handleClose(e){
+  handleClose(e) {
     this.props.dispatch(changeCurrentResponseID(null));
   }
   render() {
@@ -121,11 +121,11 @@ class CurrentResponse extends Component {
     })
 
     let publicResponses = {};
-    
+
     _.each(response.properties, (value, key) => {
-      var excludes = false; 
+      var excludes = false;
       _.each(EXCLUDE_QUESTIONS, q => {
-        if (key.search(q) > -1){
+        if (key.search(q) > -1) {
           excludes = true;
         }
       })
@@ -142,23 +142,23 @@ class CurrentResponse extends Component {
       <ResponseContainer>
         <CloseBtn onClick={this.handleClose.bind(this)}>
           <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-            <path d="M1 1 L15 15" stroke="#D7D7D7"/>
-            <path d="M1 15 L15 1" stroke="#D7D7D7"/>
+            <path d="M1 1 L15 15" stroke="#D7D7D7" />
+            <path d="M1 15 L15 1" stroke="#D7D7D7" />
           </svg>
 
         </CloseBtn>
         <Gutter h={20} />
-        <TechTypeArea style={{borderBottom: 'none'}}>
+        <TechTypeArea style={{ borderBottom: 'none' }}>
           <div className="tech-title-area">
-          {
-            _.map(response.properties.techType.reverse(), (tt) => {
-              return (
-                <div className="tech-title" key={tt}>
-                  { tt }
-                </div>
-              );
-            })
-          }
+            {
+              _.map(response.properties.techType.reverse(), (tt) => {
+                return (
+                  <div className="tech-title" key={tt}>
+                    {tt}
+                  </div>
+                );
+              })
+            }
           </div>
           <div className="tech-color-area">
             {
@@ -171,7 +171,7 @@ class CurrentResponse extends Component {
           </div>
         </TechTypeArea>
         <TechTypeArea>
-          { address }
+          {address}
         </TechTypeArea>
         {
           _.map(publicResponses, (value, key) => {
